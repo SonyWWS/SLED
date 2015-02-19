@@ -4,7 +4,7 @@ SLED (Script Language Editor and Debugger) provides a script debugger and runtim
 
 The SLED project enables users to create, edit, and debug in-game Lua scripts easily and quickly. It also provides memory tracking and performance-analysis capabilities. Highly flexible, and equipped with an array of powerful features, this toolset can reduce script-development time while helping to increase script performance and robustness. For a list of features, see [Features and Benefits](https://github.com/SonyWWS/SLED/wiki/Features-and-Benefits).
 
-SLED has been used by several Sony Computer Entertainment first party game studios during their game development, such as Bend Game Studio, Guerilla Games, and JAPAN Studio.
+SLED has been used by several Sony Computer Entertainment first party game studios during their game development, such as Bend Studio, Guerilla Games, and JAPAN Studio.
 
 This figure shows a SLED dialog displaying an opened script file with a breakpoint and an environmental variable watch window.
 
