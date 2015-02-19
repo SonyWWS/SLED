@@ -10,8 +10,6 @@ This figure shows a SLED dialog displaying an opened script file with a breakpoi
 
 ![SLED](https://raw.githubusercontent.com/wiki/SonyWWS/SLED/images/Breakpoint.png?raw=true "SLED")
 
-![LevelEditor](https://raw.githubusercontent.com/wiki/SonyWWS/SLED/images/Breakpoint.png?raw=true "LevelEditor")
-
 SLED is an open source project. See [License.txt](https://github.com/SonyWWS/SLED/blob/master/License.txt).
 
 ### More Info ###
