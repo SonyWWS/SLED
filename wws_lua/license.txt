@@ -6,6 +6,3 @@ http://www.lua.org/
 The original Lua is distributed under the MIT Source license. Details can be found here:
 
 http://www.lua.org/license.html
-
-SCEA Legal have reviewed and approved the MIT License used by Lua as being appropriate for inclusion in Sony Playstation games and tools. The relevant BPAF is Reference Number 17337, dated 11/08/2004. 
-
