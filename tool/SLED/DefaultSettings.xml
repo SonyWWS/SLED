@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings appName="Sled" appVersion="5.0">
+  <block id="6CF685C0-D063-4F0C-B385-B8D70875BB81">
+    <value name="SplitterRatio" type="Single">0.33</value>
+  </block>
+  <block id="Sce.Atf.Applications.CommandService">
+    <value name="Command Icon Size" type="ImageSizes">Size16x16</value>
+    <value name="Keyboard Shortcuts" type="String">
+      <Shortcuts />
+    </value>
+  </block>
+  <block id="Sce.Atf.Applications.ControlHostService">
+    <value name="DockPanelState" type="String">
+      <DockPanel FormatVersion="1.0" DockLeftPortion="297" DockRightPortion="734" DockTopPortion="132.25" DockBottomPortion="241" ActiveDocumentPane="-1" ActivePane="2">
+        <Contents Count="18">
+          <Content ID="0" PersistString="SledProjectFilesTreeEditor_Project Files" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
+          <Content ID="1" PersistString="OutputService_Output" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
+          <Content ID="2" PersistString="SledBreakpointEditor_Breakpoints" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
+          <Content ID="3" PersistString="SledFindResultsEditor1_Find Results 1" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
+          <Content ID="4" PersistString="SledFindResultsEditor2_Find Results 2" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
+          <Content ID="5" PersistString="SledSyntaxErrorsEditor_Syntax Errors" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
+          <Content ID="6" PersistString="SledTtyService_TTY" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
+          <Content ID="7" PersistString="SledLuaEnvVarsEditor_Environment" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
+          <Content ID="8" PersistString="SledLuaMemoryTraceEditor_Memory Trace" AutoHidePortion="0.25" IsHidden="True" IsFloat="False" />
+          <Content ID="9" PersistString="SledLuaUpvaluesEditor_Upvalues" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
+          <Content ID="10" PersistString="SledLuaGlobalsEditor_Globals" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
+          <Content ID="11" PersistString="SledLuaLocalsEditor_Locals" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
+          <Content ID="12" PersistString="SledLuaCallStackEditor_Call Stack" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
+          <Content ID="13" PersistString="SledLuaWatchesEditor_Watch List" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
+          <Content ID="14" PersistString="SledLuaProfileEditor_Profile Info" AutoHidePortion="0.25" IsHidden="True" IsFloat="False" />
+          <Content ID="15" PersistString="SledLuaProfileFuncCallsEditor_Profile Function Calls Tree" AutoHidePortion="0.25" IsHidden="True" IsFloat="False" />
+          <Content ID="16" PersistString="SledLuaStatesEditor_Lua States" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
+          <Content ID="17" PersistString="SledProjectFilesDiskViewEditor_Project Files - Disk View" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
+        </Contents>
+        <Panes Count="10">
+          <Pane ID="0" DockState="DockBottom" ActiveContent="1">
+            <Contents Count="2">
+              <Content ID="0" RefID="1" />
+              <Content ID="1" RefID="6" />
+            </Contents>
+          </Pane>
+          <Pane ID="1" DockState="Float" ActiveContent="-1">
+            <Contents Count="1">
+              <Content ID="0" RefID="0" />
+            </Contents>
+          </Pane>
+          <Pane ID="2" DockState="DockLeft" ActiveContent="0">
+            <Contents Count="2">
+              <Content ID="0" RefID="0" />
+              <Content ID="1" RefID="17" />
+            </Contents>
+          </Pane>
+          <Pane ID="3" DockState="DockRight" ActiveContent="10">
+            <Contents Count="6">
+              <Content ID="0" RefID="10" />
+              <Content ID="1" RefID="7" />
+              <Content ID="2" RefID="5" />
+              <Content ID="3" RefID="15" />
+              <Content ID="4" RefID="14" />
+              <Content ID="5" RefID="8" />
+            </Contents>
+          </Pane>
+          <Pane ID="4" DockState="DockBottom" ActiveContent="12">
+            <Contents Count="3">
+              <Content ID="0" RefID="12" />
+              <Content ID="1" RefID="3" />
+              <Content ID="2" RefID="4" />
+            </Contents>
+          </Pane>
+          <Pane ID="5" DockState="Float" ActiveContent="-1">
+            <Contents Count="1">
+              <Content ID="0" RefID="6" />
+            </Contents>
+          </Pane>
+          <Pane ID="6" DockState="DockRight" ActiveContent="2">
+            <Contents Count="1">
+              <Content ID="0" RefID="2" />
+            </Contents>
+          </Pane>
+          <Pane ID="7" DockState="DockRight" ActiveContent="13">
+            <Contents Count="1">
+              <Content ID="0" RefID="13" />
+            </Contents>
+          </Pane>
+          <Pane ID="8" DockState="DockBottom" ActiveContent="11">
+            <Contents Count="2">
+              <Content ID="0" RefID="11" />
+              <Content ID="1" RefID="9" />
+            </Contents>
+          </Pane>
+          <Pane ID="9" DockState="DockRight" ActiveContent="16">
+            <Contents Count="1">
+              <Content ID="0" RefID="16" />
+            </Contents>
+          </Pane>
+        </Panes>
+        <DockWindows>
+          <DockWindow ID="0" DockState="Document" ZOrderIndex="1">
+            <NestedPanes Count="0" />
+          </DockWindow>
+          <DockWindow ID="1" DockState="DockLeft" ZOrderIndex="3">
+            <NestedPanes Count="1">
+              <Pane ID="0" RefID="2" PrevPane="-1" Alignment="Bottom" Proportion="0.5" />
+            </NestedPanes>
+          </DockWindow>
+          <DockWindow ID="2" DockState="DockRight" ZOrderIndex="2">
+            <NestedPanes Count="4">
+              <Pane ID="0" RefID="3" PrevPane="-1" Alignment="Bottom" Proportion="0.5" />
+              <Pane ID="1" RefID="6" PrevPane="3" Alignment="Bottom" Proportion="0.176980198019802" />
+              <Pane ID="2" RefID="7" PrevPane="3" Alignment="Left" Proportion="0.43842645381984" />
+              <Pane ID="3" RefID="9" PrevPane="6" Alignment="Right" Proportion="0.400798175598632" />
+            </NestedPanes>
+          </DockWindow>
+          <DockWindow ID="3" DockState="DockTop" ZOrderIndex="5">
+            <NestedPanes Count="0" />
+          </DockWindow>
+          <DockWindow ID="4" DockState="DockBottom" ZOrderIndex="4">
+            <NestedPanes Count="3">
+              <Pane ID="0" RefID="0" PrevPane="-1" Alignment="Right" Proportion="0.5" />
+              <Pane ID="1" RefID="4" PrevPane="0" Alignment="Right" Proportion="0.684375" />
+              <Pane ID="2" RefID="8" PrevPane="4" Alignment="Right" Proportion="0.625993061949935" />
+            </NestedPanes>
+          </DockWindow>
+        </DockWindows>
+        <FloatWindows Count="2">
+          <FloatWindow ID="0" Bounds="606, 481, 300, 300" ZOrderIndex="0">
+            <NestedPanes Count="1">
+              <Pane ID="0" RefID="1" PrevPane="-1" Alignment="Right" Proportion="0.5" />
+            </NestedPanes>
+          </FloatWindow>
+          <FloatWindow ID="1" Bounds="403, 395, 300, 300" ZOrderIndex="1">
+            <NestedPanes Count="1">
+              <Pane ID="0" RefID="5" PrevPane="-1" Alignment="Right" Proportion="0.5" />
+            </NestedPanes>
+          </FloatWindow>
+        </FloatWindows>
+      </DockPanel>
+    </value>
+    <value name="UILocked" type="Boolean">False</value>
+  </block>
+  <block id="Sce.Atf.Applications.FileDialogService">
+    <value name="RecentDirectories" type="String">
+      <FileDialogServiceSettings />
+    </value>
+  </block>
+  <block id="Sce.Atf.Applications.MainForm">
+    <value name="MainFormBounds" type="Rectangle">78, 47, 1683, 1033</value>
+    <value name="MainFormWindowState" type="FormWindowState">Maximized</value>
+    <value name="ToolStripContainerSettings" type="String">
+      <ToolStripContainerSettings>
+        <ToolStripPanel Name="TopToolStripPanel">
+          <ToolStrip Name="Project Files Tree Editor_toolbar" Location="0,0">
+            <ToolStripItem Name="Project Files Tree Editor_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="View_toolbar" Location="0,0">
+            <ToolStripItem Name="View_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="Format_toolbar" Location="0,0">
+            <ToolStripItem Name="Format_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="Breakpoint Window_toolbar" Location="0,0">
+            <ToolStripItem Name="Breakpoint Window_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="Project_toolbar" Location="0,0">
+            <ToolStripItem Name="Project_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="Modify_toolbar" Location="0,0">
+            <ToolStripItem Name="Modify_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="TTY_toolbar" Location="0,0">
+            <ToolStripItem Name="TTY_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="Breakpoint Context_toolbar" Location="0,0">
+            <ToolStripItem Name="Breakpoint Context_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="Main Menu" Location="0,0" />
+          <ToolStrip Name="Lua Variable List_toolbar" Location="566,0">
+            <ToolStripItem Name="Lua Variable List_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="Help_toolbar" Location="566,0">
+            <ToolStripItem Name="Help_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="Project Files - Disk View_toolbar" Location="566,0">
+            <ToolStripItem Name="Project Files - Disk View_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="Edit_toolbar" Location="3,24">
+            <ToolStripItem Name="Edit/Copy" />
+            <ToolStripItem Name="Edit/Cut" />
+            <ToolStripItem Name="Edit/Paste" />
+            <ToolStripItem Name="Edit/Delete" />
+            <ToolStripItem Name="Edit/Undo" />
+            <ToolStripItem Name="Edit/Redo" />
+            <ToolStripItem Name="Edit_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="File_toolbar" Location="167,24">
+            <ToolStripItem Name="File/Save" />
+            <ToolStripItem Name="File/Save As ..." />
+            <ToolStripItem Name="File/Save All" />
+            <ToolStripItem Name="File/&amp;Save Project" />
+            <ToolStripItem Name="File_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="Debug_toolbar" Location="285,24">
+            <ToolStripItem Name="&amp;Debug/&amp;Start" />
+            <ToolStripItem Name="&amp;Debug/&amp;Current Statement" />
+            <ToolStripItem Name="&amp;Debug/Step &amp;Into" />
+            <ToolStripItem Name="&amp;Debug/Step &amp;Over" />
+            <ToolStripItem Name="&amp;Debug/Step Ou&amp;t" />
+            <ToolStripItem Name="&amp;Debug/Sto&amp;p" />
+            <ToolStripItem Name="&amp;Debug/&amp;Connect" />
+            <ToolStripItem Name="&amp;Debug/&amp;Disconnect" />
+            <ToolStripItem Name="Debug_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="Target_toolbar" Location="495,24">
+            <ToolStripItem Name="Remote Targets" />
+            <ToolStripItem Name="&amp;Target/&amp;Manage Targets" />
+            <ToolStripItem Name="Target_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="Lua_toolbar" Location="767,24">
+            <ToolStripItem Name="&amp;Lua/Toggle Lua &amp;Profiler" />
+            <ToolStripItem Name="&amp;Lua/Compile" />
+            <ToolStripItem Name="&amp;Lua/Toggle Lua &amp;Memory Tracer" />
+            <ToolStripItem Name="Lua_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="Source Control_toolbar" Location="911,24">
+            <ToolStripItem Name="Source Control/No source control plugin found!" />
+            <ToolStripItem Name="Source Control/Source Control/Add" />
+            <ToolStripItem Name="Source Control/Source Control/Revert" />
+            <ToolStripItem Name="Source Control/Source Control/Check In" />
+            <ToolStripItem Name="Source Control/Source Control/Check Out" />
+            <ToolStripItem Name="Source Control/Source Control/Get Latest Version" />
+            <ToolStripItem Name="Source Control/Source Control/Refresh Status" />
+            <ToolStripItem Name="Source Control/Source Control/History" />
+            <ToolStripItem Name="Source Control/Source Control/Open Connection..." />
+            <ToolStripItem Name="Source Control_toolbar" />
+          </ToolStrip>
+          <ToolStrip Name="Window_toolbar" Location="862,24">
+            <ToolStripItem Name="Window_toolbar" />
+            <ToolStripItem Name="Window/Lock UI Layout" />
+          </ToolStrip>
+        </ToolStripPanel>
+        <ToolStripPanel Name="LeftToolStripPanel" />
+        <ToolStripPanel Name="BottomToolStripPanel">
+          <ToolStrip Name="StatusBar" Location="0,0">
+            <ToolStripItem Name="$Status0" />
+          </ToolStrip>
+        </ToolStripPanel>
+        <ToolStripPanel Name="RightToolStripPanel" />
+      </ToolStripContainerSettings>
+    </value>
+  </block>
+  <block id="Sce.Atf.Applications.RecentDocumentCommands">
+    <value name="Recent Files Count" type="Int32">8</value>
+    <value name="RecentDocuments" type="String">
+      <DocumentServiceSettings />
+    </value>
+  </block>
+  <block id="Sce.Atf.Perforce.PerforceService">
+    <value name="Enable or Disable Perforce Service" type="Boolean">False</value>
+    <value name="File Status Cache Timeout" type="Int32">60</value>
+    <value name="Show Errors" type="String">False</value>
+  </block>
+  <block id="Sce.Sled.Lua.SledLuaCompilerService">
+    <value name="Lua Compiler Settings" type="String">
+      <LuaCompilerSettings>
+        <Settings Verbose="1" />
+      </LuaCompilerSettings>
+    </value>
+  </block>
+  <block id="Sce.Sled.Lua.SledLuaFunctionParserService">
+    <value name="Lua Function Parser Settings" type="String">&lt;LuaFunctionParserSettings&gt;&lt;Settings Verbose="0" /&gt;&lt;/LuaFunctionParserSettings&gt;</value>
+    <value name="Verbose" type="Boolean">False</value>
+  </block>
+  <block id="Sce.Sled.Lua.SledLuaVariableParserService">
+    <value name="Lua Variable Parser Settings" type="String">&lt;LuaVariableParserSettings&gt;&lt;Settings Verbose="0" /&gt;&lt;/LuaVariableParserSettings&gt;</value>
+  </block>
+  <block id="Sce.Sled.Net.Tcp.SledNetPluginTcp">
+    <value name="TCP Settings" type="String">
+      <NetworkSettings>
+        <tcp default_port="11111" />
+      </NetworkSettings>
+    </value>
+  </block>
+  <block id="Sce.Sled.Project.SledProjectService">
+    <value name="Open last project on startup" type="String">
+      <OpenLastProjectOnStartup>
+        <OpenLast enabled="0" />
+      </OpenLastProjectOnStartup>
+    </value>
+  </block>
+  <block id="Sce.Sled.SledDebugHeartbeatService">
+    <value name="Heartbeat Settings" type="String">
+      <HeartbeatSettings>
+        <HeartbeatSettings Audible="False" ControlConnection="False" />
+      </HeartbeatSettings>
+    </value>
+  </block>
+  <block id="Sce.Sled.SledFindAndReplaceService">
+    <value name="Find and Replace Settings" type="String">
+      <FindAndReplaceSettings>
+        <QuickFindSettings LookInIndex="0" FindOptionsExpanded="False" MatchCaseChecked="False" MatchWholeWordChecked="False" SearchUpChecked="False" UseChecked="False" UseIndex="0" />
+        <FindInFilesSettings LookInIndex="0" IncludeSubFolders="False" FindOptionsExpanded="False" MatchCaseChecked="False" MatchWholeWordChecked="False" UseChecked="False" UseIndex="0" ResultsOptionsExpanded="False" Results1WindowChecked="True" DisplayFileNamesOnlyChecked="False" />
+        <QuickReplaceSettings LookInIndex="0" FindOptionsExpanded="False" MatchCaseChecked="False" MatchWholeWordChecked="False" SearchUpChecked="False" UseChecked="False" UseIndex="0" />
+        <ReplaceInFilesSettings LookInIndex="0" IncludeSubFolders="False" FindOptionsExpanded="False" MatchCaseChecked="False" MatchWholeWordChecked="False" UseChecked="False" UseIndex="0" ResultsOptionsExpanded="False" Results1WindowChecked="True" DisplayFileNamesOnlyChecked="False" KeepModifiedFilesOpen="False" />
+      </FindAndReplaceSettings>
+    </value>
+  </block>
+  <block id="Sce.Sled.SledLanguageParserService">
+    <value name="Verbosity" type="SledLanguageParserVerbosity">Overall</value>
+  </block>
+  <block id="Sce.Sled.SledSourceControlService">
+    <value name="Source Control Settings" type="String">
+      <SourceControlSettings>
+        <SourceControl Enabled="False" />
+      </SourceControlSettings>
+    </value>
+  </block>
+  <block id="Sce.Sled.SledSyntaxCheckerService">
+    <value name="Enabled" type="Boolean">True</value>
+    <value name="Syntax Checker State" type="String">&lt;SyntaxCheckerState&gt;&lt;SyntaxChecker Enabled="True" Verbose="False" /&gt;&lt;/SyntaxCheckerState&gt;</value>
+    <value name="Verbosity" type="SledSyntaxCheckerVerbosity">Overall</value>
+  </block>
+  <block id="Sce.Sled.SledTargetService">
+    <value name="Sled Targets" type="String">
+      <SledTargets>
+        <Selected ip="127.0.0.1" port="11111" protocol="TCP" imported="True" />
+      </SledTargets>
+    </value>
+  </block>
+  <block id="Sce.Sled.SledTtyService">
+    <value name="Tty GUI Settings" type="String">
+      <Columns>
+        <Column Name="Time" Width="79" />
+        <Column Name="Data" Width="484" />
+        <Splitter Distance="133" />
+      </Columns>
+    </value>
+  </block>
+  <block id="System.Guid">
+    <value name="FileFilterString" type="String">.lua, .txt</value>
+    <value name="Sce.Sled.Lua.SledLuaCallStackService+SledLuaCallStackEditor-Call Stack-TreeListView-Settings" type="String">
+      <Columns>
+        <Column Name="*" Width="60" />
+        <Column Name="Function" Width="142" />
+        <Column Name="File" Width="122" />
+        <Column Name="Line" Width="60" />
+      </Columns>
+    </value>
+    <value name="Sce.Sled.Lua.SledLuaEnvironmentVariableService+SledLuaEnvVarsEditor-Environment-TreeListView-Settings" type="String">
+      <Columns>
+        <Column Name="Name" Width="139" />
+        <Column Name="Type" Width="101" />
+        <Column Name="Value" Width="118" />
+      </Columns>
+    </value>
+    <value name="Sce.Sled.Lua.SledLuaGlobalVariableService+SledLuaGlobalsEditor-Globals-TreeListView-Settings" type="String">
+      <Columns>
+        <Column Name="Name" Width="156" />
+        <Column Name="Type" Width="110" />
+        <Column Name="Value" Width="112" />
+      </Columns>
+    </value>
+    <value name="Sce.Sled.Lua.SledLuaLocalVariableService+SledLuaLocalsEditor-Locals-TreeListView-Settings" type="String">
+      <Columns>
+        <Column Name="Name" Width="122" />
+        <Column Name="Type" Width="99" />
+        <Column Name="Value" Width="101" />
+      </Columns>
+    </value>
+    <value name="Sce.Sled.Lua.SledLuaLuaStatesService+SledLuaStatesEditor-Lua States-TreeListView-Settings" type="String">
+      <Columns>
+        <Column Name="Address" Width="111" />
+        <Column Name="Name" Width="198" />
+      </Columns>
+    </value>
+    <value name="Sce.Sled.Lua.SledLuaMemoryTraceService+SledLuaMemoryTraceEditor-Memory Trace-TreeListView-Settings" type="String">
+      <Columns>
+        <Column Name="Order" Width="60" />
+        <Column Name="What" Width="60" />
+        <Column Name="Old Address" Width="60" />
+        <Column Name="New Address" Width="60" />
+        <Column Name="Old Size" Width="60" />
+        <Column Name="New Size" Width="60" />
+      </Columns>
+    </value>
+    <value name="Sce.Sled.Lua.SledLuaProfilerService+SledLuaProfileEditor-Profile Info-TreeListView-Settings" type="String">
+      <Columns>
+        <Column Name="Function" Width="60" />
+        <Column Name="Calls" Width="60" />
+        <Column Name="Total" Width="60" />
+        <Column Name="Average" Width="60" />
+        <Column Name="Shortest" Width="60" />
+        <Column Name="Longest" Width="60" />
+        <Column Name="Total (Inner)" Width="60" />
+        <Column Name="Average (Inner)" Width="60" />
+        <Column Name="Shortest (Inner)" Width="60" />
+        <Column Name="Longest (Inner)" Width="60" />
+      </Columns>
+    </value>
+    <value name="Sce.Sled.Lua.SledLuaProfilerService+SledLuaProfileFuncCallsEditor-Profile Function Calls Tree-TreeListView-Settings" type="String">
+      <Columns>
+        <Column Name="Function" Width="60" />
+      </Columns>
+    </value>
+    <value name="Sce.Sled.Lua.SledLuaUpvalueVariableService+SledLuaUpvaluesEditor-Upvalues-TreeListView-Settings" type="String">
+      <Columns>
+        <Column Name="Name" Width="82" />
+        <Column Name="Type" Width="92" />
+        <Column Name="Value" Width="93" />
+      </Columns>
+    </value>
+    <value name="Sce.Sled.Lua.SledLuaWatchedVariableService+SledLuaWatchesEditor-Watch List-TreeListView-Settings" type="String">
+      <Columns>
+        <Column Name="Name" Width="101" />
+        <Column Name="Type" Width="84" />
+        <Column Name="Value" Width="90" />
+        <Column Name="Variable Type" Width="60" />
+      </Columns>
+    </value>
+    <value name="Sce.Sled.SledBreakpointEditor-Breakpoints-TreeListView-Settings" type="String">
+      <Columns>
+        <Column Name="Enabled" Width="126" />
+        <Column Name="File" Width="84" />
+        <Column Name="Line" Width="60" />
+        <Column Name="Condition" Width="60" />
+        <Column Name="Cond. Enabled" Width="60" />
+        <Column Name="Result" Width="60" />
+        <Column Name="Environment" Width="60" />
+      </Columns>
+    </value>
+    <value name="Sce.Sled.SledFindAndReplaceService+SledFindResultsEditor1-Find Results 1-TreeListView-Settings" type="String">
+      <Columns>
+        <Column Name="File" Width="60" />
+        <Column Name="Line" Width="60" />
+        <Column Name="Text" Width="60" />
+      </Columns>
+    </value>
+    <value name="Sce.Sled.SledFindAndReplaceService+SledFindResultsEditor2-Find Results 2-TreeListView-Settings" type="String">
+      <Columns>
+        <Column Name="File" Width="60" />
+        <Column Name="Line" Width="60" />
+        <Column Name="Text" Width="60" />
+      </Columns>
+    </value>
+    <value name="Sce.Sled.SledProjectFilesDiskViewEditor-Project Files - Disk View-TreeListView-Settings" type="String">
+      <Columns>
+        <Column Name="Roots" Width="60" />
+      </Columns>
+    </value>
+    <value name="Sce.Sled.SledSyntaxErrorsEditor-Syntax Errors-TreeListView-Settings" type="String">
+      <Columns>
+        <Column Name="Language" Width="60" />
+        <Column Name="File" Width="89" />
+        <Column Name="Line" Width="60" />
+        <Column Name="Error" Width="187" />
+      </Columns>
+    </value>
+    <value name="ShowOnlyProjectFiles" type="Boolean">False</value>
+    <value name="UseFileFilters" type="Boolean">False</value>
+  </block>
+</settings>

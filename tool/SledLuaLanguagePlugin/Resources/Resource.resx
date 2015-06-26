@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PluginName" xml:space="preserve">
+    <value>SLED Lua Language Plugin</value>
+  </data>
+  <data name="Lua" xml:space="preserve">
+    <value>Lua</value>
+  </data>
+  <data name="LuaExtension" xml:space="preserve">
+    <value>.lua</value>
+  </data>
+  <data name="MenuSeparator" xml:space="preserve">
+    <value>/</value>
+  </data>
+  <data name="XmlExtension" xml:space="preserve">
+    <value>.xml</value>
+  </data>
+  <data name="DomLocalsList" xml:space="preserve">
+    <value>SledLuaVarLocals</value>
+  </data>
+  <data name="DomUpvaluesList" xml:space="preserve">
+    <value>SledLuaVarUpvalues</value>
+  </data>
+  <data name="DomEnvVarList" xml:space="preserve">
+    <value>SledLuaVarEnvList</value>
+  </data>
+  <data name="MemoryTraceStreamFileName" xml:space="preserve">
+    <value>lua-memorytrace_stream.xml</value>
+  </data>
+  <data name="DomGlobalsList" xml:space="preserve">
+    <value>SledLuaVarGlobals</value>
+  </data>
+  <data name="DomCallStackList" xml:space="preserve">
+    <value>SledLuaCallStack</value>
+  </data>
+  <data name="DomProfileInfoList" xml:space="preserve">
+    <value>SledLuaProfileInfo</value>
+  </data>
+  <data name="DomProfileFuncCallsList" xml:space="preserve">
+    <value>SledLuaProfileFuncCalls</value>
+  </data>
+  <data name="DomMemoryTraceList" xml:space="preserve">
+    <value>SledLuaMemoryTrace</value>
+  </data>
+  <data name="DomWatchedVarsList" xml:space="preserve">
+    <value>SledLuaVarWatchList</value>
+  </data>
+  <data name="DomLuaStatesList" xml:space="preserve">
+    <value>SledLuaStatesList</value>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="LUA_TNONE" xml:space="preserve">
+    <value>LUA_TNONE</value>
+  </data>
+  <data name="_16x16" xml:space="preserve">
+    <value>16x16</value>
+  </data>
+  <data name="PngExtension" xml:space="preserve">
+    <value>.png</value>
+  </data>
+  <data name="LUA_TNIL" xml:space="preserve">
+    <value>LUA_TNIL</value>
+  </data>
+  <data name="LUA_TBOOLEAN" xml:space="preserve">
+    <value>LUA_TBOOLEAN</value>
+  </data>
+  <data name="LUA_TLIGHTUSERDATA" xml:space="preserve">
+    <value>LUA_TLIGHTUSERDATA</value>
+  </data>
+  <data name="LUA_TNUMBER" xml:space="preserve">
+    <value>LUA_TNUMBER</value>
+  </data>
+  <data name="LUA_TSTRING" xml:space="preserve">
+    <value>LUA_TSTRING</value>
+  </data>
+  <data name="LUA_TTABLE" xml:space="preserve">
+    <value>LUA_TTABLE</value>
+  </data>
+  <data name="LUA_TFUNCTION" xml:space="preserve">
+    <value>LUA_TFUNCTION</value>
+  </data>
+  <data name="LUA_TUSERDATA" xml:space="preserve">
+    <value>LUA_TUSERDATA</value>
+  </data>
+  <data name="LUA_TTHREAD" xml:space="preserve">
+    <value>LUA_TTHREAD</value>
+  </data>
+  <data name="LocalsLower" xml:space="preserve">
+    <value>locals</value>
+  </data>
+  <data name="Space" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="LuaLocals" xml:space="preserve">
+    <value>Lua Locals</value>
+  </data>
+  <data name="UpvaluesLower" xml:space="preserve">
+    <value>upvalues</value>
+  </data>
+  <data name="LuaUpvalues" xml:space="preserve">
+    <value>Lua Upvalues</value>
+  </data>
+  <data name="EnvVarsLower" xml:space="preserve">
+    <value>envvars</value>
+  </data>
+  <data name="LuaEnvironmentVariables" xml:space="preserve">
+    <value>Lua Environment Variables</value>
+  </data>
+  <data name="GlobalsFileName" xml:space="preserve">
+    <value>lua-globals.xml</value>
+  </data>
+  <data name="LuaGlobals" xml:space="preserve">
+    <value>Lua Globals</value>
+  </data>
+  <data name="CallstackFileName" xml:space="preserve">
+    <value>lua-callstack.xml</value>
+  </data>
+  <data name="LuaCallStack" xml:space="preserve">
+    <value>Lua Call Stack</value>
+  </data>
+  <data name="ProfileInfoFileName" xml:space="preserve">
+    <value>lua-profileinfo.xml</value>
+  </data>
+  <data name="LuaProfileInfo" xml:space="preserve">
+    <value>Lua Profile Info</value>
+  </data>
+  <data name="ProfileFuncCallsFileName" xml:space="preserve">
+    <value>lua-profilefunccalls.xml</value>
+  </data>
+  <data name="LuaProfileFuncCalls" xml:space="preserve">
+    <value>Lua Profile Func Calls</value>
+  </data>
+  <data name="MemoryTraceFileName" xml:space="preserve">
+    <value>lua-memorytrace.xml</value>
+  </data>
+  <data name="LuaMemoryTrace" xml:space="preserve">
+    <value>Lua Memory Trace</value>
+  </data>
+  <data name="WatchListFileName" xml:space="preserve">
+    <value>lua-watchlist.xml</value>
+  </data>
+  <data name="LuaWatchList" xml:space="preserve">
+    <value>Lua Watch List</value>
+  </data>
+  <data name="LuaStatesFileName" xml:space="preserve">
+    <value>lua-statelist.xml</value>
+  </data>
+  <data name="LuaStateList" xml:space="preserve">
+    <value>Lua State List</value>
+  </data>
+  <data name="True" xml:space="preserve">
+    <value>True</value>
+  </data>
+  <data name="One" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="False" xml:space="preserve">
+    <value>False</value>
+  </data>
+  <data name="Zero" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="G" xml:space="preserve">
+    <value>G</value>
+  </data>
+  <data name="L" xml:space="preserve">
+    <value>L</value>
+  </data>
+  <data name="U" xml:space="preserve">
+    <value>U</value>
+  </data>
+  <data name="E" xml:space="preserve">
+    <value>E</value>
+  </data>
+  <data name="GLower" xml:space="preserve">
+    <value>g</value>
+  </data>
+  <data name="LLower" xml:space="preserve">
+    <value>l</value>
+  </data>
+  <data name="ULower" xml:space="preserve">
+    <value>u</value>
+  </data>
+  <data name="ELower" xml:space="preserve">
+    <value>e</value>
+  </data>
+  <data name="Globals" xml:space="preserve">
+    <value>Globals</value>
+  </data>
+  <data name="Locals" xml:space="preserve">
+    <value>Locals</value>
+  </data>
+  <data name="Upvalues" xml:space="preserve">
+    <value>Upvalues</value>
+  </data>
+  <data name="Watches" xml:space="preserve">
+    <value>Watches</value>
+  </data>
+  <data name="EnvVars" xml:space="preserve">
+    <value>EnvVars</value>
+  </data>
+  <data name="WhatEditorIsThis" xml:space="preserve">
+    <value>Wait, what editor is this?</value>
+  </data>
+  <data name="RightSquigglyBracket" xml:space="preserve">
+    <value>}</value>
+  </data>
+  <data name="HexAddress" xml:space="preserve">
+    <value>0x</value>
+  </data>
+  <data name="DomObjectIsntWatchedVar" xml:space="preserve">
+    <value>DomObject isn't a watched variable!</value>
+  </data>
+  <data name="Colon" xml:space="preserve">
+    <value>:</value>
+  </data>
+  <data name="CheckBuffer" xml:space="preserve">
+    <value>CheckBuffer</value>
+  </data>
+  <data name="Comma" xml:space="preserve">
+    <value>,</value>
+  </data>
+  <data name="InvalidLuaVersion" xml:space="preserve">
+    <value>Invalid Lua version!</value>
+  </data>
+  <data name="EnvVar" xml:space="preserve">
+    <value>EnvVar</value>
+  </data>
+  <data name="Global" xml:space="preserve">
+    <value>Global</value>
+  </data>
+  <data name="Local" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="Upvalue" xml:space="preserve">
+    <value>Upvalue</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>&lt;Unknown&gt;</value>
+  </data>
+  <data name="GuidLuaCompilerService" xml:space="preserve">
+    <value>{E39AB3F6-8FD3-5cd3-1C11-11264E6E7B9C}</value>
+  </data>
+  <data name="LuaCompilerSettings" xml:space="preserve">
+    <value>LuaCompilerSettings</value>
+  </data>
+  <data name="LuaCompilerSettingsTitle" xml:space="preserve">
+    <value>Lua Compiler Settings</value>
+  </data>
+  <data name="OnePointZero" xml:space="preserve">
+    <value>1.0</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="UtfDashEight" xml:space="preserve">
+    <value>utf-8</value>
+  </data>
+  <data name="Verbose" xml:space="preserve">
+    <value>Verbose</value>
+  </data>
+  <data name="YesLower" xml:space="preserve">
+    <value>yes</value>
+  </data>
+  <data name="GuidLuaFunctionParserService" xml:space="preserve">
+    <value>{E39AB3F6-8EEE-EEEE-1D11-11264E6E7B9C}</value>
+  </data>
+  <data name="GuidLuaVariableParserService" xml:space="preserve">
+    <value>{E39EDDD6-AAAA-1234-1A23-11264E6E7B9C}</value>
+  </data>
+  <data name="LuaFunctionParser" xml:space="preserve">
+    <value>Lua Function Parser</value>
+  </data>
+  <data name="LuaFunctionParserSettings" xml:space="preserve">
+    <value>LuaFunctionParserSettings</value>
+  </data>
+  <data name="LuaFunctionParserSettingsTitle" xml:space="preserve">
+    <value>Lua Function Parser Settings</value>
+  </data>
+  <data name="LuaVariableParser" xml:space="preserve">
+    <value>Lua Variable Parser</value>
+  </data>
+  <data name="LuaVariableParserSettings" xml:space="preserve">
+    <value>LuaVariableParserSettings</value>
+  </data>
+  <data name="LuaVariableParserSettingsTitle" xml:space="preserve">
+    <value>Lua Variable Parser Settings</value>
+  </data>
+  <data name="Asterisk" xml:space="preserve">
+    <value>*</value>
+  </data>
+</root>

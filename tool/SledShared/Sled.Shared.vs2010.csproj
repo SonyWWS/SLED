@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BB7F3AE7-2899-4E1C-90DF-2DD375C4ADD9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sce.Sled.Shared</RootNamespace>
+    <AssemblyName>Sled.Shared</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\lib\anycpu_dotnet_clr4_debug\</OutputPath>
+    <IntermediateOutputPath>obj\Debug.vs2010\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\lib\anycpu_dotnet_clr4_debug\Sled.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\lib\anycpu_dotnet_clr4_release\</OutputPath>
+    <IntermediateOutputPath>obj\Release.vs2010\</IntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\lib\anycpu_dotnet_clr4_release\Sled.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\ISledProjectFilesTreeViewable.cs" />
+    <Compile Include="Controls\SledAsyncTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\SledAsyncTaskForm.Designer.cs">
+      <DependentUpon>SledAsyncTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SledCheckedGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SledCheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SledCollapsibleGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SledMultiFolderSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\SledMultiFolderSelectionForm.Designer.cs">
+      <DependentUpon>SledMultiFolderSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SledTreeListViewEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Document\ISledDocument.cs">
+    </Compile>
+    <Compile Include="Document\SledDocumentClient.cs" />
+    <Compile Include="Document\SledDocumentSyntaxHighlighter.cs" />
+    <Compile Include="Dom\ISledVarBaseType.cs" />
+    <Compile Include="Dom\SledAttributeBaseType.cs" />
+    <Compile Include="Dom\SledCallStackListType.cs" />
+    <Compile Include="Dom\SledCallStackType.cs" />
+    <Compile Include="Dom\SledDomUtilities.cs" />
+    <Compile Include="Dom\SledFindResultsListType.cs" />
+    <Compile Include="Dom\SledFindResultsType.cs" />
+    <Compile Include="Dom\SledFunctionBaseType.cs" />
+    <Compile Include="Dom\SledMemoryTraceType.cs" />
+    <Compile Include="Dom\SledProfileInfoListType.cs" />
+    <Compile Include="Dom\SledProfileInfoType.cs" />
+    <Compile Include="Dom\SledProjectFilesBaseType.cs" />
+    <Compile Include="Dom\SledProjectFilesBreakpointType.cs" />
+    <Compile Include="Dom\SledProjectFilesFileType.cs" />
+    <Compile Include="Dom\SledProjectFilesFolderType.cs" />
+    <Compile Include="Dom\SledProjectFilesLanguageType.cs" />
+    <Compile Include="Dom\SledProjectFilesRootType.cs" />
+    <Compile Include="Dom\SledProjectFilesType.cs" />
+    <Compile Include="Dom\SledProjectFilesUserSettingsType.cs" />
+    <Compile Include="Dom\SledProjectFilesWatchType.cs" />
+    <Compile Include="Dom\SledSchema.cs" />
+    <Compile Include="Dom\SledSharedSchemaLoader.cs" />
+    <Compile Include="Dom\SledSpfReaderWriter.cs" />
+    <Compile Include="Dom\SledSyntaxErrorListType.cs" />
+    <Compile Include="Dom\SledSyntaxErrorType.cs" />
+    <Compile Include="Dom\SledVarBaseType.cs" />
+    <Compile Include="Dom\SledVarBaseWatchListType.cs" />
+    <Compile Include="Dom\SledVarLocationType.cs" />
+    <Compile Include="Plugin\ISledBreakpointPlugin.cs" />
+    <Compile Include="Plugin\ISledCanPluginBeInstantiated.cs" />
+    <Compile Include="Plugin\ISledDocumentPlugin.cs" />
+    <Compile Include="Plugin\ISledLanguagePlugin.cs" />
+    <Compile Include="Plugin\ISledNetworkPlugin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Plugin\ISledProjectSettingsPlugin.cs" />
+    <Compile Include="Plugin\SledLanguagePluginAttribute.cs" />
+    <Compile Include="Plugin\SledNetworkPluginAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Resources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Localization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Scmp\SledControlMessageProtocol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Scmp\SledNetworkBufferPacker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Scmp\SledNetworkBufferReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\ISledBreakpointService.cs" />
+    <Compile Include="Services\ISledCrashReporter.cs" />
+    <Compile Include="Services\ISledDocumentService.cs" />
+    <Compile Include="Services\ISledDynamicPluginService.cs" />
+    <Compile Include="Services\ISledFileExtensionService.cs" />
+    <Compile Include="Services\ISledFileWatcherService.cs" />
+    <Compile Include="Services\ISledFindAndReplaceService.cs" />
+    <Compile Include="Services\ISledGotoService.cs" />
+    <Compile Include="Services\ISledDebugFreezeService.cs" />
+    <Compile Include="Services\ISledLanguageParserService.cs" />
+    <Compile Include="Services\ISledLanguagePluginService.cs" />
+    <Compile Include="Services\ISledDebugService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\ISledDirectoryInfoService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\ISledModifiedFilesFormService.cs" />
+    <Compile Include="Services\ISledModifiedProjectFormService.cs" />
+    <Compile Include="Services\ISledNetworkPluginService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\ISledProjectFileAdderService.cs" />
+    <Compile Include="Services\ISledProjectFileFinderService.cs" />
+    <Compile Include="Services\ISledProjectFileGathererService.cs" />
+    <Compile Include="Services\ISledProjectService.cs" />
+    <Compile Include="Services\ISledProjectWatcherService.cs" />
+    <Compile Include="Services\ISledSourceControlService.cs" />
+    <Compile Include="Services\ISledSyntaxCheckerService.cs" />
+    <Compile Include="Services\ISledTargetService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\ISledTTYService.cs" />
+    <Compile Include="Services\ISledUsageStatistics.cs" />
+    <Compile Include="Services\SledServiceReference.cs" />
+    <Compile Include="SledAssemblyAttribute.cs" />
+    <Compile Include="SledOutDevice.cs" />
+    <Compile Include="SledShared.cs" />
+    <Compile Include="Utilities\SledFileSystemFileStats.cs" />
+    <Compile Include="Utilities\SledFileSystemWatcher.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilities\SledIcon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\SledKernel32.cs" />
+    <Compile Include="Utilities\SledTimer.cs" />
+    <Compile Include="Utilities\SledUser32.cs" />
+    <Compile Include="Utilities\SledUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Localization.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\debug_connect16.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_connect24.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_connect32.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_disconnect16.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_disconnect24.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_disconnect32.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_manage_targets16.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_manage_targets24.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_manage_targets32.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_start_debug16.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_start_debug24.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_start_debug32.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_stepInto_debug16.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_stepInto_debug24.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_stepInto_debug32.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_stepOut_debug16.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_stepOut_debug24.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_stepOut_debug32.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_step_debug16.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_step_debug24.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_step_debug32.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_step_over_debug16.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_step_over_debug24.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_step_over_debug32.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_stop_debug16.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_stop_debug24.png" />
+    <EmbeddedResource Include="Resources\Icons\debug_stop_debug32.png" />
+    <EmbeddedResource Include="Resources\Icons\file_close16.png" />
+    <EmbeddedResource Include="Resources\Icons\file_close24.png" />
+    <EmbeddedResource Include="Resources\Icons\file_close32.png" />
+    <EmbeddedResource Include="Resources\Icons\file_new_lua16.png" />
+    <EmbeddedResource Include="Resources\Icons\file_new_lua24.png" />
+    <EmbeddedResource Include="Resources\Icons\file_new_lua32.png" />
+    <EmbeddedResource Include="Resources\Icons\file_new_txt16.png" />
+    <EmbeddedResource Include="Resources\Icons\file_new_txt24.png" />
+    <EmbeddedResource Include="Resources\Icons\file_new_txt32.png" />
+    <EmbeddedResource Include="Resources\Icons\file_open16.png" />
+    <EmbeddedResource Include="Resources\Icons\file_open24.png" />
+    <EmbeddedResource Include="Resources\Icons\file_open32.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_add16.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_add24.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_add32.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_close16.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_close24.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_close32.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_new16.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_new24.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_new32.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_open16.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_open24.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_open32.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_remove16.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_remove24.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_remove32.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_save16.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_save24.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_save32.png" />
+    <EmbeddedResource Include="Resources\Icons\project_check_scripts16.png" />
+    <EmbeddedResource Include="Resources\Icons\project_check_scripts24.png" />
+    <EmbeddedResource Include="Resources\Icons\project_check_scripts32.png" />
+    <EmbeddedResource Include="Resources\Icons\project_parse_globals16.png" />
+    <EmbeddedResource Include="Resources\Icons\project_parse_globals24.png" />
+    <EmbeddedResource Include="Resources\Icons\project_parse_globals32.png" />
+    <EmbeddedResource Include="Resources\Icons\project_syntax_check16.png" />
+    <EmbeddedResource Include="Resources\Icons\project_syntax_check24.png" />
+    <EmbeddedResource Include="Resources\Icons\project_syntax_check32.png" />
+    <EmbeddedResource Include="Resources\Icons\project_toggle_breakpoints16.png" />
+    <EmbeddedResource Include="Resources\Icons\project_toggle_breakpoints24.png" />
+    <EmbeddedResource Include="Resources\Icons\project_toggle_breakpoints32.png" />
+    <EmbeddedResource Include="Resources\Icons\project_toggle_memory_trc16.png" />
+    <EmbeddedResource Include="Resources\Icons\project_toggle_memory_trc24.png" />
+    <EmbeddedResource Include="Resources\Icons\project_toggle_memory_trc32.png" />
+    <EmbeddedResource Include="Resources\Icons\project_toggle_profiler16.png" />
+    <EmbeddedResource Include="Resources\Icons\project_toggle_profiler24.png" />
+    <EmbeddedResource Include="Resources\Icons\project_toggle_profiler32.png" />
+    <EmbeddedResource Include="Resources\Icons\Sled.ico" />
+    <EmbeddedResource Include="Resources\Icons\Splash.bmp" />
+    <EmbeddedResource Include="Resources\Icons\Splash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Schemas\SledProjectFiles.xsd">
+      <SubType>
+      </SubType>
+    </EmbeddedResource>
+    <None Include="Resources\Schemas\SledProjectFiles.xsx">
+      <DependentUpon>SledProjectFiles.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Skins\Dark.skn">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\bp_hit16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\bp_hit24.png" />
+    <EmbeddedResource Include="Resources\Icons\bp_hit32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\bp_csi16.png" />
+    <EmbeddedResource Include="Resources\Icons\bp_csi24.png" />
+    <EmbeddedResource Include="Resources\Icons\bp_csi32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\bp16.png" />
+    <EmbeddedResource Include="Resources\Icons\bp24.png" />
+    <EmbeddedResource Include="Resources\Icons\bp32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\SledMultiFolderSelectionForm.ja.resx">
+      <DependentUpon>SledMultiFolderSelectionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SledMultiFolderSelectionForm.resx">
+      <DependentUpon>SledMultiFolderSelectionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\wws_atf\Framework\Atf.Core\Atf.Core.vs2010.csproj">
+      <Project>{9D1835B6-D1C2-44BA-BAE1-05C6EC442D2F}</Project>
+      <Name>Atf.Core.vs2010</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\wws_atf\Framework\Atf.Gui.WinForms\Atf.Gui.WinForms.vs2010.csproj">
+      <Project>{7C36A258-9102-420D-B80A-5EB5717644B6}</Project>
+      <Name>Atf.Gui.WinForms.vs2010</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\wws_atf\Framework\Atf.Gui\Atf.Gui.vs2010.csproj">
+      <Project>{4765C2A7-F989-40DB-BC12-FCD67025B93F}</Project>
+      <Name>Atf.Gui.vs2010</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SledSyntaxEditor\Sled.SyntaxEditor.vs2010.csproj">
+      <Project>{0D7B1F12-0EE5-4D7D-B116-C6E97F7A0956}</Project>
+      <Name>Sled.SyntaxEditor</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\SledAsyncTaskForm.resx">
+      <DependentUpon>SledAsyncTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Icons\go16.png" />
+    <EmbeddedResource Include="Resources\Icons\go24.png" />
+    <EmbeddedResource Include="Resources\Icons\go32.png" />
+    <EmbeddedResource Include="Resources\Icons\stop16.png" />
+    <EmbeddedResource Include="Resources\Icons\stop24.png" />
+    <EmbeddedResource Include="Resources\Icons\stop32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\file_project_save_as16.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_save_as24.png" />
+    <EmbeddedResource Include="Resources\Icons\file_project_save_as32.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

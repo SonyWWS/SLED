@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- wws_premake -->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{C196CD9C-2D76-4C38-368E-D70EA2ECB299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{56EB95D1-428D-C0A7-2B48-D4FB178947F8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="errorcodes.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="luautils.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="luavariable.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="params.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="profilestack.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="scmp.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="sledluaplugin.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="sledluaplugin_class.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="varfilter.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="luautils_5.2.3.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="luautils_common.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="profilestack.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="scmp.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="sledluaplugin.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="sledluaplugin_class.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="sledluaplugin_class_5.2.3.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="varfilter.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

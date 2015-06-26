@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- wws_premake -->
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug Win32 Static DCRT|Win32">
+      <Configuration>Debug Win32 Static DCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win32 Static DCRT|x64">
+      <Configuration>Debug Win32 Static DCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win32 Static SCRT|Win32">
+      <Configuration>Debug Win32 Static SCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win32 Static SCRT|x64">
+      <Configuration>Debug Win32 Static SCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win64 Static DCRT|Win32">
+      <Configuration>Debug Win64 Static DCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win64 Static DCRT|x64">
+      <Configuration>Debug Win64 Static DCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win64 Static SCRT|Win32">
+      <Configuration>Debug Win64 Static SCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win64 Static SCRT|x64">
+      <Configuration>Debug Win64 Static SCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win32 Static DCRT|Win32">
+      <Configuration>Release Win32 Static DCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win32 Static DCRT|x64">
+      <Configuration>Release Win32 Static DCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win32 Static SCRT|Win32">
+      <Configuration>Release Win32 Static SCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win32 Static SCRT|x64">
+      <Configuration>Release Win32 Static SCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win64 Static DCRT|Win32">
+      <Configuration>Release Win64 Static DCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win64 Static DCRT|x64">
+      <Configuration>Release Win64 Static DCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win64 Static SCRT|Win32">
+      <Configuration>Release Win64 Static SCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win64 Static SCRT|x64">
+      <Configuration>Release Win64 Static SCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1223423A-2390-43F3-B433-B232456FECAB}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>libsce_testsimple-5.1.4_sample</RootNamespace>
+    <ProjectName>libsce_testsimple-5.1.4_sample</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static DCRT|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static SCRT|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static DCRT|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static SCRT|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static DCRT|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static SCRT|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static DCRT|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static SCRT|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static DCRT|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static SCRT|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static DCRT|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static SCRT|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static DCRT|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static SCRT|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static DCRT|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static SCRT|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static DCRT|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\bin\sce_sled\runtime\win32_static_dcrt_vc120_debug\</OutDir>
+    <IntDir>..\..\tmp\sce_sled\libsce_testsimple-5.1.4_sample\win32_static_dcrt_vc120_debug\</IntDir>
+    <TargetName>libsce_testsimple-5.1.4_sample</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static SCRT|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\bin\sce_sled\runtime\win32_static_scrt_vc120_debug\</OutDir>
+    <IntDir>..\..\tmp\sce_sled\libsce_testsimple-5.1.4_sample\win32_static_scrt_vc120_debug\</IntDir>
+    <TargetName>libsce_testsimple-5.1.4_sample</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static DCRT|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\bin\sce_sled\runtime\win64_static_dcrt_vc120_debug\</OutDir>
+    <IntDir>..\..\tmp\sce_sled\libsce_testsimple-5.1.4_sample\win64_static_dcrt_vc120_debug\</IntDir>
+    <TargetName>libsce_testsimple-5.1.4_sample</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static SCRT|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\bin\sce_sled\runtime\win64_static_scrt_vc120_debug\</OutDir>
+    <IntDir>..\..\tmp\sce_sled\libsce_testsimple-5.1.4_sample\win64_static_scrt_vc120_debug\</IntDir>
+    <TargetName>libsce_testsimple-5.1.4_sample</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static DCRT|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\bin\sce_sled\runtime\win32_static_dcrt_vc120_release\</OutDir>
+    <IntDir>..\..\tmp\sce_sled\libsce_testsimple-5.1.4_sample\win32_static_dcrt_vc120_release\</IntDir>
+    <TargetName>libsce_testsimple-5.1.4_sample</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static SCRT|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\bin\sce_sled\runtime\win32_static_scrt_vc120_release\</OutDir>
+    <IntDir>..\..\tmp\sce_sled\libsce_testsimple-5.1.4_sample\win32_static_scrt_vc120_release\</IntDir>
+    <TargetName>libsce_testsimple-5.1.4_sample</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static DCRT|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\bin\sce_sled\runtime\win64_static_dcrt_vc120_release\</OutDir>
+    <IntDir>..\..\tmp\sce_sled\libsce_testsimple-5.1.4_sample\win64_static_dcrt_vc120_release\</IntDir>
+    <TargetName>libsce_testsimple-5.1.4_sample</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static SCRT|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\bin\sce_sled\runtime\win64_static_scrt_vc120_release\</OutDir>
+    <IntDir>..\..\tmp\sce_sled\libsce_testsimple-5.1.4_sample\win64_static_scrt_vc120_release\</IntDir>
+    <TargetName>libsce_testsimple-5.1.4_sample</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static DCRT|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>_DEBUG;DEBUG;WWS_BUILD_DEBUG;WWS_ASSERTS_ENABLED=1;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDebug;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;SCE_LUA_VER=514;WWS_LUA_VER=514;SCE_SLED_ASSERT_ENABLED=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..;..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;"$(ProjectDir)..\sledcore\lib\win32_static_dcrt_vc120_debug\libsce_sledcore.lib";%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static SCRT|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>_DEBUG;DEBUG;WWS_BUILD_DEBUG;WWS_ASSERTS_ENABLED=1;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDebug;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;SCE_LUA_VER=514;WWS_LUA_VER=514;SCE_SLED_ASSERT_ENABLED=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..;..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;"$(ProjectDir)..\sledcore\lib\win32_static_scrt_vc120_debug\libsce_sledcore.lib";%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static DCRT|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>_DEBUG;DEBUG;WWS_BUILD_DEBUG;WWS_ASSERTS_ENABLED=1;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDebug;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;WIN64;_WIN64;SCE_LUA_VER=514;WWS_LUA_VER=514;SCE_SLED_ASSERT_ENABLED=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..;..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;"$(ProjectDir)..\sledcore\lib\win64_static_dcrt_vc120_debug\libsce_sledcore.lib";%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static SCRT|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>_DEBUG;DEBUG;WWS_BUILD_DEBUG;WWS_ASSERTS_ENABLED=1;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDebug;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;WIN64;_WIN64;SCE_LUA_VER=514;WWS_LUA_VER=514;SCE_SLED_ASSERT_ENABLED=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..;..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;"$(ProjectDir)..\sledcore\lib\win64_static_scrt_vc120_debug\libsce_sledcore.lib";%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static DCRT|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>NDEBUG;WWS_BUILD_RELEASE;WWS_ASSERTS_ENABLED=0;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDisable;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;SCE_LUA_VER=514;WWS_LUA_VER=514;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..;..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;"$(ProjectDir)..\sledcore\lib\win32_static_dcrt_vc120_release\libsce_sledcore.lib";%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static SCRT|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>NDEBUG;WWS_BUILD_RELEASE;WWS_ASSERTS_ENABLED=0;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDisable;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;SCE_LUA_VER=514;WWS_LUA_VER=514;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..;..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;"$(ProjectDir)..\sledcore\lib\win32_static_scrt_vc120_release\libsce_sledcore.lib";%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static DCRT|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>NDEBUG;WWS_BUILD_RELEASE;WWS_ASSERTS_ENABLED=0;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDisable;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;WIN64;_WIN64;SCE_LUA_VER=514;WWS_LUA_VER=514;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..;..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;"$(ProjectDir)..\sledcore\lib\win64_static_dcrt_vc120_release\libsce_sledcore.lib";%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static SCRT|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>NDEBUG;WWS_BUILD_RELEASE;WWS_ASSERTS_ENABLED=0;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDisable;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;WIN64;_WIN64;SCE_LUA_VER=514;WWS_LUA_VER=514;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..;..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;"$(ProjectDir)..\sledcore\lib\win64_static_scrt_vc120_release\libsce_sledcore.lib";%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\sledcore\assert.h" />
+    <ClInclude Include="..\sledcore\base_types.h" />
+    <ClInclude Include="..\sledcore\common.h" />
+    <ClInclude Include="..\sledcore\datetime.h" />
+    <ClInclude Include="..\sledcore\memory.h" />
+    <ClInclude Include="..\sledcore\mutex.h" />
+    <ClInclude Include="..\sledcore\sleep.h" />
+    <ClInclude Include="..\sledcore\socket.h" />
+    <ClInclude Include="..\sledcore\target_macros.h" />
+    <ClInclude Include="..\sledcore\thread.h" />
+    <ClInclude Include="..\sledcore\windows\mutex_windows.h" />
+    <ClInclude Include="..\sledcore\windows\socket_windows.h" />
+    <ClInclude Include="..\sledcore\windows\thread_windows.h" />
+    <ClInclude Include="..\sleddebugger_unittests\scoped_network.h" />
+    <ClInclude Include="..\sledluaplugin_SharedSampleCode\fileutilities.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\sleddebugger_unittests\scoped_network.cpp" />
+    <ClCompile Include="..\sledluaplugin_SharedSampleCode\fileutilities.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\sledluaplugin\libsce_sledluaplugin-5.1.4_vs2013.vcxproj">
+      <Project>{C3E72BF5-432B-460B-AC15-1EB234123416}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\wws_lua\lua-5.1.4\build\lua-5.1.4\lua-5.1.4_vs2013.vcxproj">
+      <Project>{C3234523-74BB-4EEB-AC15-1D1234130406}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\sleddebugger\libsce_sleddebugger_vs2013.vcxproj">
+      <Project>{C3E72BF5-72EE-460B-AC15-1D1234130406}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SledAddFile" xml:space="preserve">
+    <value>&amp;Add File</value>
+  </data>
+  <data name="SledAssetDirectoryErrorDoesNotExist" xml:space="preserve">
+    <value>Asset directory does not exist! Would you like to set a new asset directory?</value>
+  </data>
+  <data name="SledAssetDirectoryErrorNotSet" xml:space="preserve">
+    <value>No asset directory set, files will probably not open!</value>
+  </data>
+  <data name="SledAssetDirectoryErrorTitle" xml:space="preserve">
+    <value>Asset Directory Error</value>
+  </data>
+  <data name="SledAssetDirectorySelect" xml:space="preserve">
+    <value>Select the asset directory!</value>
+  </data>
+  <data name="SledAutoAddFilesCount" xml:space="preserve">
+    <value>Files Found (%s0 Files) (%s1 Checked)</value>
+  </data>
+  <data name="SledAutoProjectCreationErrorNotFindAssetDir1" xml:space="preserve">
+    <value>Auto project creation did not find the asset directory specified but was able to create the new directory %s0.</value>
+  </data>
+  <data name="SledAutoProjectCreationErrorNotFindAssetDir2" xml:space="preserve">
+    <value>Auto project creation failed to find and then create an asset directory! The directory was %s0 and the error was %s0.</value>
+  </data>
+  <data name="SledAutoProjectCreationErrorNotFindProjectDir1" xml:space="preserve">
+    <value>Auto project creation did not find the project directory specified but was able to create the new directory %s0.</value>
+  </data>
+  <data name="SledAutoProjectCreationErrorNotFindProjectDir2" xml:space="preserve">
+    <value>Auto project creation failed to find and then create a project directory! The directory was %s0 and the error was %s1.</value>
+  </data>
+  <data name="SledClose" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="SledCommandProjectAddFileComment" xml:space="preserve">
+    <value>Add a file to the project</value>
+  </data>
+  <data name="SledCommandProjectCloseComment" xml:space="preserve">
+    <value>Close an open project</value>
+  </data>
+  <data name="SledCommandProjectNewComment" xml:space="preserve">
+    <value>Create a new project</value>
+  </data>
+  <data name="SledCommandProjectOpenComment" xml:space="preserve">
+    <value>Open an existing project</value>
+  </data>
+  <data name="SledCommandProjectSave" xml:space="preserve">
+    <value>&amp;Save Project</value>
+  </data>
+  <data name="SledCommandProjectSaveAs" xml:space="preserve">
+    <value>Save Project A&amp;s...</value>
+  </data>
+  <data name="SledCommandProjectSaveAsComment" xml:space="preserve">
+    <value>Save project as...</value>
+  </data>
+  <data name="SledCommandProjectSaveComment" xml:space="preserve">
+    <value>Save project</value>
+  </data>
+  <data name="SledFile" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="SledFileNoAmpersand" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="SledMD5FileError" xml:space="preserve">
+    <value>Encountered error when computing MD5 hash for file %s0! %s1</value>
+  </data>
+  <data name="SledNew" xml:space="preserve">
+    <value>&amp;New</value>
+  </data>
+  <data name="SledOpen" xml:space="preserve">
+    <value>&amp;Open</value>
+  </data>
+  <data name="SledPath" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="SledProject" xml:space="preserve">
+    <value>&amp;Project</value>
+  </data>
+  <data name="SledProjectAutoAddFilesAddFilesErrorTitle" xml:space="preserve">
+    <value>Add Files Error</value>
+  </data>
+  <data name="SledProjectAutoAddFilesAddFilesException" xml:space="preserve">
+    <value>There was an exception when trying to find files recursively from %s0</value>
+  </data>
+  <data name="SledProjectAutoAddFilesSelectDirTitle" xml:space="preserve">
+    <value>Select a directory to add files from!</value>
+  </data>
+  <data name="SledProjectDirtyString" xml:space="preserve">
+    <value>Would you like to save?</value>
+  </data>
+  <data name="SledProjectDirtyTitle" xml:space="preserve">
+    <value>Project Dirty!</value>
+  </data>
+  <data name="SledProjectFileReadOnlyRemoveError" xml:space="preserve">
+    <value>Encountered an error removing the read-only attribute of the project file when trying to verify that the namespace was correct and that there were no duplicate entries.</value>
+  </data>
+  <data name="SledProjectFilesErrorRemovingDuplicates" xml:space="preserve">
+    <value>Encountered an error "%s0" when removing duplicates from project file %s1</value>
+  </data>
+  <data name="SledProjectFilesErrorVerifyingNamespace" xml:space="preserve">
+    <value>Encountered an error "%s0" when verifying namespace in project file %s1</value>
+  </data>
+  <data name="SledProjectFilesTitle" xml:space="preserve">
+    <value>Project Files</value>
+  </data>
+  <data name="SledProjectMenuChangeAssetDir" xml:space="preserve">
+    <value>&amp;Change Asset Directory</value>
+  </data>
+  <data name="SledProjectMenuChangeAssetDirComment" xml:space="preserve">
+    <value>Change asset directory</value>
+  </data>
+  <data name="SledProjectMenuClearOutputWindow" xml:space="preserve">
+    <value>&amp;Clear Output Window</value>
+  </data>
+  <data name="SledProjectMenuClearOutputWindowComment" xml:space="preserve">
+    <value>Clear the output window</value>
+  </data>
+  <data name="SledProjectMenuOpenLast" xml:space="preserve">
+    <value>Open Last Project On Startup</value>
+  </data>
+  <data name="SledProjectMenuOpenLastComment" xml:space="preserve">
+    <value>Open the last used project on startup</value>
+  </data>
+  <data name="SledProjectMenuShowAutoAddFilesComment" xml:space="preserve">
+    <value>Add Files...</value>
+  </data>
+  <data name="SledProjectMenuShowAutoAddFilesTitle" xml:space="preserve">
+    <value>&amp;Add Files...</value>
+  </data>
+  <data name="SledProjectMenuSyntaxCheck" xml:space="preserve">
+    <value>Perform Syntax Check</value>
+  </data>
+  <data name="SledProjectMenuSyntaxCheckComment" xml:space="preserve">
+    <value>Checks scripts for syntax errors</value>
+  </data>
+  <data name="SledProjectMenuSyntaxCheckState" xml:space="preserve">
+    <value>Toggle Syntax Check</value>
+  </data>
+  <data name="SledProjectMenuSyntaxCheckStateComment" xml:space="preserve">
+    <value>Toggle Syntax Check On/Off</value>
+  </data>
+  <data name="SledProjectMenuTitle" xml:space="preserve">
+    <value>&amp;Project</value>
+  </data>
+  <data name="SledProjectMenuTitleComment" xml:space="preserve">
+    <value>General Project Options</value>
+  </data>
+  <data name="SledProjectMenuViewProjectPaths" xml:space="preserve">
+    <value>&amp;View Project Paths</value>
+  </data>
+  <data name="SledProjectMenuViewProjectPathsComment" xml:space="preserve">
+    <value>View project paths</value>
+  </data>
+  <data name="SledProjectNewFormAssetDirSelectDescription" xml:space="preserve">
+    <value>Select a folder to be the asset folder!</value>
+  </data>
+  <data name="SledProjectNewFormErrorAssetDir" xml:space="preserve">
+    <value>Invalid asset directory!</value>
+  </data>
+  <data name="SledProjectNewFormErrorProjectDir" xml:space="preserve">
+    <value>Invalid project directory!</value>
+  </data>
+  <data name="SledProjectNewFormErrorProjectName" xml:space="preserve">
+    <value>Invalid project name!</value>
+  </data>
+  <data name="SledProjectNewFormErrorTitle" xml:space="preserve">
+    <value>New Project Form - Error</value>
+  </data>
+  <data name="SledProjectNewFormProjectDirSelectDescription" xml:space="preserve">
+    <value>Select a folder to create the project in!</value>
+  </data>
+  <data name="SledProjectOpenErrorString1" xml:space="preserve">
+    <value>The project file does not exist! Would you like to remove the entry from the most recent project list?</value>
+  </data>
+  <data name="SledProjectOpenErrorTitle" xml:space="preserve">
+    <value>Project Open Error</value>
+  </data>
+  <data name="SledRecentProject" xml:space="preserve">
+    <value>Recent Project</value>
+  </data>
+  <data name="SledRecentProjectComment" xml:space="preserve">
+    <value>Open a recently used project</value>
+  </data>
+  <data name="SledRecentProjects" xml:space="preserve">
+    <value>Recent &amp;Projects</value>
+  </data>
+  <data name="SledRemoveFile" xml:space="preserve">
+    <value>&amp;Remove File</value>
+  </data>
+  <data name="SledRemoveFileComment" xml:space="preserve">
+    <value>Remove file from project</value>
+  </data>
+  <data name="SledSettingsErrorExceptionLoadingSetting" xml:space="preserve">
+    <value>Exception loading %s0 settings: %s1</value>
+  </data>
+  <data name="SledSettingsErrorExceptionSavingSetting" xml:space="preserve">
+    <value>Exception saving %s0 settings: %s1</value>
+  </data>
+</root>

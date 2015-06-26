@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="SledProjectFiles" elementFormDefault="qualified" targetNamespace="sled" xmlns="sled" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:include schemaLocation="../../SledShared/Resources/Schemas/SledProjectFiles.xsd"/>
+  
+  <xs:element name="SledLuaProfileInfo" type="SledProfileInfoListType"/>
+  <xs:element name="SledLuaProfileFuncCalls" type="SledProfileInfoListType"/>
+  <xs:element name="SledLuaMemoryTrace" type="SledMemoryTraceListType"/>
+  <xs:element name="SledLuaCallStack" type="SledCallStackListType"/>
+
+  <!-- Lua variable definitions -->
+
+  <!-- This complex type represents a base class that all Lua variables will inherit from. -->
+  <xs:complexType name="SledLuaVarBaseType" abstract="true">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="type" displayName="Type" readOnly="true"/>
+        <scea.dom.editors.attribute name="value" displayName="Value"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SledVarBaseType">
+        <xs:sequence>
+          <xs:element name="TargetHierarchy" type="SledLuaVarNameTypePairType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+
+        <!-- The display name -->
+        <xs:attribute name="display_name" type="xs:string"/>
+        
+        <!-- What the variable is - LUA_TNUMBER, LUA_TTHREAD, LUA_TSTRING, etc -->
+        <xs:attribute name="type" type="xs:string"/>
+
+        <!-- The value of the variable -->
+        <xs:attribute name="value" type="xs:string"/>
+
+        <!-- The key type (refers to the name - whether its a LUA_TSTRING or LUA_TNUMBER) -->
+        <!-- This is used when changing the value while debugging as the variable has to -->
+        <!-- get pushed on the stack so knowing what type to push the name as is important. -->
+        <xs:attribute name="keytype" type="xs:integer"/>
+
+        <!-- Whether item is expanded on the GUI -->
+        <xs:attribute name="expanded" type="xs:boolean"/>
+
+        <!-- Whether item is visible on the GUI (variable filter service related) -->
+        <xs:attribute name="visible" type="xs:boolean"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- This complex type represents a Lua variable found in the environment table. -->
+  <!-- This complex type can also parent other LIKE complex types. -->
+  <xs:complexType name="SledLuaVarEnvType">
+    <xs:complexContent>
+      <xs:extension base="SledLuaVarBaseType">
+        <xs:sequence>
+          <xs:element name="EnvVars" type="SledLuaVarEnvType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="level" type="xs:integer"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- This complex type represents a Lua GLOBAL variable. -->
+  <!-- This copmlex type can also parent other LIKE complex types. -->
+  <xs:complexType name="SledLuaVarGlobalType">
+    <xs:complexContent>
+      <xs:extension base="SledLuaVarBaseType">
+        <xs:sequence>
+          <xs:element name="Globals" type="SledLuaVarGlobalType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- This complex type represents a base class that local & upvalue variables inherit from. -->
+  <xs:complexType name="SledLuaVarLocalUpvalueBaseType" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="SledLuaVarBaseType">
+        <xs:attribute name="level" type="xs:integer"/>
+        <xs:attribute name="index" type="xs:integer"/>
+        <xs:attribute name="function_name" type="xs:string"/>
+        <xs:attribute name="function_linedefined" type="xs:integer"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- This complex type represents a Lua LOCAL variable. -->
+  <!-- This copmlex type can also parent other LIKE complex types. -->
+  <xs:complexType name="SledLuaVarLocalType">
+    <xs:complexContent>
+      <xs:extension base="SledLuaVarLocalUpvalueBaseType">
+        <xs:sequence>
+          <xs:element name="Locals" type="SledLuaVarLocalType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- This complex type represents a Lua UPVALUE variable. -->
+  <!-- This copmlex type can also parent other LIKE complex types. -->
+  <xs:complexType name="SledLuaVarUpvalueType">
+    <xs:complexContent>
+      <xs:extension base="SledLuaVarLocalUpvalueBaseType">
+        <xs:sequence>
+          <xs:element name="Upvalues" type="SledLuaVarUpvalueType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SledLuaFunctionType">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="last_line_defined" displayName="Last Line Defined" readOnly="true"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SledFunctionBaseType">
+        <xs:attribute name="last_line_defined" type="xs:integer"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SledLuaCompileAttributeType">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="compile" displayName="Compile" readOnly="false"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SledAttributeBaseType">
+        <xs:attribute name="compile" type="xs:boolean"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Define some lists of Lua variables. -->
+
+  <!-- This complex type defines a base class for Lua variable lists. -->
+  <xs:complexType name="SledLuaVarBaseListType" abstract="true">
+    <!-- Name of the list -->
+    <xs:attribute name="name" type="xs:Name"/>
+  </xs:complexType>
+
+  <!-- This complex type contains a list of Lua environment variables. -->
+  <xs:complexType name="SledLuaVarEnvListType">
+    <xs:complexContent>
+      <xs:extension base="SledLuaVarBaseListType">
+        <xs:sequence>
+          <xs:element name="EnvVars" type="SledLuaVarEnvType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- This complex type contains a list of Lua GLOBAL variables. -->
+  <xs:complexType name="SledLuaVarGlobalListType">
+    <xs:complexContent>
+      <xs:extension base="SledLuaVarBaseListType">
+        <xs:sequence>
+          <xs:element name="Globals" type="SledLuaVarGlobalType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- This complex type contains a list of Lua LOCAL variables. -->
+  <xs:complexType name="SledLuaVarLocalListType">
+    <xs:complexContent>
+      <xs:extension base="SledLuaVarBaseListType">
+        <xs:sequence>
+          <xs:element name="Locals" type="SledLuaVarLocalType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- This complex type contains a list of Lua UPVALUE variables. -->
+  <xs:complexType name="SledLuaVarUpvalueListType">
+    <xs:complexContent>
+      <xs:extension base="SledLuaVarBaseListType">
+        <xs:sequence>
+          <xs:element name="Upvalues" type="SledLuaVarUpvalueType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SledLuaVarNameTypePairType">
+    <xs:attribute name="name" type="xs:Name"/>
+    <xs:attribute name="name_type" type="xs:integer"/>
+  </xs:complexType>
+
+  <xs:simpleType name="SledLuaVarScopeType">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.enumeration name="Global" displayName="Global"/>
+        <scea.dom.editors.enumeration name="Local" displayName="Local"/>
+        <scea.dom.editors.enumeration name="Upvalue" displayName="Upvalue"/>
+        <scea.dom.editors.enumeration name="Environment" displayName="Environment"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Global"/>
+      <xs:enumeration value="Local"/>
+      <xs:enumeration value="Upvalue"/>
+      <xs:enumeration value="Environment"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SledLuaVarLookUpContextType">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.enumeration name="Normal" displayName="Normal"/>
+        <scea.dom.editors.enumeration name="WatchProject" displayName="Project Watch"/>
+        <scea.dom.editors.enumeration name="WatchCustom" displayName="Custom Watch"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Normal"/>
+      <xs:enumeration value="WatchProject"/>
+      <xs:enumeration value="WatchCustom"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="SledLuaVarLookUpType">
+    <xs:sequence>
+      <xs:element name="NamesAndTypes" type="SledLuaVarNameTypePairType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="scope" type="SledLuaVarScopeType"/>
+    <xs:attribute name="stack_level" type="xs:integer"/>
+    <xs:attribute name="index" type="xs:integer"/>
+    <xs:attribute name="extra" type="xs:boolean"/>
+    <xs:attribute name="context" type="SledLuaVarLookUpContextType"/>
+  </xs:complexType>
+
+  <xs:complexType name ="SledLuaProjectFilesWatchType">
+    <xs:complexContent>
+      <xs:extension base="SledProjectFilesWatchType">
+        <xs:sequence>
+          <xs:element name="LookUp" type="SledLuaVarLookUpType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="scope" type="SledLuaVarScopeType" use="required"/>
+        <xs:attribute name="context" type="SledLuaVarLookUpContextType" use="required"/>
+        <xs:attribute name="guid" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:complexContent>    
+  </xs:complexType>
+
+  <!-- This complex type contains a list of Lua watched variables. -->
+  <xs:complexType name="SledLuaVarWatchListType">
+    <xs:complexContent>
+      <xs:extension base="SledVarBaseWatchListType">
+        <xs:sequence>
+          <xs:element name="Globals" type="SledLuaVarGlobalType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="Locals" type="SledLuaVarLocalType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="Upvalues" type="SledLuaVarUpvalueType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="EnvVars" type="SledLuaVarEnvType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Complex type to represent a Lua state -->
+  <xs:complexType name="SledLuaStateType">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="name" displayName="Name"/>
+        <scea.dom.editors.attribute name="address" displayName="Address"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:attribute name="name" type="xs:Name"/>
+    <xs:attribute name="address" type="xs:string"/>
+    <xs:attribute name="checked" type="xs:boolean"/>
+  </xs:complexType>
+
+  <!-- Complex type to represent a list of Lua states -->
+  <xs:complexType name="SledLuaStateListType">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="name" displayName="Name"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="LuaStates" type="SledLuaStateType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:Name"/>
+  </xs:complexType>
+
+  <!-- Define actual elements containing lists of Lua variables. -->
+  <xs:element name="SledLuaVarGlobals" type="SledLuaVarGlobalListType"/>
+  <xs:element name="SledLuaVarLocals" type="SledLuaVarLocalListType"/>
+  <xs:element name="SledLuaVarUpvalues" type="SledLuaVarUpvalueListType"/>
+  <xs:element name="SledLuaVarWatchList" type="SledLuaVarWatchListType"/>
+  <xs:element name="SledLuaVarEnvList" type="SledLuaVarEnvListType"/>
+  <xs:element name="SledLuaStatesList" type="SledLuaStateListType"/>
+
+  <xs:complexType name="SledLuaVarFilterTypesType">
+    <xs:attribute name="lua_tnil" type="xs:boolean"/>
+    <xs:attribute name="lua_tboolean" type="xs:boolean"/>
+    <xs:attribute name="lua_tlightuserdata" type="xs:boolean"/>
+    <xs:attribute name="lua_tnumber" type="xs:boolean"/>
+    <xs:attribute name="lua_tstring" type="xs:boolean"/>
+    <xs:attribute name="lua_ttable" type="xs:boolean"/>
+    <xs:attribute name="lua_tfunction" type="xs:boolean"/>
+    <xs:attribute name="lua_tuserdata" type="xs:boolean"/>
+    <xs:attribute name="lua_tthread" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="SledLuaVarFilterNameType">
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="SledLuaVarFilterNamesType">
+    <xs:sequence>
+      <xs:element name="Names" type="SledLuaVarFilterNameType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SledLuaVarFilterType">
+    <xs:sequence>
+      <xs:element name="LocalTypes" type="SledLuaVarFilterTypesType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="LocalNames" type="SledLuaVarFilterNamesType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="TargetTypes" type="SledLuaVarFilterTypesType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="TargetNames" type="SledLuaVarFilterNamesType" minOccurs="1" maxOccurs="1"/>      
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- For persisted global/local/upvalue/environment variable filters -->
+  <xs:complexType name="SledLuaVarFiltersType">
+    <xs:complexContent>
+      <xs:extension base="SledProjectFilesUserSettingsType">
+        <xs:sequence>
+          <xs:element name="Globals" type="SledLuaVarFilterType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Locals" type="SledLuaVarFilterType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Upvalues" type="SledLuaVarFilterType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="EnvVars" type="SledLuaVarFilterType" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="SledLuaVarFiltersList" type="SledLuaVarFiltersType"/>
+  
+  <!-- Compile configuration structure -->
+  <xs:complexType name="SledLuaCompileConfigurationType">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="name" displayName="Name"/>
+        <scea.dom.editors.attribute name="little_endian" displayName="Little Endian"/>
+        <scea.dom.editors.attribute name="strip_debug" displayName="Strip Debug Info"/>
+        <scea.dom.editors.attribute name="sizeof_int" displayName="sizeof(int)"/>
+        <scea.dom.editors.attribute name="sizeof_size_t" displayName="sizeof(size_t)"/>
+        <scea.dom.editors.attribute name="sizeof_lua_Number" displayName="sizeof(lua_Number)"/>
+        <scea.dom.editors.attribute name="selected" displayName="Selected" readOnly="true"/>
+        <scea.dom.editors.attribute name="output_path" displayName="Output Path"/>
+        <scea.dom.editors.attribute name="output_extension" displayName="Output Extension"/>
+        <scea.dom.editors.attribute name="preserve_relative_path_info" displayName="Preserve Relative Path Info"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:attribute name="name" type="xs:Name"/>
+    <xs:attribute name="little_endian" type="xs:boolean"/>
+    <xs:attribute name="strip_debug" type="xs:boolean"/>
+    <xs:attribute name="sizeof_int" type="xs:integer"/>
+    <xs:attribute name="sizeof_size_t" type="xs:integer"/>
+    <xs:attribute name="sizeof_lua_Number" type="xs:integer"/>
+    <xs:attribute name="selected" type="xs:boolean"/>
+    <xs:attribute name="output_path" type="xs:string"/>
+    <xs:attribute name="output_extension" type="xs:string"/>
+    <xs:attribute name="preserve_relative_path_info" type="xs:boolean"/>
+  </xs:complexType>
+  
+  <!-- For persisted compile settings -->
+  <xs:complexType name="SledLuaCompileSettingsType">
+    <xs:complexContent>
+      <xs:extension base="SledProjectFilesUserSettingsType">
+        <xs:sequence>
+          <xs:element name="Configurations" type="SledLuaCompileConfigurationType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>      
+    </xs:complexContent>
+  </xs:complexType>
+
+</xs:schema>

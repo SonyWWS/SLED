@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BreakpointWindowCondition" xml:space="preserve">
+    <value>条件を変更</value>
+  </data>
+  <data name="BreakpointWindowConditionComment" xml:space="preserve">
+    <value>ブレークポイントに条件を追加・削除</value>
+  </data>
+  <data name="BreakpointWindowConditionDisable" xml:space="preserve">
+    <value>条件を無効にする</value>
+  </data>
+  <data name="BreakpointWindowConditionDisableComment" xml:space="preserve">
+    <value>ブレークポイントの条件を無効にする</value>
+  </data>
+  <data name="BreakpointWindowConditionEnable" xml:space="preserve">
+    <value>条件を有効にする</value>
+  </data>
+  <data name="BreakpointWindowConditionEnableComment" xml:space="preserve">
+    <value>ブレークポイントの条件を有効にする</value>
+  </data>
+  <data name="BreakpointWindowDisable" xml:space="preserve">
+    <value>無効</value>
+  </data>
+  <data name="BreakpointWindowDisableComment" xml:space="preserve">
+    <value>ブレークポイントを無効にし、ヒットしないようにする</value>
+  </data>
+  <data name="BreakpointWindowEnable" xml:space="preserve">
+    <value>有効</value>
+  </data>
+  <data name="BreakpointWindowEnableComment" xml:space="preserve">
+    <value>ブレークポイントを有効にし、ヒットするようにする</value>
+  </data>
+  <data name="BreakpointWindowName" xml:space="preserve">
+    <value>ブレークポイント</value>
+  </data>
+  <data name="BreakpointWindowRemove" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="BreakpointWindowRemoveAll" xml:space="preserve">
+    <value>選択したものをすべて削除</value>
+  </data>
+  <data name="BreakpointWindowRemoveAllComment" xml:space="preserve">
+    <value>選択したすべてのブレークポイントを削除</value>
+  </data>
+  <data name="BreakpointWindowRemoveComment" xml:space="preserve">
+    <value>ブレークポイントを削除</value>
+  </data>
+  <data name="SledAdd" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="SledBreakpointConditionError" xml:space="preserve">
+    <value>ブレークポイント条件のエラー</value>
+  </data>
+  <data name="SledBreakpointConditionErrorNoCondition" xml:space="preserve">
+    <value>条件を入力してください（または、「条件」チェックボックスのチェックを外し、条件全体を無効にしてください）。</value>
+  </data>
+  <data name="SledBreakpointConditionSyntaxError" xml:space="preserve">
+    <value>構文エラー</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointAdd" xml:space="preserve">
+    <value>ブレークポイントを追加</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointAddComment" xml:space="preserve">
+    <value>現在の行にブレークポイントを追加</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointCondition" xml:space="preserve">
+    <value>条件</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointConditionComment" xml:space="preserve">
+    <value>ブレークポイントに条件を追加・削除</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointDisable" xml:space="preserve">
+    <value>ブレークポイントを無効にする</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointDisableComment" xml:space="preserve">
+    <value>ブレークポイントを無効にし、ヒットしないようにする</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointEnable" xml:space="preserve">
+    <value>ブレークポイントを有効にする</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointEnableComment" xml:space="preserve">
+    <value>ブレークポイントを有効にし、ヒットするようにする</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointRemove" xml:space="preserve">
+    <value>ブレークポイントを削除</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointRemoveAll" xml:space="preserve">
+    <value>すべてのブレークポイントを削除</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointRemoveAllComment" xml:space="preserve">
+    <value>ファイルからすべてのブレークポイントを削除</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointRemoveComment" xml:space="preserve">
+    <value>現在の行のブレークポイントを削除</value>
+  </data>
+  <data name="SledClose" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="SledCommandFileCloseComment" xml:space="preserve">
+    <value>開いているファイルを閉じる</value>
+  </data>
+  <data name="SledCommandFileNewTextComment" xml:space="preserve">
+    <value>新規テキストファイルを作成</value>
+  </data>
+  <data name="SledCommandFileOpenComment" xml:space="preserve">
+    <value>既存ファイルを開く</value>
+  </data>
+  <data name="SledCommandFindReplace" xml:space="preserve">
+    <value>検索と置換</value>
+  </data>
+  <data name="SledCommandGoto" xml:space="preserve">
+    <value>移動...</value>
+  </data>
+  <data name="SledCommandGotoComment" xml:space="preserve">
+    <value>行へ移動</value>
+  </data>
+  <data name="SledConnected" xml:space="preserve">
+    <value>接続済</value>
+  </data>
+  <data name="SledDebugMenuConnect" xml:space="preserve">
+    <value>接続</value>
+  </data>
+  <data name="SledDebugMenuConnectComment" xml:space="preserve">
+    <value>ターゲットに接続</value>
+  </data>
+  <data name="SledDebugMenuDisconnect" xml:space="preserve">
+    <value>切断</value>
+  </data>
+  <data name="SledDebugMenuDisconnectComment" xml:space="preserve">
+    <value>ターゲットから切断</value>
+  </data>
+  <data name="SledDebugMenuStart" xml:space="preserve">
+    <value>開始</value>
+  </data>
+  <data name="SledDebugMenuStartComment" xml:space="preserve">
+    <value>デバッグを開始</value>
+  </data>
+  <data name="SledDebugMenuStepComment" xml:space="preserve">
+    <value>行にステップイン</value>
+  </data>
+  <data name="SledDebugMenuStepOut" xml:space="preserve">
+    <value>ステップアウト</value>
+  </data>
+  <data name="SledDebugMenuStepOutComment" xml:space="preserve">
+    <value>関数からステップアウト</value>
+  </data>
+  <data name="SledDebugMenuStepOver" xml:space="preserve">
+    <value>ステップオーバー</value>
+  </data>
+  <data name="SledDebugMenuStepOverComment" xml:space="preserve">
+    <value>行をステップオーバー</value>
+  </data>
+  <data name="SledDebugMenuStop" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="SledDebugMenuStopComment" xml:space="preserve">
+    <value>デバッグを停止</value>
+  </data>
+  <data name="SledDebugMenuTitle" xml:space="preserve">
+    <value>デバッグ</value>
+  </data>
+  <data name="SledDebugMenuTitleComment" xml:space="preserve">
+    <value>デバッグメニュー</value>
+  </data>
+  <data name="SledDisconnected" xml:space="preserve">
+    <value>切断済</value>
+  </data>
+  <data name="SledEditAndContinueFileNotSentError" xml:space="preserve">
+    <value>ファイルを送信できませんでした。ブレークポイントが一致していない可能性があります。</value>
+  </data>
+  <data name="SledEditAndContinueReloadFileQuestion" xml:space="preserve">
+    <value>ターゲットに更新したファイルをリロードしますか?</value>
+  </data>
+  <data name="SledEditAndContinueTitle" xml:space="preserve">
+    <value>編集・続行</value>
+  </data>
+  <data name="SledEncounterErrorWillCloseComment" xml:space="preserve">
+    <value>SLEDにてエラーが発生しました。終了します。</value>
+  </data>
+  <data name="SledError" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="SledFile" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="SledNew" xml:space="preserve">
+    <value>新規作成</value>
+  </data>
+  <data name="SledOpen" xml:space="preserve">
+    <value>開く</value>
+  </data>
+  <data name="SledRemoteTargetErrorString" xml:space="preserve">
+    <value>ターゲットがありません - ターゲットを追加しますか?</value>
+  </data>
+  <data name="SledRemoteTargetErrorTitle" xml:space="preserve">
+    <value>リモートターゲットのエラー</value>
+  </data>
+  <data name="SledSyntaxCheckFinished" xml:space="preserve">
+    <value>構文チェックが終了しました。</value>
+  </data>
+  <data name="SledSyntaxCheckStarting" xml:space="preserve">
+    <value>構文チェックを開始しています...</value>
+  </data>
+  <data name="SledSyntaxErrorsTitle" xml:space="preserve">
+    <value>構文エラー</value>
+  </data>
+  <data name="SledTTYFilterTTYOutputComment" xml:space="preserve">
+    <value>TTYフィルタフォームを表示</value>
+  </data>
+  <data name="SledTargetMenuManageTargets" xml:space="preserve">
+    <value>ターゲットを管理</value>
+  </data>
+  <data name="SledTargetMenuManageTargetsComment" xml:space="preserve">
+    <value>リモートターゲットを管理</value>
+  </data>
+  <data name="SledTargetMenuTitle" xml:space="preserve">
+    <value>ターゲット</value>
+  </data>
+  <data name="SledTargetMenuTitleComment" xml:space="preserve">
+    <value>ターゲットメニュー</value>
+  </data>
+  <data name="SledText" xml:space="preserve">
+    <value>テキスト</value>
+  </data>
+  <data name="SledFailChangePermissions" xml:space="preserve">
+    <value>SLEDは、ファイル許可の変更に失敗しました。</value>
+  </data>
+  <data name="SledFileReadOnlyError" xml:space="preserve">
+    <value>読み取り専用ファイル – エラー</value>
+  </data>
+  <data name="SledLine" xml:space="preserve">
+    <value>行</value>
+  </data>
+  <data name="SledPath" xml:space="preserve">
+    <value>パス</value>
+  </data>
+  <data name="SledCannotMakeChanges" xml:space="preserve">
+    <value>現時点では変更できません。</value>
+  </data>
+  <data name="SledEditorLocked" xml:space="preserve">
+    <value>エディタがロックされています。</value>
+  </data>
+  <data name="SledFileReadOnly" xml:space="preserve">
+    <value>ファイルは読み取り専用です。</value>
+  </data>
+  <data name="SledTTYFilter" xml:space="preserve">
+    <value>TTYフィルタ</value>
+  </data>
+  <data name="SledTTYFilterEntriesSave" xml:space="preserve">
+    <value>保存するTTYフィルタエントリがありません。</value>
+  </data>
+  <data name="SledTTYFilterFileError" xml:space="preserve">
+    <value>TTYフィルタ – ファイルエラー</value>
+  </data>
+  <data name="SledAssetDirectoryErrorFileUnableToOpen" xml:space="preserve">
+    <value>ファイルを開けませんでした – 間違った資産ディレクトリですか?</value>
+  </data>
+  <data name="SledProjectMenuToggleBreakpoint" xml:space="preserve">
+    <value>切替&amp;ブレークポイント</value>
+  </data>
+  <data name="SledProjectMenuToggleBreakpointComment" xml:space="preserve">
+    <value>ブレークポイントのオン・オフを切替</value>
+  </data>
+  <data name="SledProjectFilesTitle" xml:space="preserve">
+    <value>プロジェクトファイル</value>
+  </data>
+  <data name="SledProjectFilesTreeExplore" xml:space="preserve">
+    <value>参照</value>
+  </data>
+  <data name="SledProjectFilesTreeNewFolder" xml:space="preserve">
+    <value>新規フォルダ</value>
+  </data>
+  <data name="SledProjectFilesTreeOpen" xml:space="preserve">
+    <value>開く</value>
+  </data>
+  <data name="SledProjectFilesTreeOpenWith" xml:space="preserve">
+    <value>…で開く</value>
+  </data>
+  <data name="SledProjectFilesTreeRemove" xml:space="preserve">
+    <value>削除</value>
+  </data>
+</root>

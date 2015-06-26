@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_grpTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="m_btnFindAll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="m_btnFindAll.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_btnFindAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="m_btnFindAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>169, 377</value>
+  </data>
+  <data name="m_btnFindAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="m_btnFindAll.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="m_btnFindAll.Text" xml:space="preserve">
+    <value>Find All</value>
+  </data>
+  <data name="&gt;&gt;m_btnFindAll.Name" xml:space="preserve">
+    <value>m_btnFindAll</value>
+  </data>
+  <data name="&gt;&gt;m_btnFindAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_btnFindAll.Parent" xml:space="preserve">
+    <value>m_grpTitle</value>
+  </data>
+  <data name="&gt;&gt;m_btnFindAll.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="m_lblFindWhat.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="m_lblFindWhat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_lblFindWhat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 16</value>
+  </data>
+  <data name="m_lblFindWhat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="m_lblFindWhat.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="m_lblFindWhat.Text" xml:space="preserve">
+    <value>Find what:</value>
+  </data>
+  <data name="&gt;&gt;m_lblFindWhat.Name" xml:space="preserve">
+    <value>m_lblFindWhat</value>
+  </data>
+  <data name="&gt;&gt;m_lblFindWhat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_lblFindWhat.Parent" xml:space="preserve">
+    <value>m_grpTitle</value>
+  </data>
+  <data name="&gt;&gt;m_lblFindWhat.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="m_lblListResultsIn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="m_lblListResultsIn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_lblListResultsIn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="m_lblListResultsIn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 13</value>
+  </data>
+  <data name="m_lblListResultsIn.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="m_lblListResultsIn.Text" xml:space="preserve">
+    <value>List results in:</value>
+  </data>
+  <data name="&gt;&gt;m_lblListResultsIn.Name" xml:space="preserve">
+    <value>m_lblListResultsIn</value>
+  </data>
+  <data name="&gt;&gt;m_lblListResultsIn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_lblListResultsIn.Parent" xml:space="preserve">
+    <value>m_grpResultOptions</value>
+  </data>
+  <data name="&gt;&gt;m_lblListResultsIn.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="m_chkDisplayFileNamesOnly.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="m_chkDisplayFileNamesOnly.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_chkDisplayFileNamesOnly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 70</value>
+  </data>
+  <data name="m_chkDisplayFileNamesOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 17</value>
+  </data>
+  <data name="m_chkDisplayFileNamesOnly.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="m_chkDisplayFileNamesOnly.Text" xml:space="preserve">
+    <value>Display file names only</value>
+  </data>
+  <data name="&gt;&gt;m_chkDisplayFileNamesOnly.Name" xml:space="preserve">
+    <value>m_chkDisplayFileNamesOnly</value>
+  </data>
+  <data name="&gt;&gt;m_chkDisplayFileNamesOnly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_chkDisplayFileNamesOnly.Parent" xml:space="preserve">
+    <value>m_grpResultOptions</value>
+  </data>
+  <data name="&gt;&gt;m_chkDisplayFileNamesOnly.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="m_rdoFindResults2Window.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="m_rdoFindResults2Window.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_rdoFindResults2Window.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 51</value>
+  </data>
+  <data name="m_rdoFindResults2Window.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 17</value>
+  </data>
+  <data name="m_rdoFindResults2Window.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="m_rdoFindResults2Window.Text" xml:space="preserve">
+    <value>Find results 2 window</value>
+  </data>
+  <data name="&gt;&gt;m_rdoFindResults2Window.Name" xml:space="preserve">
+    <value>m_rdoFindResults2Window</value>
+  </data>
+  <data name="&gt;&gt;m_rdoFindResults2Window.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_rdoFindResults2Window.Parent" xml:space="preserve">
+    <value>m_grpResultOptions</value>
+  </data>
+  <data name="&gt;&gt;m_rdoFindResults2Window.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="m_rdoFindResults1Window.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="m_rdoFindResults1Window.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_rdoFindResults1Window.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="m_rdoFindResults1Window.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 17</value>
+  </data>
+  <data name="m_rdoFindResults1Window.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="m_rdoFindResults1Window.Text" xml:space="preserve">
+    <value>Find results 1 window</value>
+  </data>
+  <data name="&gt;&gt;m_rdoFindResults1Window.Name" xml:space="preserve">
+    <value>m_rdoFindResults1Window</value>
+  </data>
+  <data name="&gt;&gt;m_rdoFindResults1Window.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_rdoFindResults1Window.Parent" xml:space="preserve">
+    <value>m_grpResultOptions</value>
+  </data>
+  <data name="&gt;&gt;m_rdoFindResults1Window.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="m_grpResultOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 276</value>
+  </data>
+  <data name="m_grpResultOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 94</value>
+  </data>
+  <data name="m_grpResultOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="m_grpResultOptions.Text" xml:space="preserve">
+    <value>Result options</value>
+  </data>
+  <data name="&gt;&gt;m_grpResultOptions.Name" xml:space="preserve">
+    <value>m_grpResultOptions</value>
+  </data>
+  <data name="&gt;&gt;m_grpResultOptions.Type" xml:space="preserve">
+    <value>Sce.Sled.Shared.Controls.SledCollapsibleGroupBox, Sled.Shared, Version=4.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;m_grpResultOptions.Parent" xml:space="preserve">
+    <value>m_grpTitle</value>
+  </data>
+  <data name="&gt;&gt;m_grpResultOptions.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button1.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 32</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 23</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>m_grpTitle</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="m_cmbLookAtTheseFileTypes.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_cmbLookAtTheseFileTypes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 121</value>
+  </data>
+  <data name="m_cmbLookAtTheseFileTypes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 21</value>
+  </data>
+  <data name="m_cmbLookAtTheseFileTypes.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;m_cmbLookAtTheseFileTypes.Name" xml:space="preserve">
+    <value>m_cmbLookAtTheseFileTypes</value>
+  </data>
+  <data name="&gt;&gt;m_cmbLookAtTheseFileTypes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_cmbLookAtTheseFileTypes.Parent" xml:space="preserve">
+    <value>m_grpFindOptions</value>
+  </data>
+  <data name="&gt;&gt;m_cmbLookAtTheseFileTypes.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="m_lblLookAtTheseFileTypes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="m_lblLookAtTheseFileTypes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_lblLookAtTheseFileTypes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 105</value>
+  </data>
+  <data name="m_lblLookAtTheseFileTypes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 13</value>
+  </data>
+  <data name="m_lblLookAtTheseFileTypes.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="m_lblLookAtTheseFileTypes.Text" xml:space="preserve">
+    <value>Look at these file types:</value>
+  </data>
+  <data name="&gt;&gt;m_lblLookAtTheseFileTypes.Name" xml:space="preserve">
+    <value>m_lblLookAtTheseFileTypes</value>
+  </data>
+  <data name="&gt;&gt;m_lblLookAtTheseFileTypes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_lblLookAtTheseFileTypes.Parent" xml:space="preserve">
+    <value>m_grpFindOptions</value>
+  </data>
+  <data name="&gt;&gt;m_lblLookAtTheseFileTypes.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="m_cmbUse.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_cmbUse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 81</value>
+  </data>
+  <data name="m_cmbUse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 21</value>
+  </data>
+  <data name="m_cmbUse.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;m_cmbUse.Name" xml:space="preserve">
+    <value>m_cmbUse</value>
+  </data>
+  <data name="&gt;&gt;m_cmbUse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_cmbUse.Parent" xml:space="preserve">
+    <value>m_grpFindOptions</value>
+  </data>
+  <data name="&gt;&gt;m_cmbUse.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="m_chkUse.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="m_chkUse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_chkUse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 62</value>
+  </data>
+  <data name="m_chkUse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 17</value>
+  </data>
+  <data name="m_chkUse.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="m_chkUse.Text" xml:space="preserve">
+    <value>Use:</value>
+  </data>
+  <data name="&gt;&gt;m_chkUse.Name" xml:space="preserve">
+    <value>m_chkUse</value>
+  </data>
+  <data name="&gt;&gt;m_chkUse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_chkUse.Parent" xml:space="preserve">
+    <value>m_grpFindOptions</value>
+  </data>
+  <data name="&gt;&gt;m_chkUse.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="m_chkMatchWholeWord.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="m_chkMatchWholeWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_chkMatchWholeWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 43</value>
+  </data>
+  <data name="m_chkMatchWholeWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 17</value>
+  </data>
+  <data name="m_chkMatchWholeWord.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="m_chkMatchWholeWord.Text" xml:space="preserve">
+    <value>Match whole word</value>
+  </data>
+  <data name="&gt;&gt;m_chkMatchWholeWord.Name" xml:space="preserve">
+    <value>m_chkMatchWholeWord</value>
+  </data>
+  <data name="&gt;&gt;m_chkMatchWholeWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_chkMatchWholeWord.Parent" xml:space="preserve">
+    <value>m_grpFindOptions</value>
+  </data>
+  <data name="&gt;&gt;m_chkMatchWholeWord.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="m_chkMatchCase.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="m_chkMatchCase.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_chkMatchCase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 24</value>
+  </data>
+  <data name="m_chkMatchCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 17</value>
+  </data>
+  <data name="m_chkMatchCase.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="m_chkMatchCase.Text" xml:space="preserve">
+    <value>Match case</value>
+  </data>
+  <data name="&gt;&gt;m_chkMatchCase.Name" xml:space="preserve">
+    <value>m_chkMatchCase</value>
+  </data>
+  <data name="&gt;&gt;m_chkMatchCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_chkMatchCase.Parent" xml:space="preserve">
+    <value>m_grpFindOptions</value>
+  </data>
+  <data name="&gt;&gt;m_chkMatchCase.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="m_grpFindOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 118</value>
+  </data>
+  <data name="m_grpFindOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 152</value>
+  </data>
+  <data name="m_grpFindOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="m_grpFindOptions.Text" xml:space="preserve">
+    <value>Find options</value>
+  </data>
+  <data name="&gt;&gt;m_grpFindOptions.Name" xml:space="preserve">
+    <value>m_grpFindOptions</value>
+  </data>
+  <data name="&gt;&gt;m_grpFindOptions.Type" xml:space="preserve">
+    <value>Sce.Sled.Shared.Controls.SledCollapsibleGroupBox, Sled.Shared, Version=4.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;m_grpFindOptions.Parent" xml:space="preserve">
+    <value>m_grpTitle</value>
+  </data>
+  <data name="&gt;&gt;m_grpFindOptions.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="m_chkIncludeSubFolders.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="m_chkIncludeSubFolders.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="m_chkIncludeSubFolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_chkIncludeSubFolders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 95</value>
+  </data>
+  <data name="m_chkIncludeSubFolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 17</value>
+  </data>
+  <data name="m_chkIncludeSubFolders.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="m_chkIncludeSubFolders.Text" xml:space="preserve">
+    <value>Include sub-folders</value>
+  </data>
+  <data name="&gt;&gt;m_chkIncludeSubFolders.Name" xml:space="preserve">
+    <value>m_chkIncludeSubFolders</value>
+  </data>
+  <data name="&gt;&gt;m_chkIncludeSubFolders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_chkIncludeSubFolders.Parent" xml:space="preserve">
+    <value>m_grpTitle</value>
+  </data>
+  <data name="&gt;&gt;m_chkIncludeSubFolders.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="m_btnLookIn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_btnLookIn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 70</value>
+  </data>
+  <data name="m_btnLookIn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 23</value>
+  </data>
+  <data name="m_btnLookIn.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="m_btnLookIn.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;m_btnLookIn.Name" xml:space="preserve">
+    <value>m_btnLookIn</value>
+  </data>
+  <data name="&gt;&gt;m_btnLookIn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_btnLookIn.Parent" xml:space="preserve">
+    <value>m_grpTitle</value>
+  </data>
+  <data name="&gt;&gt;m_btnLookIn.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="m_cmbLookIn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 72</value>
+  </data>
+  <data name="m_cmbLookIn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 21</value>
+  </data>
+  <data name="m_cmbLookIn.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;m_cmbLookIn.Name" xml:space="preserve">
+    <value>m_cmbLookIn</value>
+  </data>
+  <data name="&gt;&gt;m_cmbLookIn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_cmbLookIn.Parent" xml:space="preserve">
+    <value>m_grpTitle</value>
+  </data>
+  <data name="&gt;&gt;m_cmbLookIn.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="m_cmbFindWhat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 32</value>
+  </data>
+  <data name="m_cmbFindWhat.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="m_cmbFindWhat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 21</value>
+  </data>
+  <data name="m_cmbFindWhat.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;m_cmbFindWhat.Name" xml:space="preserve">
+    <value>m_cmbFindWhat</value>
+  </data>
+  <data name="&gt;&gt;m_cmbFindWhat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_cmbFindWhat.Parent" xml:space="preserve">
+    <value>m_grpTitle</value>
+  </data>
+  <data name="&gt;&gt;m_cmbFindWhat.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="m_lblLookIn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="m_lblLookIn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="m_lblLookIn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 56</value>
+  </data>
+  <data name="m_lblLookIn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="m_lblLookIn.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="m_lblLookIn.Text" xml:space="preserve">
+    <value>Look in:</value>
+  </data>
+  <data name="&gt;&gt;m_lblLookIn.Name" xml:space="preserve">
+    <value>m_lblLookIn</value>
+  </data>
+  <data name="&gt;&gt;m_lblLookIn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_lblLookIn.Parent" xml:space="preserve">
+    <value>m_grpTitle</value>
+  </data>
+  <data name="&gt;&gt;m_lblLookIn.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="m_grpTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 32</value>
+  </data>
+  <data name="m_grpTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 409</value>
+  </data>
+  <data name="m_grpTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="m_grpTitle.Text" xml:space="preserve">
+    <value>Find In Files</value>
+  </data>
+  <data name="&gt;&gt;m_grpTitle.Name" xml:space="preserve">
+    <value>m_grpTitle</value>
+  </data>
+  <data name="&gt;&gt;m_grpTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;m_grpTitle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;m_grpTitle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 441</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SledFindAndReplaceForm_FindInFiles</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SledLuaCallStackTitle" xml:space="preserve">
+    <value>Lua Call Stack</value>
+  </data>
+  <data name="SledLuaGlobalsTitle" xml:space="preserve">
+    <value>Lua Globals</value>
+  </data>
+  <data name="SledLuaLocalsTitle" xml:space="preserve">
+    <value>Lua Locals</value>
+  </data>
+  <data name="SledLuaMemoryTraceTitle" xml:space="preserve">
+    <value>Lua Memory Trace</value>
+  </data>
+  <data name="SledLuaProfileFuncCallsTitle" xml:space="preserve">
+    <value>Lua Profile Function Calls Tree</value>
+  </data>
+  <data name="SledLuaProfileInfoTitle" xml:space="preserve">
+    <value>Lua Profile Info</value>
+  </data>
+  <data name="SledLuaUpvaluesTitle" xml:space="preserve">
+    <value>Lua Upvalues</value>
+  </data>
+  <data name="SledLuaWatchListTitle" xml:space="preserve">
+    <value>Lua Watch List</value>
+  </data>
+  <data name="SledLuaGotoGlobal" xml:space="preserve">
+    <value>Goto Global</value>
+  </data>
+  <data name="SledLuaGotoGlobalComment" xml:space="preserve">
+    <value>Go to where the global is used</value>
+  </data>
+  <data name="SledLuaGotoLocal" xml:space="preserve">
+    <value>Goto Local</value>
+  </data>
+  <data name="SledLuaGotoLocalComment" xml:space="preserve">
+    <value>Go to where the local is used</value>
+  </data>
+  <data name="SledLuaGotoUpvalue" xml:space="preserve">
+    <value>Goto Upvalue</value>
+  </data>
+  <data name="SledLuaGotoUpvalueComment" xml:space="preserve">
+    <value>Go to where the upvalue is used</value>
+  </data>
+  <data name="SledLuaGotoWatch" xml:space="preserve">
+    <value>Add Global Watch</value>
+  </data>
+  <data name="SledLuaGotoWatchComment" xml:space="preserve">
+    <value>Add global variable to the Lua watch list</value>
+  </data>
+  <data name="SledLuaRemoveGlobalWatches" xml:space="preserve">
+    <value>Remove Global Watch(es)</value>
+  </data>
+  <data name="SledLuaRemoveGlobalWatchesComment" xml:space="preserve">
+    <value>Remove global variable(s) from the Lua watch list</value>
+  </data>
+  <data name="SledLuaAddLocalWatch" xml:space="preserve">
+    <value>Add Local Watch</value>
+  </data>
+  <data name="SledLuaAddLocalWatchComment" xml:space="preserve">
+    <value>Add local variable to the Lua watch list</value>
+  </data>
+  <data name="SledLuaRemoveLocalWatches" xml:space="preserve">
+    <value>Remove Local Watch(es)</value>
+  </data>
+  <data name="SledLuaRemoveLocalWatchesComment" xml:space="preserve">
+    <value>Remove local variable(s) from the Lua watch list</value>
+  </data>
+  <data name="SledLuaAddUpvalueWatch" xml:space="preserve">
+    <value>Add Upvalue Watch</value>
+  </data>
+  <data name="SledLuaAddUpvalueWatchComment" xml:space="preserve">
+    <value>Add upvalue variable to the Lua watch list</value>
+  </data>
+  <data name="SledLuaRemoveUpvalueWatches" xml:space="preserve">
+    <value>Remove Upvalue Watch(es)</value>
+  </data>
+  <data name="SledLuaRemoveUpvalueWatchesComment" xml:space="preserve">
+    <value>Remove upvalue variable(s) from the Lua watch list</value>
+  </data>
+  <data name="SledLuaRemoveSelectedWatches" xml:space="preserve">
+    <value>Remove Selected Watches</value>
+  </data>
+  <data name="SledLuaRemoveSelectedWatchesComment" xml:space="preserve">
+    <value>Remove selected variables from the Lua watch list</value>
+  </data>
+  <data name="SledLuaFailedToFindBase" xml:space="preserve">
+    <value>%s0 failed to find base table!</value>
+  </data>
+  <data name="SledLuaOverwriteReadOnly" xml:space="preserve">
+    <value>%s0 is read only! Would you like to overwrite this property and make the file writable?</value>
+  </data>
+  <data name="SledLuaError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="SledLuaIgnoreReadOnlyErrors" xml:space="preserve">
+    <value>Would you liked to ignore read-only file errors?</value>
+  </data>
+  <data name="SledLuaQuestion" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="SledLuaTTYFilterAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="SledLuaTTYFilterEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="SledLuaFile" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="SledLuaNew" xml:space="preserve">
+    <value>&amp;New</value>
+  </data>
+  <data name="SledLuaCreateNewFileComment" xml:space="preserve">
+    <value>Create a new Lua file</value>
+  </data>
+  <data name="SledLuaFilterGlobalVars" xml:space="preserve">
+    <value>Filter &amp;Global Variables</value>
+  </data>
+  <data name="SledLuaFilterGlobalVarsComment" xml:space="preserve">
+    <value>Filter global variables</value>
+  </data>
+  <data name="SledLuaFilterLocalVars" xml:space="preserve">
+    <value>Filter &amp;Local Variables</value>
+  </data>
+  <data name="SledLuaFilterLocalVarsComment" xml:space="preserve">
+    <value>Filter local variables</value>
+  </data>
+  <data name="SledLuaFilterUpvalueVars" xml:space="preserve">
+    <value>Filter &amp;Upvalue Variables</value>
+  </data>
+  <data name="SledLuaFilterUpvalueVarsComments" xml:space="preserve">
+    <value>Filter upvalue variables</value>
+  </data>
+  <data name="SledLuaToggleLuaProfiler" xml:space="preserve">
+    <value>Toggle Lua &amp;Profiler</value>
+  </data>
+  <data name="SledLuaToggleLuaProfilerComment" xml:space="preserve">
+    <value>Toggles the Lua profiler on/off</value>
+  </data>
+  <data name="SledLuaToggleMemoryTracer" xml:space="preserve">
+    <value>Toggle Lua &amp;Memory Tracer</value>
+  </data>
+  <data name="SledLuaToggleMemoryTracerComment" xml:space="preserve">
+    <value>Toggles the Lua memory tracer on/off</value>
+  </data>
+  <data name="SledLuaEnvironmentTitle" xml:space="preserve">
+    <value>Lua Environment</value>
+  </data>
+  <data name="SledLuaFunction" xml:space="preserve">
+    <value>Function</value>
+  </data>
+  <data name="SledLuaVariableFilterGlobalTitle" xml:space="preserve">
+    <value>Lua Global Variable Filter</value>
+  </data>
+  <data name="SledLuaVariableFilterLocalTitle" xml:space="preserve">
+    <value>Lua Local Variable Filter</value>
+  </data>
+  <data name="SledLuaVariableFilterUpvalueTitle" xml:space="preserve">
+    <value>Lua Upvalue Variable Filter</value>
+  </data>
+  <data name="SledLuaName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="SledLuaType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="SledLuaValue" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="SledLuaLuaLanguageDescription" xml:space="preserve">
+    <value>Lua scripting language</value>
+  </data>
+  <data name="SledLuaPluginOptions" xml:space="preserve">
+    <value>Lua Plugin Options</value>
+  </data>
+  <data name="SledLuaTag" xml:space="preserve">
+    <value>&amp;Lua</value>
+  </data>
+  <data name="SledLuaExceptionTag" xml:space="preserve">
+    <value>Exception: %s0</value>
+  </data>
+  <data name="SledLuaRemoteTargetMessageError" xml:space="preserve">
+    <value>Debug: Error processing server message! Message was:</value>
+  </data>
+  <data name="SledLuaExceptionWas" xml:space="preserve">
+    <value>Exception was: %s0</value>
+  </data>
+  <data name="SledLuaWatchFormatIncorrect" xml:space="preserve">
+    <value>Lua watch "%s0" format incorrect, removing!</value>
+  </data>
+  <data name="SledLuaMemoryTraceAlloc" xml:space="preserve">
+    <value>Allocation</value>
+  </data>
+  <data name="SledLuaMemoryTraceRealloc" xml:space="preserve">
+    <value>Reallocation</value>
+  </data>
+  <data name="SledLuaMemoryTraceDealloc" xml:space="preserve">
+    <value>Deallocation</value>
+  </data>
+  <data name="SledLuaMemoryTraceStreamingError" xml:space="preserve">
+    <value>Debug: Error in memory trace streaming [%s0]</value>
+  </data>
+  <data name="SledLuaModifyVarInvalidTime" xml:space="preserve">
+    <value>Debug: Cannot modify Lua globals/locals/upvalues at this time!</value>
+  </data>
+  <data name="SledLuaModifyVarInvalidType" xml:space="preserve">
+    <value>Debug: Can only modify variables of type: LUA_TBOOLEAN, LUA_TNUMBER, or LUA_TSTRING!</value>
+  </data>
+  <data name="SledLuaModifyVarInvalidValue1" xml:space="preserve">
+    <value>Debug: Invalid value %s0 for type LUA_TNUMBER. Must be a number!</value>
+  </data>
+  <data name="SledLuaModifyVarInvalidValue2" xml:space="preserve">
+    <value>Debug: Invalid value %s0 for type LUA_TBOOLEAN. Must be true/false/1/0</value>
+  </data>
+  <data name="SledLuaModifyVarSent" xml:space="preserve">
+    <value>Debug: Modification sent</value>
+  </data>
+  <data name="SledLuaSendNetVarFilterState" xml:space="preserve">
+    <value>Lua: Sending updated variable network filter state</value>
+  </data>
+  <data name="SledLuaVarParserDllLoadFailed" xml:space="preserve">
+    <value>Lua Variable Parser: Failed to load .dll!</value>
+  </data>
+  <data name="SledLuaVarParserStarting" xml:space="preserve">
+    <value>Lua Variable Parser: Starting...</value>
+  </data>
+  <data name="SledLuaVarParserComplete" xml:space="preserve">
+    <value>Lua Variable Parser: Complete!</value>
+  </data>
+  <data name="SledLuaVarParserFailedParsing" xml:space="preserve">
+    <value>Lua Variable Parser: Failed parsing %s0!</value>
+  </data>
+  <data name="SledLuaVarParserWithArg" xml:space="preserve">
+    <value>Lua Variable Parser: %s0</value>
+  </data>
+  <data name="SledLuaVarParserFoundVar" xml:space="preserve">
+    <value>Lua Variable Parser: %s0: found %s1 on line %s2!</value>
+  </data>
+  <data name="SledLuaVarParserFoundBp" xml:space="preserve">
+    <value>Lua Variable Parser: %s0: found valid breakpoint position on line %s1!</value>
+  </data>
+  <data name="SledLuaVarParserFoundFunc" xml:space="preserve">
+    <value>Lua Variable Parser: %s0: found function %s1 at line %s2!</value>
+  </data>
+  <data name="SledLuaLuaStates" xml:space="preserve">
+    <value>Lua States</value>
+  </data>
+  <data name="SledLuaLuaState" xml:space="preserve">
+    <value>Lua State (0x%s0)</value>
+  </data>
+  <data name="SledLuaLuaStateAddress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="SledLuaLuaStateName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="SledLuaLuaStateEnabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="SledLuaCallStackTitleShort" xml:space="preserve">
+    <value>Call Stack</value>
+  </data>
+  <data name="SledLuaEnvironmentTitleShort" xml:space="preserve">
+    <value>Environment</value>
+  </data>
+  <data name="SledLuaGlobalsTitleShort" xml:space="preserve">
+    <value>Globals</value>
+  </data>
+  <data name="SledLuaLocalsTitleShort" xml:space="preserve">
+    <value>Locals</value>
+  </data>
+  <data name="SledLuaMemoryTraceTitleShort" xml:space="preserve">
+    <value>Memory Trace</value>
+  </data>
+  <data name="SledLuaProfileFuncCallsTitleShort" xml:space="preserve">
+    <value>Profile Function Calls Tree</value>
+  </data>
+  <data name="SledLuaProfileInfoTitleShort" xml:space="preserve">
+    <value>Profile Info</value>
+  </data>
+  <data name="SledLuaUpvaluesTitleShort" xml:space="preserve">
+    <value>Upvalues</value>
+  </data>
+  <data name="SledLuaWatchListTitleShort" xml:space="preserve">
+    <value>Watch List</value>
+  </data>
+  <data name="SledLuaAddEnvVarWatch" xml:space="preserve">
+    <value>Add Environment Table Variable Watch</value>
+  </data>
+  <data name="SledLuaAddEnvVarWatchComment" xml:space="preserve">
+    <value>Add environment table variable to the Lua watch list</value>
+  </data>
+  <data name="SledLuaRemoveEnvVarWatches" xml:space="preserve">
+    <value>Remove Environment Table Variable Watch(es)</value>
+  </data>
+  <data name="SledLuaRemoveEnvVarWatchesComment" xml:space="preserve">
+    <value>Remove environment table variable(s) from the Lua watch list</value>
+  </data>
+  <data name="SledLuaFilterEnvVarVars" xml:space="preserve">
+    <value>Filter &amp;Environment Table Variables</value>
+  </data>
+  <data name="SledLuaFilterEnvVarVarsComment" xml:space="preserve">
+    <value>Filter environment table variables</value>
+  </data>
+  <data name="SledLuaVariableFilterEnvVarTitle" xml:space="preserve">
+    <value>Lua Environment Table Variable Filter</value>
+  </data>
+  <data name="SledLuaCompilerCompile" xml:space="preserve">
+    <value>Compile</value>
+  </data>
+  <data name="SledLuaCompilerCompileComment" xml:space="preserve">
+    <value>Compile Lua scripts</value>
+  </data>
+  <data name="SledLuaCompilerErrorNoActiveProject" xml:space="preserve">
+    <value>[Lua compiler] No active project; nothing to compile!</value>
+  </data>
+  <data name="SledLuaCompilerErrorNoPluginOwnedFiles" xml:space="preserve">
+    <value>[Lua compiler] No files owned by Lua plugin; nothing to compile!</value>
+  </data>
+  <data name="SledLuaCompilerErrorSuccess" xml:space="preserve">
+    <value>[Lua compiler] Compiling %s0: success!</value>
+  </data>
+  <data name="SledLuaCompilerErrorFailed" xml:space="preserve">
+    <value>[Lua compiler] Compiling %s0: failed! %s1</value>
+  </data>
+  <data name="SledLuaCompilerErrorExceptionCompilingFile" xml:space="preserve">
+    <value>[Lua compiler] Exception compiling file %s0: %s1</value>
+  </data>
+  <data name="SledLuaCompilerErrorExceptionInLuaCompiler" xml:space="preserve">
+    <value>[Lua compiler] Exception with Lua compiler: %s0</value>
+  </data>
+  <data name="SledLuaCompilerSettings" xml:space="preserve">
+    <value>Compiler Settings</value>
+  </data>
+  <data name="SledLuaCompilerSettingsComment" xml:space="preserve">
+    <value>Modify Lua compiler settings</value>
+  </data>
+  <data name="SledLuaCompiler" xml:space="preserve">
+    <value>Lua Compiler</value>
+  </data>
+  <data name="SledLuaCompilerNotifySelectConfiguration" xml:space="preserve">
+    <value>You have no compiler configurations or have not selected a compiler configuration to use. You will now be prompted to select a compiler configuration.</value>
+  </data>
+  <data name="SledLuaCompilerNotifySelectConfigurationError" xml:space="preserve">
+    <value>You have no compiler configurations or have not selected a compiler configuration to use - compilation cannot continue.</value>
+  </data>
+  <data name="SledLuaCompilerErrorNoFiles" xml:space="preserve">
+    <value>[Lua compiler] No files to compile!</value>
+  </data>
+  <data name="SledLuaCompilerErrorCantCreateDir" xml:space="preserve">
+    <value>[Lua compiler] Can't compile script to user supplied destination directory because the directory doesn't exist and can't be created! The exception was: %s0</value>
+  </data>
+  <data name="SledSettingsErrorExceptionLoadingSetting" xml:space="preserve">
+    <value>Exception loading %s0 settings: %s1</value>
+  </data>
+  <data name="SledSettingsErrorExceptionSavingSetting" xml:space="preserve">
+    <value>Exception saving %s0 settings: %s1</value>
+  </data>
+  <data name="SledLuaSyntaxCheckerErrorInstance" xml:space="preserve">
+    <value>Lua Syntax Checker: Failed to create instance!</value>
+  </data>
+  <data name="SledLuaSyntaxCheckerErrorInstanceWithException" xml:space="preserve">
+    <value>Lua Syntax Checker: Failed to create instance! Exception was: %s0</value>
+  </data>
+  <data name="SledLuaSyntaxCheckerErrorProcessingFile" xml:space="preserve">
+    <value>Lua Syntax Checker: Exception processing file %s0! Exception was: %s1</value>
+  </data>
+  <data name="SledLuaSyntaxCheckerErrorProcessingString" xml:space="preserve">
+    <value>Lua Syntax Checker: Exception processing string %s0! Exception was: %s1</value>
+  </data>
+  <data name="SledLuaVarParserErrorInstance" xml:space="preserve">
+    <value>Variable Parser: Failed to create instance!</value>
+  </data>
+  <data name="SledLuaVarParserErrorInstanceWithException" xml:space="preserve">
+    <value>Variable Parser: Failed to create instance! Exception was: %s0</value>
+  </data>
+</root>

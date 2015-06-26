@@ -1,0 +1,5 @@
+
+SLED 5.1.2
+---------------
+NOTE: SLED 5.1.2 can be used with libsleddebugger versions 5.1.2-5.1.2 & libsledluaplugin versions 5.1.2-5.1.2
+* Initial open source release

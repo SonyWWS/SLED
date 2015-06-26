@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="SledProjectFiles" elementFormDefault="qualified" targetNamespace="sled" xmlns="sled" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="SledProjectFilesBaseType" abstract="true">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="name" displayName="Name"/>
+        <sce.sled.shared.dom.attribute.dontsave name="expanded"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:attribute name="name" type="xs:Name"/>
+    <xs:attribute name="expanded" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="SledProjectFilesBreakpointType">
+    <xs:attribute name="line" type="xs:integer"/>
+    <xs:attribute name="enabled" type="xs:boolean"/>
+    <xs:attribute name="condition" type="xs:string"/>
+    <xs:attribute name="conditionenabled" type="xs:boolean"/>
+    <xs:attribute name="conditionresult" type="xs:boolean"/>
+    <xs:attribute name="usefunctionenvironment" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="SledProjectFilesWatchType" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="SledProjectFilesBaseType">
+        <xs:attribute name="language_plugin" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SledProjectFilesRootType">
+    <xs:attribute name="directory" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="SledProjectFilesLanguageType">
+    <xs:attribute name="language" type="xs:Name"/>
+    <xs:attribute name="version" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="SledProjectFilesUserSettingsType" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="SledProjectFilesBaseType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SledProjectFilesFileType">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="path" displayName="Path"/>
+        <sce.sled.shared.dom.attribute.dontsave name="md5hash"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SledProjectFilesBaseType">
+        <xs:sequence>
+          <xs:element name="Breakpoints" type="SledProjectFilesBreakpointType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="Functions" type="SledFunctionBaseType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="Attributes" type="SledAttributeBaseType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="path" type="xs:string"/>
+        <xs:attribute name="guid" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SledProjectFilesFolderType">
+    <xs:complexContent>
+      <xs:extension base="SledProjectFilesBaseType">
+        <xs:sequence>
+          <xs:element name="Files" type="SledProjectFilesFileType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="Folders" type="SledProjectFilesFolderType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>  
+
+  <xs:complexType name="SledProjectFilesType">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="assetdirectory" displayName="Asset Directory"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="SledProjectFilesFolderType">
+        <xs:sequence>
+          <xs:element name="Languages" type="SledProjectFilesLanguageType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="Watches" type="SledProjectFilesWatchType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="Roots" type="SledProjectFilesRootType" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="UserSettings" type="SledProjectFilesUserSettingsType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="assetdirectory" type="xs:string"/>
+        <xs:attribute name="guid" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="SledProjectFiles" type="SledProjectFilesType"/>
+
+  <xs:complexType name="SledProjectFilesEmptyType">
+    <xs:attribute name="name" type="xs:string" />
+  </xs:complexType>
+
+  <xs:element name="SledProjectEmpty" type="SledProjectFilesEmptyType"/>
+
+  <xs:complexType name="SledSyntaxErrorType">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="line" displayName="Line" readOnly="true"/>
+        <scea.dom.editors.attribute name="error" displayName="Error" readOnly="true"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:attribute name="line" type="xs:integer"/>
+    <xs:attribute name="error" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="SledSyntaxErrorListType">
+    <xs:sequence>
+      <xs:element name="Errors" type="SledSyntaxErrorType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:Name"/>
+  </xs:complexType>
+
+  <xs:element name="SledSyntaxErrors" type="SledSyntaxErrorListType"/>
+
+  <xs:complexType name="SledFunctionBaseType" abstract="true">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="name" displayName="Name" readOnly="true"/>
+        <scea.dom.editors.attribute name="line_defined" displayName="Line Defined" readOnly="true"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="line_defined" type="xs:integer"/>
+  </xs:complexType>
+
+  <xs:complexType name="SledAttributeBaseType" abstract="true">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="name" displayName="Name" readOnly="true"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="SledProfileInfoType">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="function" displayName="Function" readOnly="true"/>
+        <scea.dom.editors.attribute name="num_calls" displayName="Calls" readOnly="true"/>
+        <scea.dom.editors.attribute name="time_total" displayName="Total" readOnly="true"/>
+        <scea.dom.editors.attribute name="time_avg" displayName="Average" readOnly="true"/>
+        <scea.dom.editors.attribute name="time_min" displayName="Shortest" readOnly="true"/>
+        <scea.dom.editors.attribute name="time_max" displayName="Longest" readOnly="true"/>
+        <scea.dom.editors.attribute name="time_total_inner" displayName="Total (Inner)" readOnly="true"/>
+        <scea.dom.editors.attribute name="time_avg_inner" displayName="Average (Inner)" readOnly="true"/>
+        <scea.dom.editors.attribute name="time_min_inner" displayName="Shortest (Inner)" readOnly="true"/>
+        <scea.dom.editors.attribute name="time_max_inner" displayName="Longest (Inner)" readOnly="true"/>
+        <scea.dom.editors.attribute name="num_funcs_called" displayName="Num Funcs Called" readOnly="true"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ProfileInfo" type="SledProfileInfoType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="function" type="xs:string"/>
+    <xs:attribute name="time_total" type="xs:float"/>
+    <xs:attribute name="time_avg" type="xs:float"/>
+    <xs:attribute name="time_min" type="xs:float"/>
+    <xs:attribute name="time_max" type="xs:float"/>
+    <xs:attribute name="time_total_inner" type="xs:float"/>
+    <xs:attribute name="time_avg_inner" type="xs:float"/>
+    <xs:attribute name="time_min_inner" type="xs:float"/>
+    <xs:attribute name="time_max_inner" type="xs:float"/>
+    <xs:attribute name="num_calls" type="xs:integer"/>
+    <xs:attribute name="line" type="xs:integer"/>
+    <xs:attribute name="file" type="xs:string"/>
+    <xs:attribute name="num_funcs_called" type="xs:integer"/>
+  </xs:complexType>
+
+  <xs:complexType name="SledProfileInfoListType">
+    <xs:sequence>
+      <xs:element name="ProfileInfo" type="SledProfileInfoType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:Name"/>
+  </xs:complexType>
+
+  <xs:complexType name="SledMemoryTraceType">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="order" displayName="Order" description="Order the allocations/reallocations/deallocations happened" readOnly="true"/>
+        <scea.dom.editors.attribute name="what" displayName="What" description="Allocation or deallocation" readOnly="true"/>
+        <scea.dom.editors.attribute name="oldaddress" displayName="Old Address" description="Old Address" readOnly="true"/>
+        <scea.dom.editors.attribute name="newaddress" displayName="New Address" description="New Address" readOnly="true"/>
+        <scea.dom.editors.attribute name="oldsize" displayName="Old Size" description="Old Size" readOnly="true"/>
+        <scea.dom.editors.attribute name="newsize" displayName="New Size" description="New Size" readOnly="true"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:attribute name="order" type="xs:unsignedLong"/>
+    <xs:attribute name="what" type="xs:string"/>
+    <xs:attribute name="oldaddress" type="xs:string"/>
+    <xs:attribute name="newaddress" type="xs:string"/>
+    <xs:attribute name="oldsize" type="xs:integer"/>
+    <xs:attribute name="newsize" type="xs:integer"/>
+  </xs:complexType>
+
+  <xs:complexType name="SledMemoryTraceListType">
+    <xs:sequence>
+      <xs:element name="MemoryTrace" type="SledMemoryTraceType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:Name"/>
+  </xs:complexType>
+
+  <xs:complexType name="SledCallStackType">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="function" displayName="Function" description="Function name" readOnly="true"/>
+        <scea.dom.editors.attribute name="file" displayName="File" description="File function is in" readOnly="true"/>
+        <scea.dom.editors.attribute name="currentline" displayName="Line" description="Line number function call is on" readOnly="true"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:attribute name="function" type="xs:string"/>
+    <xs:attribute name="file" type="xs:string"/>
+    <xs:attribute name="currentline" type="xs:integer"/>
+    <xs:attribute name="linedefined" type="xs:integer"/>
+    <xs:attribute name="lineend" type="xs:integer"/>
+    <xs:attribute name="level" type="xs:integer"/>
+  </xs:complexType>
+
+  <xs:complexType name="SledCallStackListType">
+    <xs:sequence>
+      <xs:element name="CallStack" type="SledCallStackType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:Name"/>
+  </xs:complexType>
+
+  <!-- This complex type represents a position in a file where the variable is located. -->
+  <xs:complexType name="SledVarLocationType">
+    <!-- File name -->
+    <xs:attribute name="file" type="xs:string"/>
+    <!-- Line in file -->
+    <xs:attribute name="line" type="xs:integer"/>
+    <!-- Occurence on line -->
+    <xs:attribute name="occurence" type="xs:integer"/>
+  </xs:complexType>
+
+  <!-- This complex type represents a base variable watch list. -->
+  <xs:complexType name="SledVarBaseWatchListType" abstract="true">
+    <!-- Name of the watch list -->
+    <xs:attribute name="name" type="xs:Name"/>
+  </xs:complexType>
+
+  <!-- This complex type represents a base variable type to be used for any language. -->
+  <xs:complexType name="SledVarBaseType" abstract="true">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="name" displayName="Name" readOnly="true"/>
+      </xs:appinfo>
+    </xs:annotation>
+
+    <!-- A list of locations this variable is referenced. -->
+    <xs:sequence>
+      <xs:element name="Locations" type="SledVarLocationType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+
+    <!-- Variable name -->
+    <xs:attribute name="name" type="xs:Name"/>
+    <!-- Variable unique name -->
+    <xs:attribute name="unique_name" type="xs:string"/>
+  </xs:complexType>
+
+  <!-- This complex type represents a find-in-files result. -->
+  <xs:complexType name="SledFindResultsType">
+    <xs:annotation>
+      <xs:appinfo>
+        <scea.dom.editors.attribute name="name" displayName="File" description="File" readOnly="true"/>
+        <scea.dom.editors.attribute name="file" displayName="File" description="File" readOnly="true"/>
+        <scea.dom.editors.attribute name="line" displayName="Line" description="Line number" readOnly="true"/>
+        <scea.dom.editors.attribute name="line_text" displayName="Text" description="Text on line" readOnly="true"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:attribute name="name" type="xs:Name"/>
+    <xs:attribute name="file" type="xs:string"/>
+    <xs:attribute name="line" type="xs:integer"/>
+    <xs:attribute name="start_offset" type="xs:integer"/>
+    <xs:attribute name="end_offset" type="xs:integer"/>
+    <xs:attribute name="line_text" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="SledFindResultsListType">
+    <xs:sequence>
+      <xs:element name="FindResults" type="SledFindResultsType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:Name"/>
+  </xs:complexType>
+
+  <xs:element name="SledFindResults1" type="SledFindResultsListType"/>
+  <xs:element name="SledFindResults2" type="SledFindResultsListType"/>
+
+</xs:schema>

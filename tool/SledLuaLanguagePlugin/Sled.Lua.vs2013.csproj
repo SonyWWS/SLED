@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{219A82A0-8AC0-4C46-8AB6-05ADAC9C8871}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sce.Sled.Lua</RootNamespace>
+    <AssemblyName>Sled.Lua</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\sce_sled\SLED.vs2013\Debug\Plugins\</OutputPath>
+    <IntermediateOutputPath>obj\Debug.vs2013\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\sce_sled\SLED.vs2013\Plugins\</OutputPath>
+    <IntermediateOutputPath>obj\Release.vs2013\</IntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dom\ISledLuaVarBaseType.cs" />
+    <Compile Include="Dom\SledLuaCompileAttributeType.cs" />
+    <Compile Include="Dom\SledLuaCompileConfigurationType.cs" />
+    <Compile Include="Dom\SledLuaCompileSettingsType.cs" />
+    <Compile Include="Dom\SledLuaDomLoader.cs" />
+    <Compile Include="Dom\SledLuaFunctionType.cs" />
+    <Compile Include="Dom\SledLuaProjectFilesWatchType.cs" />
+    <Compile Include="Dom\SledLuaSchema.cs" />
+    <Compile Include="Dom\SledLuaStateListType.cs" />
+    <Compile Include="Dom\SledLuaStateType.cs" />
+    <Compile Include="Dom\SledLuaVarBaseListType.cs" />
+    <Compile Include="Dom\SledLuaVarBaseType.cs" />
+    <Compile Include="Dom\SledLuaVarEnvListType.cs" />
+    <Compile Include="Dom\SledLuaVarEnvType.cs" />
+    <Compile Include="Dom\SledLuaVarFilter.cs" />
+    <Compile Include="Dom\SledLuaVarGlobalType.cs" />
+    <Compile Include="Dom\SledLuaVarGobalListType.cs" />
+    <Compile Include="Dom\SledLuaVarLookUpContextType.cs" />
+    <Compile Include="Dom\SledLuaVarLookUpType.cs" />
+    <Compile Include="Dom\SledLuaVarNameTypePairType.cs" />
+    <Compile Include="Dom\SledLuaVarLocalListType.cs" />
+    <Compile Include="Dom\SledLuaVarLocalType.cs" />
+    <Compile Include="Dom\SledLuaVarLocalUpvalueBaseType.cs" />
+    <Compile Include="Dom\SledLuaVarScopeType.cs" />
+    <Compile Include="Dom\SledLuaVarUpvalueListType.cs" />
+    <Compile Include="Dom\SledLuaVarUpvalueType.cs" />
+    <Compile Include="Dom\SledLuaVarWatchListType.cs" />
+    <Compile Include="ISledLuaWatchedVariableService.cs" />
+    <Compile Include="Resources\Localization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SledCommandPlugin_VariableLists.cs" />
+    <Compile Include="SledControlMessageProtocol_Lua.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SledLuaBaseVariableService.cs" />
+    <Compile Include="SledLuaBreakpointColorService.cs" />
+    <Compile Include="SledLuaCallStackService.cs" />
+    <Compile Include="SledLuaCompilerConfigurationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledLuaCompilerConfigurationsForm.Designer.cs">
+      <DependentUpon>SledLuaCompilerConfigurationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledLuaCompilerService.cs" />
+    <Compile Include="SledLuaEnvironmentVariableService.cs" />
+    <Compile Include="SledLuaFunctionCursorWatcherService.cs" />
+    <Compile Include="SledLuaFunctionParserService.cs" />
+    <Compile Include="SledLuaFunctionToolbar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SledLuaGenerateLookUpStringService.cs" />
+    <Compile Include="SledLuaGlobalVariableService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SledLuaLanguagePlugin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SledLuaLocalVariableService.cs" />
+    <Compile Include="SledLuaLuaStatesService.cs" />
+    <Compile Include="SledLuaLuaVersionService.cs" />
+    <Compile Include="SledLuaMaxBreakpointService.cs" />
+    <Compile Include="SledLuaMemoryTraceService.cs" />
+    <Compile Include="SledLuaMenuShared.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SledLuaProfilerService.cs" />
+    <Compile Include="SledLuaSyntaxCheckerService.cs" />
+    <Compile Include="SledLuaTreeListViewEditor.cs" />
+    <Compile Include="SledLuaTTYService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SledLuaUpvalueVariableService.cs" />
+    <Compile Include="SledLuaUserEnteredWatchedVariablePickTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledLuaUserEnteredWatchedVariablePickTypeForm.Designer.cs">
+      <DependentUpon>SledLuaUserEnteredWatchedVariablePickTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledLuaUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SledLuaVarFilterState.cs" />
+    <Compile Include="SledLuaVariableFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledLuaVariableFilterForm.designer.cs">
+      <DependentUpon>SledLuaVariableFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledLuaVariableFilterService.cs" />
+    <Compile Include="SledLuaVariableFilterVarNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledLuaVariableFilterVarNameForm.Designer.cs">
+      <DependentUpon>SledLuaVariableFilterVarNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledLuaVariableFinderService.cs" />
+    <Compile Include="SledLuaVariableLocationService.cs" />
+    <Compile Include="SledLuaVariableParserService.cs" />
+    <Compile Include="SledLuaVarScmpService.cs" />
+    <Compile Include="SledLuaWatchedVariableService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\LUA_TBOOLEAN16x16.png" />
+    <EmbeddedResource Include="Resources\Icons\LUA_TFUNCTION16x16.png" />
+    <EmbeddedResource Include="Resources\Icons\LUA_TLIGHTUSERDATA16x16.png" />
+    <EmbeddedResource Include="Resources\Icons\LUA_TNIL16x16.png" />
+    <EmbeddedResource Include="Resources\Icons\LUA_TNONE16x16.png" />
+    <EmbeddedResource Include="Resources\Icons\LUA_TNUMBER16x16.png" />
+    <EmbeddedResource Include="Resources\Icons\LUA_TSTRING16x16.png" />
+    <EmbeddedResource Include="Resources\Icons\LUA_TTABLE16x16.png" />
+    <EmbeddedResource Include="Resources\Icons\LUA_TTHREAD16x16.png" />
+    <EmbeddedResource Include="Resources\Icons\LUA_TUSERDATA16x16.png" />
+    <EmbeddedResource Include="Resources\Localization.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\wws_atf\Framework\Atf.Core\Atf.Core.vs2010.csproj">
+      <Project>{9D1835B6-D1C2-44BA-BAE1-05C6EC442D2F}</Project>
+      <Name>Atf.Core.vs2010</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\wws_atf\Framework\Atf.Gui.WinForms\Atf.Gui.WinForms.vs2010.csproj">
+      <Project>{7C36A258-9102-420D-B80A-5EB5717644B6}</Project>
+      <Name>Atf.Gui.WinForms.vs2010</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\wws_atf\Framework\Atf.Gui\Atf.Gui.vs2010.csproj">
+      <Project>{4765C2A7-F989-40DB-BC12-FCD67025B93F}</Project>
+      <Name>Atf.Gui.vs2010</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\wws_lua\extras\Lua.Utilities.Shared\Lua.Utilities.Shared.vs2013.csproj">
+      <Project>{a72e51d1-1f48-4336-bb40-33dc165efdd0}</Project>
+      <Name>Lua.Utilities.Shared.vs2013</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\wws_lua\extras\Lua.Utilities\Lua.Utilities.5.1.4.x86.vs2013.vcxproj">
+      <Project>{BC7BF7FF-72C6-48D1-BE1B-C61B2FF616C3}</Project>
+      <Name>Lua.Utilities.5.1.4.x86</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\wws_lua\extras\Lua.Utilities\Lua.Utilities.5.2.3.x86.vs2013.vcxproj">
+      <Project>{da52c603-6fe3-4c35-bfab-12e6177922a5}</Project>
+      <Name>Lua.Utilities.5.2.3.x86</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SledShared\Sled.Shared.vs2013.csproj">
+      <Project>{BB7F3AE7-2899-4E1C-90DF-2DD375C4ADD9}</Project>
+      <Name>Sled.Shared</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SledSyntaxEditor\Sled.SyntaxEditor.vs2013.csproj">
+      <Project>{0D7B1F12-0EE5-4D7D-B116-C6E97F7A0956}</Project>
+      <Name>Sled.SyntaxEditor</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schemas\SledLuaProjectFiles.xsd">
+      <SubType>
+      </SubType>
+    </EmbeddedResource>
+    <None Include="Schemas\SledLuaProjectFiles.xsx">
+      <DependentUpon>SledLuaProjectFiles.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\lua_compile16.png" />
+    <EmbeddedResource Include="Resources\Icons\lua_compile24.png" />
+    <EmbeddedResource Include="Resources\Icons\lua_compile32.png" />
+    <EmbeddedResource Include="SledLuaCompilerConfigurationsForm.ja.resx">
+      <DependentUpon>SledLuaCompilerConfigurationsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledLuaCompilerConfigurationsForm.resx">
+      <DependentUpon>SledLuaCompilerConfigurationsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledLuaUserEnteredWatchedVariablePickTypeForm.resx">
+      <DependentUpon>SledLuaUserEnteredWatchedVariablePickTypeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledLuaVariableFilterForm.ja.resx">
+      <DependentUpon>SledLuaVariableFilterForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledLuaVariableFilterForm.resx">
+      <DependentUpon>SledLuaVariableFilterForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledLuaVariableFilterVarNameForm.ja.resx">
+      <DependentUpon>SledLuaVariableFilterVarNameForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledLuaVariableFilterVarNameForm.resx">
+      <DependentUpon>SledLuaVariableFilterVarNameForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

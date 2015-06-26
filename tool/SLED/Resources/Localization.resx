@@ -1,0 +1,699 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BreakpointWindowCondition" xml:space="preserve">
+    <value>Modify Condition</value>
+  </data>
+  <data name="BreakpointWindowConditionComment" xml:space="preserve">
+    <value>Add / remove a condition to the breakpoint</value>
+  </data>
+  <data name="BreakpointWindowConditionDisable" xml:space="preserve">
+    <value>Disable Condition</value>
+  </data>
+  <data name="BreakpointWindowConditionDisableComment" xml:space="preserve">
+    <value>Disable the breakpoint's condition</value>
+  </data>
+  <data name="BreakpointWindowConditionEnable" xml:space="preserve">
+    <value>Enable Condition</value>
+  </data>
+  <data name="BreakpointWindowConditionEnableComment" xml:space="preserve">
+    <value>Enable the breakpoint's condition</value>
+  </data>
+  <data name="BreakpointWindowDisable" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="BreakpointWindowDisableComment" xml:space="preserve">
+    <value>Disables the breakpoint so it will not be hit</value>
+  </data>
+  <data name="BreakpointWindowEnable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="BreakpointWindowEnableComment" xml:space="preserve">
+    <value>Enables the breakpoint so it will be hit</value>
+  </data>
+  <data name="BreakpointWindowName" xml:space="preserve">
+    <value>Breakpoints</value>
+  </data>
+  <data name="BreakpointWindowRemove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="BreakpointWindowRemoveAll" xml:space="preserve">
+    <value>Remove All Selected</value>
+  </data>
+  <data name="BreakpointWindowRemoveAllComment" xml:space="preserve">
+    <value>Remove all of the selected breakpoints</value>
+  </data>
+  <data name="BreakpointWindowRemoveComment" xml:space="preserve">
+    <value>Removes the breakpoint</value>
+  </data>
+  <data name="SledAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="SledBreakpointConditionError" xml:space="preserve">
+    <value>Breakpoint Condition Error</value>
+  </data>
+  <data name="SledBreakpointConditionErrorNoCondition" xml:space="preserve">
+    <value>The breakpoint condition cannot be empty when "Condition" is checked.</value>
+  </data>
+  <data name="SledBreakpointConditionSyntaxError" xml:space="preserve">
+    <value>Syntax Error</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointAdd" xml:space="preserve">
+    <value>Add Breakpoint</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointAddComment" xml:space="preserve">
+    <value>Adds a breakpoint to the current line</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointCondition" xml:space="preserve">
+    <value>Condition</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointConditionComment" xml:space="preserve">
+    <value>Add / remove a condition to the breakpoint</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointDisable" xml:space="preserve">
+    <value>Disable Breakpoint</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointDisableComment" xml:space="preserve">
+    <value>Disables the breakpoint so it will not be hit</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointEnable" xml:space="preserve">
+    <value>Enable Breakpoint</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointEnableComment" xml:space="preserve">
+    <value>Enables the breakpoint so it will be hit</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointRemove" xml:space="preserve">
+    <value>Remove Breakpoint</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointRemoveAll" xml:space="preserve">
+    <value>Remove All Breakpoints</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointRemoveAllComment" xml:space="preserve">
+    <value>Remove all breakpoints from the file</value>
+  </data>
+  <data name="SledBreakpointMenuBreakpointRemoveComment" xml:space="preserve">
+    <value>Removes the breakpoint on the current line</value>
+  </data>
+  <data name="SledClose" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="SledCommandFileCloseComment" xml:space="preserve">
+    <value>Close an open file</value>
+  </data>
+  <data name="SledCommandFileNewTextComment" xml:space="preserve">
+    <value>Create a new text file</value>
+  </data>
+  <data name="SledCommandFileOpenComment" xml:space="preserve">
+    <value>Open an existing file</value>
+  </data>
+  <data name="SledCommandFindReplace" xml:space="preserve">
+    <value>&amp;Find and Replace</value>
+  </data>
+  <data name="SledCommandGoto" xml:space="preserve">
+    <value>&amp;Go to...</value>
+  </data>
+  <data name="SledCommandGotoComment" xml:space="preserve">
+    <value>Go to line</value>
+  </data>
+  <data name="SledConnected" xml:space="preserve">
+    <value>Connected</value>
+  </data>
+  <data name="SledDebugMenuConnect" xml:space="preserve">
+    <value>&amp;Connect</value>
+  </data>
+  <data name="SledDebugMenuConnectComment" xml:space="preserve">
+    <value>Connect to a target</value>
+  </data>
+  <data name="SledDebugMenuDisconnect" xml:space="preserve">
+    <value>&amp;Disconnect</value>
+  </data>
+  <data name="SledDebugMenuDisconnectComment" xml:space="preserve">
+    <value>Disconnect from a target</value>
+  </data>
+  <data name="SledDebugMenuStart" xml:space="preserve">
+    <value>&amp;Start</value>
+  </data>
+  <data name="SledDebugMenuStartComment" xml:space="preserve">
+    <value>Start debugging</value>
+  </data>
+  <data name="SledDebugMenuStep" xml:space="preserve">
+    <value>Step &amp;Into</value>
+  </data>
+  <data name="SledDebugMenuStepComment" xml:space="preserve">
+    <value>Step into a line</value>
+  </data>
+  <data name="SledDebugMenuStepOut" xml:space="preserve">
+    <value>Step Ou&amp;t</value>
+  </data>
+  <data name="SledDebugMenuStepOutComment" xml:space="preserve">
+    <value>Step out of a function</value>
+  </data>
+  <data name="SledDebugMenuStepOver" xml:space="preserve">
+    <value>Step &amp;Over</value>
+  </data>
+  <data name="SledDebugMenuStepOverComment" xml:space="preserve">
+    <value>Step over a line</value>
+  </data>
+  <data name="SledDebugMenuStop" xml:space="preserve">
+    <value>Sto&amp;p</value>
+  </data>
+  <data name="SledDebugMenuStopComment" xml:space="preserve">
+    <value>Stop debugging</value>
+  </data>
+  <data name="SledDebugMenuTitle" xml:space="preserve">
+    <value>&amp;Debug</value>
+  </data>
+  <data name="SledDebugMenuTitleComment" xml:space="preserve">
+    <value>Debugging Menu</value>
+  </data>
+  <data name="SledDisconnected" xml:space="preserve">
+    <value>Disconnected</value>
+  </data>
+  <data name="SledEditAndContinueFileNotSentError" xml:space="preserve">
+    <value>File not sent! Breakpoints and other changes may be mis-matched!</value>
+  </data>
+  <data name="SledEditAndContinueReloadFileQuestion" xml:space="preserve">
+    <value>Would you like to reload the updated file on the Target?</value>
+  </data>
+  <data name="SledEditAndContinueTitle" xml:space="preserve">
+    <value>Edit &amp; Continue</value>
+  </data>
+  <data name="SledEncounterErrorWillCloseComment" xml:space="preserve">
+    <value>SLED has encountered an error and will close!</value>
+  </data>
+  <data name="SledError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="SledFileMenu" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="SledNew" xml:space="preserve">
+    <value>&amp;New</value>
+  </data>
+  <data name="SledOpen" xml:space="preserve">
+    <value>&amp;Open</value>
+  </data>
+  <data name="SledRemoteTargetErrorString" xml:space="preserve">
+    <value>No targets - do you wish to add some?</value>
+  </data>
+  <data name="SledRemoteTargetErrorTitle" xml:space="preserve">
+    <value>Remote Target Error</value>
+  </data>
+  <data name="SledSyntaxCheckFinished" xml:space="preserve">
+    <value>Syntax check finished!</value>
+  </data>
+  <data name="SledSyntaxCheckStarting" xml:space="preserve">
+    <value>Syntax check starting...</value>
+  </data>
+  <data name="SledSyntaxErrorsTitle" xml:space="preserve">
+    <value>Syntax Errors</value>
+  </data>
+  <data name="SledTargetErrorNoProjectOpen" xml:space="preserve">
+    <value>Error: No project open! Either open an existing project or set the target up to relay project information to SLED (by using SCEA::LibLuaDebugger::SetSledProjectInfo()).</value>
+  </data>
+  <data name="SledTTYFilterTTYOutput" xml:space="preserve">
+    <value>&amp;Filter TTY Output</value>
+  </data>
+  <data name="SledTTYFilterTTYOutputComment" xml:space="preserve">
+    <value>Bring up the TTY filter form</value>
+  </data>
+  <data name="SledTargetMenuManageTargets" xml:space="preserve">
+    <value>&amp;Manage Targets</value>
+  </data>
+  <data name="SledTargetMenuManageTargetsComment" xml:space="preserve">
+    <value>Manage remote targets</value>
+  </data>
+  <data name="SledTargetMenuTitle" xml:space="preserve">
+    <value>&amp;Target</value>
+  </data>
+  <data name="SledTargetMenuTitleComment" xml:space="preserve">
+    <value>Target Menu</value>
+  </data>
+  <data name="SledText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="SledNetworkPluginLoaded" xml:space="preserve">
+    <value>Network Plugin: Loaded %s0 (%s1)</value>
+  </data>
+  <data name="SledRemoteTargetsComboBoxDefault" xml:space="preserve">
+    <value>Remote Targets</value>
+  </data>
+  <data name="SledTargetErrorProcessingMessage" xml:space="preserve">
+    <value>Debug: Error processing server message! Message was:</value>
+  </data>
+  <data name="SledExceptionWas" xml:space="preserve">
+    <value>Exception was: %s0</value>
+  </data>
+  <data name="SledTargetHeartBeatNoResponse" xml:space="preserve">
+    <value>Debug: No response from target...</value>
+  </data>
+  <data name="SledAddFile" xml:space="preserve">
+    <value>&amp;Add File</value>
+  </data>
+  <data name="SledTTYClearTTYWindow" xml:space="preserve">
+    <value>&amp;Clear TTY Window</value>
+  </data>
+  <data name="SledTTYClearTTYWindowComment" xml:space="preserve">
+    <value>Clear the TTY window</value>
+  </data>
+  <data name="SledFailChangePermissions" xml:space="preserve">
+    <value>SLED failed to change the file permissions!</value>
+  </data>
+  <data name="SledFileReadOnlyError" xml:space="preserve">
+    <value>File Read Only - Error</value>
+  </data>
+  <data name="SledDebugMenuHeartbeat" xml:space="preserve">
+    <value>Heartbeat</value>
+  </data>
+  <data name="SledDebugMenuHeartbeatComment" xml:space="preserve">
+    <value>Toggle the heartbeat</value>
+  </data>
+  <data name="SledMD5FileError" xml:space="preserve">
+    <value>Encountered error when computing MD5 hash for file %s0! %s1</value>
+  </data>
+  <data name="SledCommandFindReplaceFindInFiles" xml:space="preserve">
+    <value>F&amp;ind in Files</value>
+  </data>
+  <data name="SledCommandFindReplaceFindInFilesComment" xml:space="preserve">
+    <value>Find and replace find in files</value>
+  </data>
+  <data name="SledCommandFindReplaceQuickFind" xml:space="preserve">
+    <value>Quick &amp;Find</value>
+  </data>
+  <data name="SledCommandFindReplaceQuickFindComment" xml:space="preserve">
+    <value>Find and replace quick find</value>
+  </data>
+  <data name="SledCommandFindReplaceQuickReplace" xml:space="preserve">
+    <value>Quick &amp;Replace</value>
+  </data>
+  <data name="SledCommandFindReplaceQuickReplaceComment" xml:space="preserve">
+    <value>Find and replace quick replace</value>
+  </data>
+  <data name="SledCommandFindReplaceReplaceInFiles" xml:space="preserve">
+    <value>Replace in File&amp;s</value>
+  </data>
+  <data name="SledCommandFindReplaceReplaceInFilesComment" xml:space="preserve">
+    <value>Find and replace replace in files</value>
+  </data>
+  <data name="SledFindAndReplaceLookInAllOpenDocuments" xml:space="preserve">
+    <value>All Open Documents</value>
+  </data>
+  <data name="SledFindAndReplaceLookInCurrentDocument" xml:space="preserve">
+    <value>Current Document</value>
+  </data>
+  <data name="SledFindAndReplaceLookInCurrentProject" xml:space="preserve">
+    <value>Current Project</value>
+  </data>
+  <data name="SledFindAndReplaceUsePatternRegularExpressions" xml:space="preserve">
+    <value>Regular Expressions</value>
+  </data>
+  <data name="SledFindAndReplaceUsePatternWildCards" xml:space="preserve">
+    <value>Wild Cards</value>
+  </data>
+  <data name="SledFindAndReplaceLookInEntireSolution" xml:space="preserve">
+    <value>Entire Solution</value>
+  </data>
+  <data name="SledFindAndReplaceLookInCustom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="SledDebugMenuScmpProtocolMark" xml:space="preserve">
+    <value>Send SCMP Mark</value>
+  </data>
+  <data name="SledDebugMenuScmpProtocolMarkComment" xml:space="preserve">
+    <value>Send SCMP mark</value>
+  </data>
+  <data name="SledDebugMenuScmpProtocolLogging" xml:space="preserve">
+    <value>SCMP Logging</value>
+  </data>
+  <data name="SledDebugMenuScmpProtocolLoggingComment" xml:space="preserve">
+    <value>Toggle SCMP Logging</value>
+  </data>
+  <data name="SledBreakpointConditionErrorVarArg" xml:space="preserve">
+    <value>Wrapped condition to be sent to target:%s0%s0%s1%s0%s0Syntax Error:%s0    %s2</value>
+  </data>
+  <data name="SledRemoteTargetErrorUpdatingComboBox" xml:space="preserve">
+    <value>[Remote Target] Error updating the ComboBox: %s0</value>
+  </data>
+  <data name="SledRemoteTargetErrorSelectingTarget" xml:space="preserve">
+    <value>[Remote Target] Error selecting target %s0: %s1</value>
+  </data>
+  <data name="SledBreakpointErrorRemoving" xml:space="preserve">
+    <value>[Breakpoint] Exception removing breakpoint on line %s0 from file %s1: %s2</value>
+  </data>
+  <data name="SledRemoteTargetErrorVersionMismatch" xml:space="preserve">
+    <value>Debug: Version mismatch - SLED %s0.%s1 supports a range of versions from %s2.%s3-%s0.%s1 but the Target's version is %s4.%s5!</value>
+  </data>
+  <data name="SledRemoteTargetErrorNoProjectOpen" xml:space="preserve">
+    <value>Debug: No project open error! Possible reasons: 1) no project open in SLED or 2a) no project details were specified by the Target or 2b) the Target specified wrong paths for its project details or 2c) directory creation failed due to windows permission settings.</value>
+  </data>
+  <data name="SledRemoteTargetErrorScriptCacheFileNotExist" xml:space="preserve">
+    <value>Debug: Script cache error! File does not exist: %s0 (%s1)</value>
+  </data>
+  <data name="SledFindResults1Title" xml:space="preserve">
+    <value>Find Results 1</value>
+  </data>
+  <data name="SledFindResults2Title" xml:space="preserve">
+    <value>Find Results 2</value>
+  </data>
+  <data name="SledHelpAboutErrorException" xml:space="preserve">
+    <value>[Help About Dialog] Exception: %s0</value>
+  </data>
+  <data name="SledSettingsErrorExceptionLoadingSetting" xml:space="preserve">
+    <value>Exception loading %s0 settings: %s1</value>
+  </data>
+  <data name="SledSettingsErrorExceptionSavingSetting" xml:space="preserve">
+    <value>Exception saving %s0 settings: %s1</value>
+  </data>
+  <data name="SledGotoLineError1" xml:space="preserve">
+    <value>Exception trying to jump to line number %s0 in file %s1: %s2</value>
+  </data>
+  <data name="SledGotoVariableError1" xml:space="preserve">
+    <value>Exception grabbing text from line %s0 in file %s1: %s2</value>
+  </data>
+  <data name="SledGotoVariableError2" xml:space="preserve">
+    <value>Exception reading file %s0 to find variable locations: %s1</value>
+  </data>
+  <data name="SledFindAndReplaceErrorNothingFound" xml:space="preserve">
+    <value>[Find &amp; Replace] Nothing found!</value>
+  </data>
+  <data name="SledFindAndReplaceErrorNoDocsToSearch" xml:space="preserve">
+    <value>[Find &amp; Replace] No documents to search in!</value>
+  </data>
+  <data name="SledLine" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="SledOccurrence" xml:space="preserve">
+    <value>Occurrence</value>
+  </data>
+  <data name="SledPath" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="SledTargetConnectingTo" xml:space="preserve">
+    <value>Debug: Connecting to %s0</value>
+  </data>
+  <data name="SledTargetConnectionEstablishedTo" xml:space="preserve">
+    <value>Debug: Connection established to %s0</value>
+  </data>
+  <data name="SledTargetConnectionNegotiating" xml:space="preserve">
+    <value>Debug: Negotiating connection with %s0</value>
+  </data>
+  <data name="SledTargetDisconnectedFrom" xml:space="preserve">
+    <value>Debug: Disconnected from %s0</value>
+  </data>
+  <data name="SledTargetErrorUnknownEndianness" xml:space="preserve">
+    <value>Connecting to a host with unknown endianness; disconnecting!</value>
+  </data>
+  <data name="SledTargetReady" xml:space="preserve">
+    <value>Debug: Ready to debug %s0</value>
+  </data>
+  <data name="SledTargetStartCmd" xml:space="preserve">
+    <value>Debug: Start</value>
+  </data>
+  <data name="SledTargetStepIntoCmd" xml:space="preserve">
+    <value>Debug: Step Into</value>
+  </data>
+  <data name="SledTargetStepOutcmd" xml:space="preserve">
+    <value>Debug: Step Out</value>
+  </data>
+  <data name="SledTargetStepOverCmd" xml:space="preserve">
+    <value>Debug: Step Over</value>
+  </data>
+  <data name="SledTargetStopCmd" xml:space="preserve">
+    <value>Debug: Stop</value>
+  </data>
+  <data name="SledAttemptChangeFilePermissions" xml:space="preserve">
+    <value>Would you like SLED to attempt to change the file permissions and remove the read only flag?</value>
+  </data>
+  <data name="SledCannotMakeChanges" xml:space="preserve">
+    <value>You cannot make changes at this time!</value>
+  </data>
+  <data name="SledEditorLocked" xml:space="preserve">
+    <value>Editor Locked</value>
+  </data>
+  <data name="SledErrorWas" xml:space="preserve">
+    <value>The error was: %s0</value>
+  </data>
+  <data name="SledFileReadOnly" xml:space="preserve">
+    <value>File is read only!</value>
+  </data>
+  <data name="SledNone" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="SledTTYErrorInvalidLanguage" xml:space="preserve">
+    <value>Invalid language selection! Message not sent. Please select a valid language from the combobox.</value>
+  </data>
+  <data name="SledTTYErrorNoLanguagesRegistered" xml:space="preserve">
+    <value>No language plugins have been registered with the TTY service therefore no messages can be sent via TTY.</value>
+  </data>
+  <data name="SledTTYErrorTitle" xml:space="preserve">
+    <value>TTY Error</value>
+  </data>
+  <data name="SledTTYFilter" xml:space="preserve">
+    <value>TTY Filter</value>
+  </data>
+  <data name="SledTTYFilterEntriesSave" xml:space="preserve">
+    <value>No TTY filter entries to save!</value>
+  </data>
+  <data name="SledTTYFilterErrorLoadingFile" xml:space="preserve">
+    <value>Error loading file: %s0</value>
+  </data>
+  <data name="SledTTYFilterErrorWritingFile" xml:space="preserve">
+    <value>Error writing file: %s0</value>
+  </data>
+  <data name="SledTTYFilterFileError" xml:space="preserve">
+    <value>TTY Filter - File Error</value>
+  </data>
+  <data name="SledTTYFilterNoNodesFoundInFile" xml:space="preserve">
+    <value>No TTYFilter nodes found in file: %s0</value>
+  </data>
+  <data name="SledTTY" xml:space="preserve">
+    <value>TT&amp;Y</value>
+  </data>
+  <data name="SledTTYOptions" xml:space="preserve">
+    <value>TTY Options</value>
+  </data>
+  <data name="SledFindAndReplaceGatheringFiles" xml:space="preserve">
+    <value>Gathering files...</value>
+  </data>
+  <data name="SledFindAndReplaceSearching" xml:space="preserve">
+    <value>Searching... %s0</value>
+  </data>
+  <data name="SledFindAndReplaceDisplaying" xml:space="preserve">
+    <value>Displaying...</value>
+  </data>
+  <data name="SledFindAndReplaceReplacing" xml:space="preserve">
+    <value>Replacing... %s0</value>
+  </data>
+  <data name="SledCommandFindReplaceFindNextInstanceOfSelectedTextWithoutGUI" xml:space="preserve">
+    <value>Find Next Instance of Selected Text Without GUI</value>
+  </data>
+  <data name="SledCommandFindReplaceFindNextInstanceOfSelectedTextWithoutGUIComment" xml:space="preserve">
+    <value>Find the next instance of the currently selected text without using the GUI</value>
+  </data>
+  <data name="SledCommandFindReplaceRepeatLastSearchWithoutGui" xml:space="preserve">
+    <value>Repeat Last Search Without Using GUI</value>
+  </data>
+  <data name="SledCommandFindReplaceRepeatLastSearchWithoutGuiComment" xml:space="preserve">
+    <value>Repeat the last performed search but without using the GUI</value>
+  </data>
+  <data name="SledAssetDirectoryErrorFileUnableToOpen" xml:space="preserve">
+    <value>File was unable to open - perhaps the asset directory is wrong?</value>
+  </data>
+  <data name="SledProjectMenuToggleBreakpoint" xml:space="preserve">
+    <value>Toggle &amp;Breakpoint</value>
+  </data>
+  <data name="SledProjectMenuToggleBreakpointComment" xml:space="preserve">
+    <value>Toggles a breakpoint on/off</value>
+  </data>
+  <data name="SledProjectFilesTitle" xml:space="preserve">
+    <value>Project Files</value>
+  </data>
+  <data name="SledProjectFilesTreeErrorLabelEditing" xml:space="preserve">
+    <value>[Project Files Tree] Error in label edit: %s0</value>
+  </data>
+  <data name="SledProjectFilesTreeErrorRenamingFile" xml:space="preserve">
+    <value>[Project Files Tree] Error attempting to rename file %s0: %s1</value>
+  </data>
+  <data name="SledProjectFilesTreeExplore" xml:space="preserve">
+    <value>Explore</value>
+  </data>
+  <data name="SledProjectFilesTreeExploreComment" xml:space="preserve">
+    <value>Navigate to item in explorer</value>
+  </data>
+  <data name="SledProjectFilesTreeFileNotExist" xml:space="preserve">
+    <value>The file does not exist!</value>
+  </data>
+  <data name="SledProjectFilesTreeGoto" xml:space="preserve">
+    <value>Goto</value>
+  </data>
+  <data name="SledProjectFilesTreeGotoComment" xml:space="preserve">
+    <value>Goto to item</value>
+  </data>
+  <data name="SledProjectFilesTreeNewFolder" xml:space="preserve">
+    <value>New Folder</value>
+  </data>
+  <data name="SledProjectFilesTreeNewFolderComment" xml:space="preserve">
+    <value>Create a new folder</value>
+  </data>
+  <data name="SledProjectFilesTreeOpen" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="SledProjectFilesTreeOpenComment" xml:space="preserve">
+    <value>Open item</value>
+  </data>
+  <data name="SledProjectFilesTreeOpenWith" xml:space="preserve">
+    <value>Open With</value>
+  </data>
+  <data name="SledProjectFilesTreeOpenWithComment" xml:space="preserve">
+    <value>Open with external program</value>
+  </data>
+  <data name="SledProjectFilesTreeRemove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="SledProjectFilesTreeRemoveComment" xml:space="preserve">
+    <value>Remove item</value>
+  </data>
+  <data name="SledProjectFilesTreeRename" xml:space="preserve">
+    <value>Rename</value>
+  </data>
+  <data name="SledProjectFilesTreeRenameComment" xml:space="preserve">
+    <value>Rename item</value>
+  </data>
+  <data name="SledTargetConnectionErrorNegotiating" xml:space="preserve">
+    <value>Debug: Negotiation timed out</value>
+  </data>
+  <data name="SledFile" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="SledLanguagePluginLoaded" xml:space="preserve">
+    <value>Language Plugin: Loaded %s0 (%s1)</value>
+  </data>
+  <data name="SledCommandFindReplaceRepeatLastSearchUpWithoutGui" xml:space="preserve">
+    <value>Repeat Last Search Up Without Using GUI</value>
+  </data>
+  <data name="SledCommandFindReplaceRepeatLastSearchUpWithoutGuiComment" xml:space="preserve">
+    <value>Repeat the last performed search searching up and without using the GUI</value>
+  </data>
+  <data name="SledCommandFindReplaceFindNextInstanceOfSelectedTextUpWithoutGUIComment" xml:space="preserve">
+    <value>Find the next instance of the currently selected text searching up without using the GUI</value>
+  </data>
+  <data name="SledCommandFindReplaceFindNextInstanceOfSelectedTextUpWithoutGUI" xml:space="preserve">
+    <value>Find Next Instance of Selected Text Up Without GUI</value>
+  </data>
+</root>

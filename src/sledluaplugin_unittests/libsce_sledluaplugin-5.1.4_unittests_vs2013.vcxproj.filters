@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- wws_premake -->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="..">
+      <UniqueIdentifier>{61705900-4DFC-870B-B6AA-880BA255880B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\..">
+      <UniqueIdentifier>{CC6E590B-3883-81BC-0105-251C6DD87DED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\..\..">
+      <UniqueIdentifier>{57597B35-4326-D640-6C3F-C4E8586B0BCF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\..\..\unittest-cpp">
+      <UniqueIdentifier>{96C18FAD-022E-4BA8-CB21-E305374D6D10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\..\..\unittest-cpp\UnitTest++">
+      <UniqueIdentifier>{5BB7E752-4708-D394-706C-C1565C1C66FE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\..\..\unittest-cpp\UnitTest++\Win32">
+      <UniqueIdentifier>{7DC78C56-6919-6446-5238-A1563E297D2F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\..\wws_lua">
+      <UniqueIdentifier>{7DA566E6-E965-E21C-B2A0-2B9A1E2027F9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\..\wws_lua\extras">
+      <UniqueIdentifier>{233047D8-0FBF-D0A1-B8DD-E49CA44BE147}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\..\wws_lua\extras\Lua.Utilities">
+      <UniqueIdentifier>{7E868463-6AC2-87CD-D3D4-9FC4BF2F30E8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\sledcore">
+      <UniqueIdentifier>{E139D88C-4DEF-5082-D6E3-4A5942984786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\sledcore\windows">
+      <UniqueIdentifier>{3BCDB520-A72E-932E-309C-D9E09CFCC9ED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{C196CD9C-2D76-4C38-368E-D70EA2ECB299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{56EB95D1-428D-C0A7-2B48-D4FB178947F8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\AssertException.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\CheckMacros.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\Checks.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\CompositeTestReporter.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\Config.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\CurrentTest.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\DeferredTestReporter.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\DeferredTestResult.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\ExceptionMacros.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\ExecuteTest.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\HelperMacros.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\MemoryOutStream.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\ReportAssert.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\ReportAssertImpl.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\Test.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\TestDetails.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\TestList.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\TestMacros.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\TestReporter.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\TestReporterStdout.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\TestResults.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\TestRunner.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\TestSuite.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\TimeConstraint.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\TimeHelpers.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\UnitTest++.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\UnitTestPP.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\Win32\TimeHelpers.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\unittest-cpp\UnitTest++\XmlTestReporter.h">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wws_lua\extras\Lua.Utilities\LuaInterface.h">
+      <Filter>..\..\wws_lua\extras\Lua.Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\assert.h">
+      <Filter>..\sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\base_types.h">
+      <Filter>..\sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\common.h">
+      <Filter>..\sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\datetime.h">
+      <Filter>..\sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\memory.h">
+      <Filter>..\sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\mutex.h">
+      <Filter>..\sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\sleep.h">
+      <Filter>..\sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\socket.h">
+      <Filter>..\sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\target_macros.h">
+      <Filter>..\sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\thread.h">
+      <Filter>..\sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\windows\mutex_windows.h">
+      <Filter>..\sledcore\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\windows\socket_windows.h">
+      <Filter>..\sledcore\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\windows\thread_windows.h">
+      <Filter>..\sledcore\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sleddebugger_unittests\scoped_network.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="logstealer.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\AssertException.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\Checks.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\CompositeTestReporter.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\CurrentTest.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\DeferredTestReporter.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\DeferredTestResult.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\MemoryOutStream.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\ReportAssert.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\Test.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\TestDetails.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\TestList.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\TestReporter.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\TestReporterStdout.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\TestResults.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\TestRunner.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\TimeConstraint.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\Win32\TimeHelpers.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\unittest-cpp\UnitTest++\XmlTestReporter.cpp">
+      <Filter>..\..\..\unittest-cpp\UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wws_lua\extras\Lua.Utilities\LuaInterface-5.1.4.cpp">
+      <Filter>..\..\wws_lua\extras\Lua.Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sleddebugger_unittests\scoped_network.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="test_breakpoint.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="test_luaplugin.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="test_luastateparams.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="test_memtraceparams.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="test_profilestack.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="test_stackreconciler.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

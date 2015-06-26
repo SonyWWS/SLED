@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SledProjectFiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="libsce_testtarget_5.1.4_sample" assetdirectory="." guid="a10e930b-c358-4d5d-83cf-9cedda80f139" xmlns="sled">
+	<Files name="libsce_testtarget_script1.lua" path="libsce_testtarget_script1.lua" guid="cb9c5f84-8755-455d-b762-61f2679fa803" />
+	<Files name="libsce_testtarget_script2.lua" path="libsce_testtarget_script2.lua" guid="c3de7e3b-effa-4e83-b598-40fb0c72d21e" />
+</SledProjectFiles>

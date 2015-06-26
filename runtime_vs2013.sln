@@ -1,0 +1,246 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsce_sleddebugger", "src\sleddebugger\libsce_sleddebugger_vs2013.vcxproj", "{C3E72BF5-72EE-460B-AC15-1D1234130406}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsce_sleddebugger_unittests", "src\sleddebugger_unittests\libsce_sleddebugger_unittests_vs2013.vcxproj", "{12343516-CCDB-4230-B433-B01234342322}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C3E72BF5-72EE-460B-AC15-1D1234130406} = {C3E72BF5-72EE-460B-AC15-1D1234130406}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua-5.1.4", "wws_lua\lua-5.1.4\build\lua-5.1.4\lua-5.1.4_vs2013.vcxproj", "{C3234523-74BB-4EEB-AC15-1D1234130406}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsce_sledluaplugin-5.1.4", "src\sledluaplugin\libsce_sledluaplugin-5.1.4_vs2013.vcxproj", "{C3E72BF5-432B-460B-AC15-1EB234123416}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua-5.2.3", "wws_lua\lua-5.2.3\build\lua-5.2.3\lua-5.2.3_vs2013.vcxproj", "{DFE31890-74BB-4EEB-AC15-1D003211FED6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsce_sledluaplugin-5.2.3", "src\sledluaplugin\libsce_sledluaplugin-5.2.3_vs2013.vcxproj", "{C3E72BF5-EED1-460B-AC15-1ABCDE123416}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsce_sledluaplugin-5.1.4_unittests", "src\sledluaplugin_unittests\libsce_sledluaplugin-5.1.4_unittests_vs2013.vcxproj", "{124234EE-AAAB-4BB0-B433-B01234118790}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C3E72BF5-432B-460B-AC15-1EB234123416} = {C3E72BF5-432B-460B-AC15-1EB234123416}
+		{C3234523-74BB-4EEB-AC15-1D1234130406} = {C3234523-74BB-4EEB-AC15-1D1234130406}
+		{C3E72BF5-72EE-460B-AC15-1D1234130406} = {C3E72BF5-72EE-460B-AC15-1D1234130406}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsce_sledluaplugin-5.2.3_unittests", "src\sledluaplugin_unittests\libsce_sledluaplugin-5.2.3_unittests_vs2013.vcxproj", "{124234EE-EED1-8329-B433-B01234118790}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416} = {C3E72BF5-EED1-460B-AC15-1ABCDE123416}
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6} = {DFE31890-74BB-4EEB-AC15-1D003211FED6}
+		{C3E72BF5-72EE-460B-AC15-1D1234130406} = {C3E72BF5-72EE-460B-AC15-1D1234130406}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsce_testsimple-5.1.4_sample", "src\sledluaplugin_TestSimple\libsce_testsimple-5.1.4_sample_vs2013.vcxproj", "{1223423A-2390-43F3-B433-B232456FECAB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C3E72BF5-432B-460B-AC15-1EB234123416} = {C3E72BF5-432B-460B-AC15-1EB234123416}
+		{C3234523-74BB-4EEB-AC15-1D1234130406} = {C3234523-74BB-4EEB-AC15-1D1234130406}
+		{C3E72BF5-72EE-460B-AC15-1D1234130406} = {C3E72BF5-72EE-460B-AC15-1D1234130406}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsce_testtarget-5.1.4_sample", "src\sledluaplugin_TestTarget\libsce_testtarget-5.1.4_sample_vs2013.vcxproj", "{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C3E72BF5-432B-460B-AC15-1EB234123416} = {C3E72BF5-432B-460B-AC15-1EB234123416}
+		{C3234523-74BB-4EEB-AC15-1D1234130406} = {C3234523-74BB-4EEB-AC15-1D1234130406}
+		{C3E72BF5-72EE-460B-AC15-1D1234130406} = {C3E72BF5-72EE-460B-AC15-1D1234130406}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsce_testtarget-5.2.3_sample", "src\sledluaplugin_TestTarget\libsce_testtarget-5.2.3_sample_vs2013.vcxproj", "{12FEFEFE-EED1-2BB0-B433-B0124356980A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416} = {C3E72BF5-EED1-460B-AC15-1ABCDE123416}
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6} = {DFE31890-74BB-4EEB-AC15-1D003211FED6}
+		{C3E72BF5-72EE-460B-AC15-1D1234130406} = {C3E72BF5-72EE-460B-AC15-1D1234130406}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 Static DCRT = Debug|Win32 Static DCRT
+		Debug|Win32 Static SCRT = Debug|Win32 Static SCRT
+		Debug|Win64 Static DCRT = Debug|Win64 Static DCRT
+		Debug|Win64 Static SCRT = Debug|Win64 Static SCRT
+		Release|Win32 Static DCRT = Release|Win32 Static DCRT
+		Release|Win32 Static SCRT = Release|Win32 Static SCRT
+		Release|Win64 Static DCRT = Release|Win64 Static DCRT
+		Release|Win64 Static SCRT = Release|Win64 Static SCRT
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Debug|Win32 Static DCRT.ActiveCfg = Debug Win32 Static DCRT|Win32
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Debug|Win32 Static DCRT.Build.0 = Debug Win32 Static DCRT|Win32
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Debug|Win32 Static SCRT.ActiveCfg = Debug Win32 Static SCRT|Win32
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Debug|Win32 Static SCRT.Build.0 = Debug Win32 Static SCRT|Win32
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Debug|Win64 Static DCRT.ActiveCfg = Debug Win64 Static DCRT|x64
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Debug|Win64 Static DCRT.Build.0 = Debug Win64 Static DCRT|x64
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Debug|Win64 Static SCRT.ActiveCfg = Debug Win64 Static SCRT|x64
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Debug|Win64 Static SCRT.Build.0 = Debug Win64 Static SCRT|x64
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Release|Win32 Static DCRT.ActiveCfg = Release Win32 Static DCRT|Win32
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Release|Win32 Static DCRT.Build.0 = Release Win32 Static DCRT|Win32
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Release|Win32 Static SCRT.ActiveCfg = Release Win32 Static SCRT|Win32
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Release|Win32 Static SCRT.Build.0 = Release Win32 Static SCRT|Win32
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Release|Win64 Static DCRT.ActiveCfg = Release Win64 Static DCRT|x64
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Release|Win64 Static DCRT.Build.0 = Release Win64 Static DCRT|x64
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Release|Win64 Static SCRT.ActiveCfg = Release Win64 Static SCRT|x64
+		{C3E72BF5-72EE-460B-AC15-1D1234130406}.Release|Win64 Static SCRT.Build.0 = Release Win64 Static SCRT|x64
+		{12343516-CCDB-4230-B433-B01234342322}.Debug|Win32 Static DCRT.ActiveCfg = Debug Win32 Static DCRT|Win32
+		{12343516-CCDB-4230-B433-B01234342322}.Debug|Win32 Static DCRT.Build.0 = Debug Win32 Static DCRT|Win32
+		{12343516-CCDB-4230-B433-B01234342322}.Debug|Win32 Static SCRT.ActiveCfg = Debug Win32 Static SCRT|Win32
+		{12343516-CCDB-4230-B433-B01234342322}.Debug|Win32 Static SCRT.Build.0 = Debug Win32 Static SCRT|Win32
+		{12343516-CCDB-4230-B433-B01234342322}.Debug|Win64 Static DCRT.ActiveCfg = Debug Win64 Static DCRT|x64
+		{12343516-CCDB-4230-B433-B01234342322}.Debug|Win64 Static DCRT.Build.0 = Debug Win64 Static DCRT|x64
+		{12343516-CCDB-4230-B433-B01234342322}.Debug|Win64 Static SCRT.ActiveCfg = Debug Win64 Static SCRT|x64
+		{12343516-CCDB-4230-B433-B01234342322}.Debug|Win64 Static SCRT.Build.0 = Debug Win64 Static SCRT|x64
+		{12343516-CCDB-4230-B433-B01234342322}.Release|Win32 Static DCRT.ActiveCfg = Release Win32 Static DCRT|Win32
+		{12343516-CCDB-4230-B433-B01234342322}.Release|Win32 Static DCRT.Build.0 = Release Win32 Static DCRT|Win32
+		{12343516-CCDB-4230-B433-B01234342322}.Release|Win32 Static SCRT.ActiveCfg = Release Win32 Static SCRT|Win32
+		{12343516-CCDB-4230-B433-B01234342322}.Release|Win32 Static SCRT.Build.0 = Release Win32 Static SCRT|Win32
+		{12343516-CCDB-4230-B433-B01234342322}.Release|Win64 Static DCRT.ActiveCfg = Release Win64 Static DCRT|x64
+		{12343516-CCDB-4230-B433-B01234342322}.Release|Win64 Static DCRT.Build.0 = Release Win64 Static DCRT|x64
+		{12343516-CCDB-4230-B433-B01234342322}.Release|Win64 Static SCRT.ActiveCfg = Release Win64 Static SCRT|x64
+		{12343516-CCDB-4230-B433-B01234342322}.Release|Win64 Static SCRT.Build.0 = Release Win64 Static SCRT|x64
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Debug|Win32 Static DCRT.ActiveCfg = Debug Win32 Static DCRT|Win32
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Debug|Win32 Static DCRT.Build.0 = Debug Win32 Static DCRT|Win32
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Debug|Win32 Static SCRT.ActiveCfg = Debug Win32 Static SCRT|Win32
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Debug|Win32 Static SCRT.Build.0 = Debug Win32 Static SCRT|Win32
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Debug|Win64 Static DCRT.ActiveCfg = Debug Win64 Static DCRT|x64
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Debug|Win64 Static DCRT.Build.0 = Debug Win64 Static DCRT|x64
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Debug|Win64 Static SCRT.ActiveCfg = Debug Win64 Static SCRT|x64
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Debug|Win64 Static SCRT.Build.0 = Debug Win64 Static SCRT|x64
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Release|Win32 Static DCRT.ActiveCfg = Release Win32 Static DCRT|Win32
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Release|Win32 Static DCRT.Build.0 = Release Win32 Static DCRT|Win32
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Release|Win32 Static SCRT.ActiveCfg = Release Win32 Static SCRT|Win32
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Release|Win32 Static SCRT.Build.0 = Release Win32 Static SCRT|Win32
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Release|Win64 Static DCRT.ActiveCfg = Release Win64 Static DCRT|x64
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Release|Win64 Static DCRT.Build.0 = Release Win64 Static DCRT|x64
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Release|Win64 Static SCRT.ActiveCfg = Release Win64 Static SCRT|x64
+		{C3234523-74BB-4EEB-AC15-1D1234130406}.Release|Win64 Static SCRT.Build.0 = Release Win64 Static SCRT|x64
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Debug|Win32 Static DCRT.ActiveCfg = Debug Win32 Static DCRT|Win32
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Debug|Win32 Static DCRT.Build.0 = Debug Win32 Static DCRT|Win32
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Debug|Win32 Static SCRT.ActiveCfg = Debug Win32 Static SCRT|Win32
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Debug|Win32 Static SCRT.Build.0 = Debug Win32 Static SCRT|Win32
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Debug|Win64 Static DCRT.ActiveCfg = Debug Win64 Static DCRT|x64
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Debug|Win64 Static DCRT.Build.0 = Debug Win64 Static DCRT|x64
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Debug|Win64 Static SCRT.ActiveCfg = Debug Win64 Static SCRT|x64
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Debug|Win64 Static SCRT.Build.0 = Debug Win64 Static SCRT|x64
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Release|Win32 Static DCRT.ActiveCfg = Release Win32 Static DCRT|Win32
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Release|Win32 Static DCRT.Build.0 = Release Win32 Static DCRT|Win32
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Release|Win32 Static SCRT.ActiveCfg = Release Win32 Static SCRT|Win32
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Release|Win32 Static SCRT.Build.0 = Release Win32 Static SCRT|Win32
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Release|Win64 Static DCRT.ActiveCfg = Release Win64 Static DCRT|x64
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Release|Win64 Static DCRT.Build.0 = Release Win64 Static DCRT|x64
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Release|Win64 Static SCRT.ActiveCfg = Release Win64 Static SCRT|x64
+		{C3E72BF5-432B-460B-AC15-1EB234123416}.Release|Win64 Static SCRT.Build.0 = Release Win64 Static SCRT|x64
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win32 Static DCRT.ActiveCfg = Debug Win32 Static DCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win32 Static DCRT.Build.0 = Debug Win32 Static DCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win32 Static SCRT.ActiveCfg = Debug Win32 Static SCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win32 Static SCRT.Build.0 = Debug Win32 Static SCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win64 Static DCRT.ActiveCfg = Debug Win64 Static DCRT|x64
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win64 Static DCRT.Build.0 = Debug Win64 Static DCRT|x64
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win64 Static SCRT.ActiveCfg = Debug Win64 Static SCRT|x64
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win64 Static SCRT.Build.0 = Debug Win64 Static SCRT|x64
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win32 Static DCRT.ActiveCfg = Release Win32 Static DCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win32 Static DCRT.Build.0 = Release Win32 Static DCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win32 Static SCRT.ActiveCfg = Release Win32 Static SCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win32 Static SCRT.Build.0 = Release Win32 Static SCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win64 Static DCRT.ActiveCfg = Release Win64 Static DCRT|x64
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win64 Static DCRT.Build.0 = Release Win64 Static DCRT|x64
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win64 Static SCRT.ActiveCfg = Release Win64 Static SCRT|x64
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win64 Static SCRT.Build.0 = Release Win64 Static SCRT|x64
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Debug|Win32 Static DCRT.ActiveCfg = Debug Win32 Static DCRT|Win32
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Debug|Win32 Static DCRT.Build.0 = Debug Win32 Static DCRT|Win32
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Debug|Win32 Static SCRT.ActiveCfg = Debug Win32 Static SCRT|Win32
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Debug|Win32 Static SCRT.Build.0 = Debug Win32 Static SCRT|Win32
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Debug|Win64 Static DCRT.ActiveCfg = Debug Win64 Static DCRT|x64
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Debug|Win64 Static DCRT.Build.0 = Debug Win64 Static DCRT|x64
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Debug|Win64 Static SCRT.ActiveCfg = Debug Win64 Static SCRT|x64
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Debug|Win64 Static SCRT.Build.0 = Debug Win64 Static SCRT|x64
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Release|Win32 Static DCRT.ActiveCfg = Release Win32 Static DCRT|Win32
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Release|Win32 Static DCRT.Build.0 = Release Win32 Static DCRT|Win32
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Release|Win32 Static SCRT.ActiveCfg = Release Win32 Static SCRT|Win32
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Release|Win32 Static SCRT.Build.0 = Release Win32 Static SCRT|Win32
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Release|Win64 Static DCRT.ActiveCfg = Release Win64 Static DCRT|x64
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Release|Win64 Static DCRT.Build.0 = Release Win64 Static DCRT|x64
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Release|Win64 Static SCRT.ActiveCfg = Release Win64 Static SCRT|x64
+		{C3E72BF5-EED1-460B-AC15-1ABCDE123416}.Release|Win64 Static SCRT.Build.0 = Release Win64 Static SCRT|x64
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Debug|Win32 Static DCRT.ActiveCfg = Debug Win32 Static DCRT|Win32
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Debug|Win32 Static DCRT.Build.0 = Debug Win32 Static DCRT|Win32
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Debug|Win32 Static SCRT.ActiveCfg = Debug Win32 Static SCRT|Win32
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Debug|Win32 Static SCRT.Build.0 = Debug Win32 Static SCRT|Win32
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Debug|Win64 Static DCRT.ActiveCfg = Debug Win64 Static DCRT|x64
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Debug|Win64 Static DCRT.Build.0 = Debug Win64 Static DCRT|x64
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Debug|Win64 Static SCRT.ActiveCfg = Debug Win64 Static SCRT|x64
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Debug|Win64 Static SCRT.Build.0 = Debug Win64 Static SCRT|x64
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Release|Win32 Static DCRT.ActiveCfg = Release Win32 Static DCRT|Win32
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Release|Win32 Static DCRT.Build.0 = Release Win32 Static DCRT|Win32
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Release|Win32 Static SCRT.ActiveCfg = Release Win32 Static SCRT|Win32
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Release|Win32 Static SCRT.Build.0 = Release Win32 Static SCRT|Win32
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Release|Win64 Static DCRT.ActiveCfg = Release Win64 Static DCRT|x64
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Release|Win64 Static DCRT.Build.0 = Release Win64 Static DCRT|x64
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Release|Win64 Static SCRT.ActiveCfg = Release Win64 Static SCRT|x64
+		{124234EE-AAAB-4BB0-B433-B01234118790}.Release|Win64 Static SCRT.Build.0 = Release Win64 Static SCRT|x64
+		{124234EE-EED1-8329-B433-B01234118790}.Debug|Win32 Static DCRT.ActiveCfg = Debug Win32 Static DCRT|Win32
+		{124234EE-EED1-8329-B433-B01234118790}.Debug|Win32 Static DCRT.Build.0 = Debug Win32 Static DCRT|Win32
+		{124234EE-EED1-8329-B433-B01234118790}.Debug|Win32 Static SCRT.ActiveCfg = Debug Win32 Static SCRT|Win32
+		{124234EE-EED1-8329-B433-B01234118790}.Debug|Win32 Static SCRT.Build.0 = Debug Win32 Static SCRT|Win32
+		{124234EE-EED1-8329-B433-B01234118790}.Debug|Win64 Static DCRT.ActiveCfg = Debug Win64 Static DCRT|x64
+		{124234EE-EED1-8329-B433-B01234118790}.Debug|Win64 Static DCRT.Build.0 = Debug Win64 Static DCRT|x64
+		{124234EE-EED1-8329-B433-B01234118790}.Debug|Win64 Static SCRT.ActiveCfg = Debug Win64 Static SCRT|x64
+		{124234EE-EED1-8329-B433-B01234118790}.Debug|Win64 Static SCRT.Build.0 = Debug Win64 Static SCRT|x64
+		{124234EE-EED1-8329-B433-B01234118790}.Release|Win32 Static DCRT.ActiveCfg = Release Win32 Static DCRT|Win32
+		{124234EE-EED1-8329-B433-B01234118790}.Release|Win32 Static DCRT.Build.0 = Release Win32 Static DCRT|Win32
+		{124234EE-EED1-8329-B433-B01234118790}.Release|Win32 Static SCRT.ActiveCfg = Release Win32 Static SCRT|Win32
+		{124234EE-EED1-8329-B433-B01234118790}.Release|Win32 Static SCRT.Build.0 = Release Win32 Static SCRT|Win32
+		{124234EE-EED1-8329-B433-B01234118790}.Release|Win64 Static DCRT.ActiveCfg = Release Win64 Static DCRT|x64
+		{124234EE-EED1-8329-B433-B01234118790}.Release|Win64 Static DCRT.Build.0 = Release Win64 Static DCRT|x64
+		{124234EE-EED1-8329-B433-B01234118790}.Release|Win64 Static SCRT.ActiveCfg = Release Win64 Static SCRT|x64
+		{124234EE-EED1-8329-B433-B01234118790}.Release|Win64 Static SCRT.Build.0 = Release Win64 Static SCRT|x64
+		{1223423A-2390-43F3-B433-B232456FECAB}.Debug|Win32 Static DCRT.ActiveCfg = Debug Win32 Static DCRT|Win32
+		{1223423A-2390-43F3-B433-B232456FECAB}.Debug|Win32 Static DCRT.Build.0 = Debug Win32 Static DCRT|Win32
+		{1223423A-2390-43F3-B433-B232456FECAB}.Debug|Win32 Static SCRT.ActiveCfg = Debug Win32 Static SCRT|Win32
+		{1223423A-2390-43F3-B433-B232456FECAB}.Debug|Win32 Static SCRT.Build.0 = Debug Win32 Static SCRT|Win32
+		{1223423A-2390-43F3-B433-B232456FECAB}.Debug|Win64 Static DCRT.ActiveCfg = Debug Win64 Static DCRT|x64
+		{1223423A-2390-43F3-B433-B232456FECAB}.Debug|Win64 Static DCRT.Build.0 = Debug Win64 Static DCRT|x64
+		{1223423A-2390-43F3-B433-B232456FECAB}.Debug|Win64 Static SCRT.ActiveCfg = Debug Win64 Static SCRT|x64
+		{1223423A-2390-43F3-B433-B232456FECAB}.Debug|Win64 Static SCRT.Build.0 = Debug Win64 Static SCRT|x64
+		{1223423A-2390-43F3-B433-B232456FECAB}.Release|Win32 Static DCRT.ActiveCfg = Release Win32 Static DCRT|Win32
+		{1223423A-2390-43F3-B433-B232456FECAB}.Release|Win32 Static DCRT.Build.0 = Release Win32 Static DCRT|Win32
+		{1223423A-2390-43F3-B433-B232456FECAB}.Release|Win32 Static SCRT.ActiveCfg = Release Win32 Static SCRT|Win32
+		{1223423A-2390-43F3-B433-B232456FECAB}.Release|Win32 Static SCRT.Build.0 = Release Win32 Static SCRT|Win32
+		{1223423A-2390-43F3-B433-B232456FECAB}.Release|Win64 Static DCRT.ActiveCfg = Release Win64 Static DCRT|x64
+		{1223423A-2390-43F3-B433-B232456FECAB}.Release|Win64 Static DCRT.Build.0 = Release Win64 Static DCRT|x64
+		{1223423A-2390-43F3-B433-B232456FECAB}.Release|Win64 Static SCRT.ActiveCfg = Release Win64 Static SCRT|x64
+		{1223423A-2390-43F3-B433-B232456FECAB}.Release|Win64 Static SCRT.Build.0 = Release Win64 Static SCRT|x64
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Debug|Win32 Static DCRT.ActiveCfg = Debug Win32 Static DCRT|Win32
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Debug|Win32 Static DCRT.Build.0 = Debug Win32 Static DCRT|Win32
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Debug|Win32 Static SCRT.ActiveCfg = Debug Win32 Static SCRT|Win32
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Debug|Win32 Static SCRT.Build.0 = Debug Win32 Static SCRT|Win32
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Debug|Win64 Static DCRT.ActiveCfg = Debug Win64 Static DCRT|x64
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Debug|Win64 Static DCRT.Build.0 = Debug Win64 Static DCRT|x64
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Debug|Win64 Static SCRT.ActiveCfg = Debug Win64 Static SCRT|x64
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Debug|Win64 Static SCRT.Build.0 = Debug Win64 Static SCRT|x64
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Release|Win32 Static DCRT.ActiveCfg = Release Win32 Static DCRT|Win32
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Release|Win32 Static DCRT.Build.0 = Release Win32 Static DCRT|Win32
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Release|Win32 Static SCRT.ActiveCfg = Release Win32 Static SCRT|Win32
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Release|Win32 Static SCRT.Build.0 = Release Win32 Static SCRT|Win32
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Release|Win64 Static DCRT.ActiveCfg = Release Win64 Static DCRT|x64
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Release|Win64 Static DCRT.Build.0 = Release Win64 Static DCRT|x64
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Release|Win64 Static SCRT.ActiveCfg = Release Win64 Static SCRT|x64
+		{12FEFEFE-CCCD-4BB0-B433-B0123AAAAAAA}.Release|Win64 Static SCRT.Build.0 = Release Win64 Static SCRT|x64
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Debug|Win32 Static DCRT.ActiveCfg = Debug Win32 Static DCRT|Win32
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Debug|Win32 Static DCRT.Build.0 = Debug Win32 Static DCRT|Win32
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Debug|Win32 Static SCRT.ActiveCfg = Debug Win32 Static SCRT|Win32
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Debug|Win32 Static SCRT.Build.0 = Debug Win32 Static SCRT|Win32
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Debug|Win64 Static DCRT.ActiveCfg = Debug Win64 Static DCRT|x64
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Debug|Win64 Static DCRT.Build.0 = Debug Win64 Static DCRT|x64
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Debug|Win64 Static SCRT.ActiveCfg = Debug Win64 Static SCRT|x64
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Debug|Win64 Static SCRT.Build.0 = Debug Win64 Static SCRT|x64
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Release|Win32 Static DCRT.ActiveCfg = Release Win32 Static DCRT|Win32
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Release|Win32 Static DCRT.Build.0 = Release Win32 Static DCRT|Win32
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Release|Win32 Static SCRT.ActiveCfg = Release Win32 Static SCRT|Win32
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Release|Win32 Static SCRT.Build.0 = Release Win32 Static SCRT|Win32
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Release|Win64 Static DCRT.ActiveCfg = Release Win64 Static DCRT|x64
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Release|Win64 Static DCRT.Build.0 = Release Win64 Static DCRT|x64
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Release|Win64 Static SCRT.ActiveCfg = Release Win64 Static SCRT|x64
+		{12FEFEFE-EED1-2BB0-B433-B0124356980A}.Release|Win64 Static SCRT.Build.0 = Release Win64 Static SCRT|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

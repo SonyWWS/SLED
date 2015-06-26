@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3B746BA4-B3A5-4286-95ED-B4EBCE1E933E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sce.Sled</RootNamespace>
+    <AssemblyName>Sled</AssemblyName>
+    <StartupObject>Sce.Sled.Program</StartupObject>
+    <ApplicationIcon>Sled.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\sce_sled\SLED.vs2013\Debug\</OutputPath>
+    <IntermediateOutputPath>obj\Debug.vs2013\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\sce_sled\SLED.vs2013\</OutputPath>
+    <IntermediateOutputPath>obj\Release.vs2013\</IntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Compile Include="Application.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Localization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SledAboutService.cs" />
+    <Compile Include="SledBreakpointConditionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledBreakpointConditionForm.Designer.cs">
+      <DependentUpon>SledBreakpointConditionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledBreakpointEditor.cs" />
+    <Compile Include="SledBreakpointService.cs" />
+    <Compile Include="SledCheckEventsFiredService.cs" />
+    <Compile Include="SledDebugBreakpointService.cs" />
+    <Compile Include="SledDebugFileService.cs" />
+    <Compile Include="SledDebugFlashWindowService.cs" />
+    <Compile Include="SledDebugHeartbeatService.cs" />
+    <Compile Include="SledDebugNegotiationTimeoutService.cs" />
+    <Compile Include="SledDebugScriptCacheService.cs" />
+    <Compile Include="SledDebugService.cs" />
+    <Compile Include="SledDirectoryInfoService.cs" />
+    <Compile Include="SledDocument.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SledDocumentService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SledDynamicPluginService.cs" />
+    <Compile Include="SledFileExtensionService.cs" />
+    <Compile Include="SledFileWatcherService.cs" />
+    <Compile Include="SledFindAndReplaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledFindAndReplaceForm.Designer.cs">
+      <DependentUpon>SledFindAndReplaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledFindAndReplaceForm_FindInFiles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SledFindAndReplaceForm_FindInFiles.Designer.cs">
+      <DependentUpon>SledFindAndReplaceForm_FindInFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledFindAndReplaceForm_QuickFind.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SledFindAndReplaceForm_QuickFind.Designer.cs">
+      <DependentUpon>SledFindAndReplaceForm_QuickFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledFindAndReplaceForm_QuickReplace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SledFindAndReplaceForm_QuickReplace.Designer.cs">
+      <DependentUpon>SledFindAndReplaceForm_QuickReplace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledFindAndReplaceForm_ReplaceInFiles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SledFindAndReplaceForm_ReplaceInFiles.Designer.cs">
+      <DependentUpon>SledFindAndReplaceForm_ReplaceInFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledFindAndReplaceService.cs" />
+    <Compile Include="SledFindAndReplaceSettings.cs" />
+    <Compile Include="SledGotoService.cs" />
+    <Compile Include="SledDebugFreezeService.cs" />
+    <Compile Include="SledLanguageParserService.cs" />
+    <Compile Include="SledLanguagePluginService.cs" />
+    <Compile Include="SledLibCrashReportNetWrapper.cs" />
+    <Compile Include="SledModifiedFilesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledModifiedFilesForm.designer.cs">
+      <DependentUpon>SledModifiedFilesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledModifiedFilesFormService.cs" />
+    <Compile Include="SledModifiedProjectFormService.cs" />
+    <Compile Include="SledNetworkPluginService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SledProjectFileGathererService.cs" />
+    <Compile Include="SledProjectFilesDiskViewEditor.cs" />
+    <Compile Include="SledProjectFilesTreeEditor.cs">
+    </Compile>
+    <Compile Include="SledProjectModifiedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledProjectModifiedForm.Designer.cs">
+      <DependentUpon>SledProjectModifiedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledProjectWatcherService.cs" />
+    <Compile Include="SledReadOnlyDocResolutionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledReadOnlyDocResolutionForm.Designer.cs">
+      <DependentUpon>SledReadOnlyDocResolutionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledSourceControlHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledSourceControlHistoryForm.Designer.cs">
+      <DependentUpon>SledSourceControlHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledSourceControlResolutionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledSourceControlResolutionForm.Designer.cs">
+      <DependentUpon>SledSourceControlResolutionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledSourceControlService.cs" />
+    <Compile Include="SledSyntaxCheckerService.cs" />
+    <Compile Include="SledSyntaxErrorsEditor.cs" />
+    <Compile Include="SledTargetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledTargetForm.Designer.cs">
+      <DependentUpon>SledTargetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledTargetService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SledTargetsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledTargetsForm.Designer.cs">
+      <DependentUpon>SledTargetsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledTitleBarTextService.cs" />
+    <Compile Include="SledTTYFilter.cs" />
+    <Compile Include="SledTTYFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledTTYFilterForm.designer.cs">
+      <DependentUpon>SledTTYFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledTTYFilterNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledTTYFilterNameForm.designer.cs">
+      <DependentUpon>SledTTYFilterNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledTtyGui.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SledTtyGui.Designer.cs">
+      <DependentUpon>SledTtyGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SledTtyListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SledTTYService.cs" />
+    <Compile Include="SledVarGotoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SledVarGotoForm.designer.cs">
+      <DependentUpon>SledVarGotoForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\wws_atf\ThirdParty\DockPanelSuite\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EmbeddedResource Include="Resources\About.rtf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Localization.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledBreakpointConditionForm.ja.resx">
+      <DependentUpon>SledBreakpointConditionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledBreakpointConditionForm.resx">
+      <DependentUpon>SledBreakpointConditionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledFindAndReplaceForm.ja.resx">
+      <DependentUpon>SledFindAndReplaceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledFindAndReplaceForm.resx">
+      <DependentUpon>SledFindAndReplaceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledFindAndReplaceForm_FindInFiles.ja.resx">
+      <DependentUpon>SledFindAndReplaceForm_FindInFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledFindAndReplaceForm_FindInFiles.resx">
+      <DependentUpon>SledFindAndReplaceForm_FindInFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledFindAndReplaceForm_QuickFind.ja.resx">
+      <DependentUpon>SledFindAndReplaceForm_QuickFind.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledFindAndReplaceForm_QuickFind.resx">
+      <DependentUpon>SledFindAndReplaceForm_QuickFind.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledFindAndReplaceForm_QuickReplace.ja.resx">
+      <DependentUpon>SledFindAndReplaceForm_QuickReplace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledFindAndReplaceForm_QuickReplace.resx">
+      <DependentUpon>SledFindAndReplaceForm_QuickReplace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledFindAndReplaceForm_ReplaceInFiles.ja.resx">
+      <DependentUpon>SledFindAndReplaceForm_ReplaceInFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledFindAndReplaceForm_ReplaceInFiles.resx">
+      <DependentUpon>SledFindAndReplaceForm_ReplaceInFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledModifiedFilesForm.ja.resx">
+      <DependentUpon>SledModifiedFilesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledModifiedFilesForm.resx">
+      <DependentUpon>SledModifiedFilesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledProjectModifiedForm.resx">
+      <DependentUpon>SledProjectModifiedForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledReadOnlyDocResolutionForm.ja.resx">
+      <DependentUpon>SledReadOnlyDocResolutionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledReadOnlyDocResolutionForm.resx">
+      <DependentUpon>SledReadOnlyDocResolutionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledSourceControlHistoryForm.resx">
+      <DependentUpon>SledSourceControlHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledSourceControlResolutionForm.resx">
+      <DependentUpon>SledSourceControlResolutionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledTargetForm.ja.resx">
+      <DependentUpon>SledTargetForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledTargetForm.resx">
+      <DependentUpon>SledTargetForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledTargetsForm.ja.resx">
+      <DependentUpon>SledTargetsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledTargetsForm.resx">
+      <DependentUpon>SledTargetsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledTTYFilterForm.ja.resx">
+      <DependentUpon>SledTTYFilterForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledTTYFilterForm.resx">
+      <DependentUpon>SledTTYFilterForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledTTYFilterNameForm.ja.resx">
+      <DependentUpon>SledTTYFilterNameForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledTTYFilterNameForm.resx">
+      <DependentUpon>SledTTYFilterNameForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledTtyGui.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SledTtyGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledVarGotoForm.ja.resx">
+      <DependentUpon>SledVarGotoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SledVarGotoForm.resx">
+      <DependentUpon>SledVarGotoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="DefaultSettings.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sled.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>mkdir "$(TargetDir)Doc"
+copy /y "$(ProjectDir)..\..\doc\*.*" "$(TargetDir)Doc\"</PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\wws_atf\Framework\Atf.Core\Atf.Core.vs2010.csproj">
+      <Project>{9D1835B6-D1C2-44BA-BAE1-05C6EC442D2F}</Project>
+      <Name>Atf.Core.vs2010</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\wws_atf\Framework\Atf.Gui.WinForms\Atf.Gui.WinForms.vs2010.csproj">
+      <Project>{7C36A258-9102-420D-B80A-5EB5717644B6}</Project>
+      <Name>Atf.Gui.WinForms.vs2010</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\wws_atf\Framework\Atf.Gui\Atf.Gui.vs2010.csproj">
+      <Project>{4765C2A7-F989-40DB-BC12-FCD67025B93F}</Project>
+      <Name>Atf.Gui.vs2010</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SledCrashReporter\Sled.CrashReporter.vs2013.csproj">
+      <Project>{0351BF6F-509B-4F2C-9B5A-0DB92D5BCBAE}</Project>
+      <Name>Sled.CrashReporter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SledProject\Sled.Project.vs2013.csproj">
+      <Project>{888AE168-8C53-4017-BD61-E74FA80E76EC}</Project>
+      <Name>Sled.Project</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SledShared\Sled.Shared.vs2013.csproj">
+      <Project>{BB7F3AE7-2899-4E1C-90DF-2DD375C4ADD9}</Project>
+      <Name>Sled.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SledSyntaxEditor\Sled.SyntaxEditor.vs2013.csproj">
+      <Project>{0D7B1F12-0EE5-4D7D-B116-C6E97F7A0956}</Project>
+      <Name>Sled.SyntaxEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SledUsageStatistics\Sled.UsageStatistics.vs2013.csproj">
+      <Project>{88EED333-6B68-4202-B1A3-71A64C9C838D}</Project>
+      <Name>Sled.UsageStatistics</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

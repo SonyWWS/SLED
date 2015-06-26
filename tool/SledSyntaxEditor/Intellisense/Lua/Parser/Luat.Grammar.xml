@@ -1,0 +1,2244 @@
+<!--
+
+LUAT LANGUAGE LEXICAL GRAMMAR
+
+GRAMMAR PRODUCTION SYNTAX
+'abc' - Terminal (token) with name "abc"
+"abc" - Non-terminal with name "abc"
+  |   - Alternation
+ ( )  - Grouping
+ [ ]  - Optional
+ { }  - Iteration (zero or more)
+<% %> - User code
+<@ @> - Parameter code
+<? ?> - Conditional code (can be used after a "[", "{", or "|")
+ - Failure match code
+<+ +> - Successful match code
+
+VALID IN CUSTOM CODE ONLY
+IsNonTerminal("abc") - Returns a boolean as to whether the LookAheadToken can start the non-terminal "abc" 
+IsNonTerminal("abc", "this.PeekToken") - Returns a boolean as to whether the specified token can start the non-terminal "abc" 
+
+-->
+<Grammar 
+	LanguageName="Luat" 
+	TypeName="LuatSemanticParser"
+	Namespace="Sce.Sled.SyntaxEditor.Intellisense.Lua.Parser"
+	RootNonTerminal="CompilationUnit"
+	LexicalStateIDTypeName="LuatLexicalStateId"
+	TokenIDTypeName="LuatTokenId"
+	OutputLanguage="C#">
+	<ImportedNamespaces>
+		<ImportedNamespace>System.Collections</ImportedNamespace>
+		<ImportedNamespace>System.Diagnostics</ImportedNamespace>
+		<ImportedNamespace>System.Text</ImportedNamespace>
+		<ImportedNamespace>System.Collections.Generic</ImportedNamespace>
+		<ImportedNamespace>Sce.Sled.SyntaxEditor</ImportedNamespace>
+	</ImportedNamespaces>
+	<LexicalStates>
+		<LexicalState>Default</LexicalState>
+	</LexicalStates>
+	<Tokens>
+		<!-- NOTE: Any changes here need to be made to LuatSyntaxLanguage.GetTokenString -->
+		<Token>Invalid</Token>
+		<Token>DocumentEnd</Token>
+		<Token>LanguageTransitionStart</Token>
+		<Token>LanguageTransitionEnd</Token>
+
+		<Token IsSignificant="false">Whitespace</Token>
+		<Token IsSignificant="false">LineTerminator</Token>
+
+		<Token IsSignificant="false">SingleLineComment</Token>
+		<Token IsSignificant="false">MultiLineComment</Token>
+		
+		<Token>Number</Token>
+		<Token>Identifier</Token>
+		<Token>String</Token>
+
+		<Token IsSignificant="false">KeywordStart</Token>
+		<Token>And</Token>
+		<Token>Break</Token>
+		<Token>Do</Token>
+		<Token>Else</Token>
+		<Token>Elseif</Token>
+		<Token>End</Token>
+		<Token>True</Token>
+		<Token>False</Token>
+		<Token>For</Token>
+		<Token>Function</Token>
+		<Token>If</Token>
+		<Token>In</Token>
+		<Token>Local</Token>
+		<Token>Nil</Token>
+		<Token>Not</Token>
+		<Token>Or</Token>
+		<Token>Repeat</Token>
+		<Token>Return</Token>
+		<Token>Then</Token>
+		<Token>Until</Token>
+		<Token>While</Token>
+		<Token IsSignificant="false">KeywordEnd</Token>
+
+		<Token IsSignificant="false">OperatorOrPunctuatorStart</Token>
+		<Token>Addition</Token>
+		<Token>Subtraction</Token>
+		<Token>Multiplication</Token>
+		<Token>Division</Token>
+		<Token>Modulus</Token>
+		<Token>Hat</Token>
+		<Token>Hash</Token>
+		<Token>Equality</Token>
+		<Token>Inequality</Token>
+		<Token>LessThanEqual</Token>
+		<Token>GreaterThanEqual</Token>
+		<Token>LessThan</Token>
+		<Token>GreaterThan</Token>
+		<Token>Assignment</Token>
+		<Token>OpenParenthesis</Token>
+		<Token>CloseParenthesis</Token>
+		<Token>OpenCurlyBrace</Token>
+		<Token>CloseCurlyBrace</Token>
+		<Token>OpenSquareBracket</Token>
+		<Token>CloseSquareBracket</Token>
+		<Token>SemiColon</Token>
+		<Token>Colon</Token>
+		<Token>Comma</Token>
+		<Token>Dot</Token>
+		<Token>DoubleDot</Token>
+		<Token>TripleDot</Token>
+		
+		<Token IsSignificant="false">OperatorOrPunctuatorEnd</Token>
+
+		<Token>MaxTokenID</Token>		
+	</Tokens>
+	<Ast Generate="true" VisitorPatternSupported="false" Namespace="Sce.Sled.SyntaxEditor.Intellisense.Lua.Parser.AST" NodeTypeEnumTypeName="LuatNodeType">
+		<AstNodes>
+			<AstNode> 
+				<!-- NOTE: No Name attribute on an AstNode element will target the AstNode base class for the language...
+							No attributes or child elements other than the AstNodeDeclarations element are currently recognized for the base node.
+					-->
+				<AstNodeDeclarations><![CDATA[	
+
+					/// <summary>
+					/// Gets the image index that is applicable for displaying this node in a user interface control.
+					/// </summary>
+					/// <value>The image index that is applicable for displaying this node in a user interface control.</value>
+					public override int ImageIndex {
+						get {
+							return (int)ActiproSoftware.Products.SyntaxEditor.IconResource.Keyword;
+						}
+					}
+									
+				]]></AstNodeDeclarations>
+			</AstNode>
+	
+			<!-- 
+			======================================================
+			=================== CompilationUnit ==================
+			======================================================
+			-->
+			<AstNode Name="CompilationUnit" Implements="ICompilationUnit, ISemanticParseData" Inherits="LuatAstNodeBase" Description="A Luat language compilation unit.">
+				<AstNodeProperty PropertyType="AstNode" Name="Block"     Type="BlockStatement" Description="The body." />
+				<AstNodeProperty PropertyType="Simple"  Name="SourceKey" Type="string"         Description="Path to the lua file" />
+				<AstNodeProperty PropertyType="Simple"  Name="Source"    Type="string"         Description="The lua source" />
+				<AstNodeDeclarations Type="Field"><![CDATA[	
+					private bool						hasLanguageTransitions;
+					private ArrayList					syntaxErrors;
+				]]></AstNodeDeclarations>
+				<AstNodeDeclarations><![CDATA[	
+					/// <summary>
+					/// Returns whether an <see cref="CollapsibleNodeOutliningParser"/> should visit the child nodes of the specified <see cref="IAstNode"/>
+					/// to look for collapsible nodes.
+					/// </summary>
+					/// <param name="node">The <see cref="IAstNode"/> to examine.</param>
+					/// <returns>
+					/// <c>true</c> if the child nodes should be visited; otherwise, <c>false</c>.
+					/// </returns>
+					bool ICompilationUnit.ShouldVisitChildNodesForOutlining(IAstNode node) {
+						return true;
+					}
+					
+					/// <summary>
+					/// Adds any extra <see cref="CollapsibleNodeOutliningParserData"/> nodes to the <see cref="CollapsibleNodeOutliningParser"/>,
+					/// such as for comments that should be marked as collapsible.
+					/// </summary>
+					/// <param name="outliningParser">The <see cref="CollapsibleNodeOutliningParser"/> to update.</param>
+					void ICompilationUnit.UpdateOutliningParser(CollapsibleNodeOutliningParser outliningParser) {
+					}
+							
+					/// <summary>
+					/// Gets whether the compilation unit contains errors.
+					/// </summary>
+					/// <value>
+					/// <c>true</c> if the compilation unit contains errors.
+					/// </value>
+					public bool HasErrors { 
+						get {
+							return ((syntaxErrors != null) && (syntaxErrors.Count > 0));
+						}
+					}
+					
+					/// <summary>
+					/// Gets or sets whether the compilation unit contains any language transitions.
+					/// </summary>
+					/// <value>
+					/// <c>true</c> if the compilation unit contains any language transitions; otherwise, <c>false</c>.
+					/// </value>
+					public bool HasLanguageTransitions { 
+						get {
+							return hasLanguageTransitions;
+						}
+						set {
+							hasLanguageTransitions = value;
+						}
+					}
+
+					/// <summary>
+					/// Gets whether the AST node is a language root node.
+					/// </summary>
+					/// <value>
+					/// <c>true</c> if the AST node is a language root node; otherwise, <c>false</c>.
+					/// </value>
+					/// <remarks>
+					/// When in a scenario where AST node trees from multiple languages have been merged together,
+					/// it is useful to identify where child language AST node trees begin within their parents.
+					/// </remarks>
+					public override bool IsLanguageRoot {
+						get {
+							return true;
+						}
+					}
+					
+					/// <summary>
+					/// Gets the collection of syntax errors that were found in the compilation unit.
+					/// </summary>
+					/// <value>The collection of syntax errors that were found in the compilation unit.</value>
+					public IList SyntaxErrors {
+						get {
+							if (syntaxErrors == null)
+								syntaxErrors = new ArrayList();
+
+							return syntaxErrors;
+						}
+					}
+					
+				]]></AstNodeDeclarations>
+			</AstNode>
+
+			
+			<!-- 
+			======================================================
+			====================== Statement =====================
+			======================================================
+			-->
+			<AstNode Name="Statement" IsAbstract="true" Inherits="LuatAstNodeBase" Description="The base class for a statement." />
+			
+			
+			<!-- 
+			======================================================
+			================= IncompleteStatement ================
+			======================================================
+			-->
+			<AstNode Name="IncompleteStatement" Inherits="Statement" Description="An incomplete statement.">
+				<AstNodeProperty PropertyType="AstNode" Name="Body" Type="IAstNode" Description="The partial statement." />
+				<AstNodeDeclarations Type="Constructor"><![CDATA[	
+					public IncompleteStatement( IAstNode body, TextRange textTange ) : this( textTange ) 
+					{
+						if ( null != body )
+						{
+							body.StartOffset = textTange.StartOffset;
+							body.EndOffset   = textTange.EndOffset;
+						}
+						this.Body = body;
+					}
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			=================== BreakStatement ===================
+			======================================================
+			-->
+			<AstNode Name="BreakStatement" Inherits="Statement" Description="A return statement.">
+			</AstNode>
+			
+			<!-- 
+			======================================================
+			================= AssignmentStatement ================
+			======================================================
+			-->
+			<AstNode Name="AssignmentStatement" Inherits="Statement" Description="An assignment statement.">
+				<AstNodeProperty PropertyType="AstNodeList" Name="Variables"             Description="The variables." />
+				<AstNodeProperty PropertyType="AstNodeList" Name="Values"                Description="The values." />
+				<AstNodeProperty PropertyType="Simple"      Name="IsLocal"   Type="bool" Description="Is the assignment a local declaration?" />
+				<AstNodeDeclarations><![CDATA[	
+
+					/// <summary>
+					/// Gets text representing the node that can be used for display, such as in a document outline.
+					/// </summary>
+					/// <value>Text representing the node that can be used for display, such as in a document outline.</value>
+					public override string DisplayText {
+						get {
+							StringBuilder text = new StringBuilder();
+							
+							int variableCount = this.Variables.Count;
+							for ( int i = 0; i < variableCount; ++i )
+							{
+								if ( i > 0 ) { text.Append( ", " ); }
+								text.Append( this.Variables[i].DisplayText );
+								text.Append( " = " );
+								text.Append( (i < this.Values.Count) ? this.Values[i].DisplayText : "nil" );
+							}
+							
+							return text.ToString();
+						}
+					}
+									
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			================= ExpressionStatement ================
+			======================================================
+			-->
+			<AstNode Name="ExpressionStatement" Inherits="Statement" Description="An statement that is formed from an expression.">
+				<AstNodeProperty PropertyType="AstNode" Name="Exp" Type="Expression" Description="The expression." />
+				<AstNodeDeclarations Type="Constructor"><![CDATA[	
+
+					/// <summary>
+					/// Initializes a new instance of the <c>ExpressionStatement</c> class. 
+					/// </summary>
+					/// <param name="owner">indicating the binary operator type.</param>
+					/// <param name="name">The name of the function.</param>
+					/// <param name="parameters">Parameters to the function.</param>
+					public ExpressionStatement(Expression exp) : this(new TextRange( exp.StartOffset, exp.EndOffset ) )
+					{
+						// Initialize parameters
+						this.Exp = exp;
+					}
+						
+				]]></AstNodeDeclarations>
+				<AstNodeDeclarations><![CDATA[	
+
+					/// <summary>
+					/// Gets text representing the node that can be used for display, such as in a document outline.
+					/// </summary>
+					/// <value>Text representing the node that can be used for display, such as in a document outline.</value>
+					public override string DisplayText {
+						get {
+							return Exp.ToString();
+						}
+					}
+									
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			==================== DoStatement =====================
+			======================================================
+			-->
+			<AstNode Name="DoStatement" Inherits="Statement" Description="A do statement.">
+				<AstNodeProperty PropertyType="AstNode" Name="Body" 			 Type="BlockStatement" Description="The do body." />
+				<AstNodeDeclarations><![CDATA[	
+					public override string DisplayText {
+						get {
+							StringBuilder text = new StringBuilder();
+							
+							text.Append( "do " );
+							text.Append( this.Body.DisplayText );
+							text.Append( "\nend" );
+							
+							return text.ToString();
+						}
+					}
+									
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			================== ConditionalBlock ==================
+			======================================================
+			-->
+			<AstNode Name="ConditionalBlock" Inherits="Statement" Description="A conditional block.">
+				<AstNodeProperty PropertyType="AstNode" Name="Conditional" Type="Expression"     Description="The conditional." />
+				<AstNodeProperty PropertyType="AstNode" Name="Block"       Type="BlockStatement" Description="The body." />
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			=================== WhileStatement ===================
+			======================================================
+			-->
+			<AstNode Name="WhileStatement" Inherits="ConditionalBlock" Description="A while statement.">
+				<AstNodeDeclarations><![CDATA[	
+					public override string DisplayText {
+						get {
+							StringBuilder text = new StringBuilder();
+							
+							text.Append( "while " );
+							text.Append( this.Conditional.DisplayText );
+							text.Append( " then\n" );
+							text.Append( this.Block.DisplayText );
+							text.Append( "\nend" );
+							
+							return text.ToString();
+						}
+					}
+									
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			=================== RepeatStatement ==================
+			======================================================
+			-->
+			<AstNode Name="RepeatStatement" Inherits="ConditionalBlock" Description="A repeat statement.">
+				<AstNodeDeclarations><![CDATA[	
+					public override string DisplayText {
+						get {
+							StringBuilder text = new StringBuilder();
+							
+							text.Append( "repeat " );
+							text.Append( this.Block.DisplayText );
+							text.Append( "\nwhile " );
+							text.Append( this.Conditional.DisplayText );
+							
+							return text.ToString();
+						}
+					}
+									
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			===================== IfStatement ====================
+			======================================================
+			-->
+			<AstNode Name="IfStatement" Inherits="ConditionalBlock" Description="An if statement.">
+				<AstNodeProperty PropertyType="AstNodeList" Name="ElseIfs"                         Description="The ElseIfs." />
+				<AstNodeProperty PropertyType="AstNode"     Name="Else"      Type="BlockStatement" Description="The else body." />
+			</AstNode>
+			
+			<!-- 
+			======================================================
+			==================== ForStatement ====================
+			======================================================
+			-->
+			<AstNode Name="ForStatement" Inherits="Statement" Description="An assignment statement.">
+				<AstNodeProperty PropertyType="AstNode"     Name="Iterator" Type="VariableExpression" Description="The iterator." />
+				<AstNodeProperty PropertyType="AstNode"     Name="Start"    Type="Expression"         Description="The iterator initial value." />
+				<AstNodeProperty PropertyType="AstNode"     Name="End"      Type="Expression"         Description="The iterator test value." />
+				<AstNodeProperty PropertyType="AstNode"     Name="Step"     Type="Expression"         Description="The iterator test value." />
+				<AstNodeProperty PropertyType="AstNode" 	Name="Body"     Type="BlockStatement"     Description="The loop body." />
+				<AstNodeDeclarations><![CDATA[	
+					public override string DisplayText {
+						get {
+							StringBuilder sb = new StringBuilder();
+							sb.Append( "for " );
+							sb.Append( Iterator.DisplayText );
+							sb.Append( " = " );
+							sb.Append( Start.DisplayText );
+							sb.Append( ", " );
+							sb.Append( End.DisplayText );
+							
+							if ( null != Step )
+							{
+								sb.Append( ", " );
+								sb.Append( Step.DisplayText );
+							}
+							
+							sb.Append( " do\n" );
+							sb.Append( this.Body.DisplayText );
+							sb.Append( "end" );
+							
+							return sb.ToString();
+						}
+					}
+									
+				]]></AstNodeDeclarations>
+			</AstNode>
+
+			<!-- 
+			======================================================
+			=================== ForInStatement ===================
+			======================================================
+			-->
+			<AstNode Name="ForInStatement" Inherits="Statement" Description="An assignment statement.">
+				<AstNodeProperty PropertyType="AstNodeList" Name="Iterators"                       Description="The iterators." />
+				<AstNodeProperty PropertyType="AstNodeList" Name="Tables"                          Description="The tables." />
+				<AstNodeProperty PropertyType="AstNode" 	Name="Body"      Type="BlockStatement" Description="The loop body." />
+				<AstNodeDeclarations><![CDATA[	
+					public override string DisplayText {
+						get {
+							StringBuilder text = new StringBuilder();
+							text.Append( "for " );
+							
+							int iteratorCount = this.Iterators.Count;
+							for ( int i = 0; i < iteratorCount; ++i )
+							{
+								if ( i > 0 ) { text.Append( ", " ); }
+								text.Append( this.Iterators[i].DisplayText );
+							}
+							
+							text.Append( " in " );
+							
+							int tableCount = this.Tables.Count;
+							for ( int i = 0; i < tableCount; ++i )
+							{
+								if ( i > 0 ) { text.Append( ", " ); }
+								text.Append( this.Tables[i].DisplayText );
+							}
+							
+							text.Append( " do\n" );
+							text.Append( this.Body.DisplayText );
+							text.Append( "end" );
+							
+							return text.ToString();
+						}
+					}
+									
+				]]></AstNodeDeclarations>
+			</AstNode>
+
+			
+			<!-- 
+			======================================================
+			=================== BlockStatement ===================
+			======================================================
+			-->
+			<AstNode Name="BlockStatement" Inherits="Statement" Description="A block of statements." ImageIndex="(System.Int32)ActiproSoftware.Products.SyntaxEditor.IconResource.Namespace">
+				<AstNodeProperty PropertyType="AstNodeList" Name="Statements"                         Description="The collection of statements." />
+				<AstNodeProperty PropertyType="Simple"      Name="FirstUnconsumedToken" Type="IToken" Description="The last consumed token." />
+				<AstNodeDeclarations><![CDATA[	
+				
+					/// <summary>
+					/// Gets text representing the node that can be used for display, such as in a document outline.
+					/// </summary>
+					/// <value>Text representing the node that can be used for display, such as in a document outline.</value>
+					public override string DisplayText {
+						get {
+							StringBuilder text = new StringBuilder();
+							
+							int statementCount = this.Statements.Count;
+							for ( int i = 0; i < statementCount; ++i )
+							{
+								text.Append( this.Statements[i].DisplayText );
+								if ( i != statementCount - 1 )
+								{
+									text.Append( "\n" );
+								}
+							}
+							
+							return text.ToString();
+						}
+					}
+									
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			=================== ReturnStatement ==================
+			======================================================
+			-->
+			<AstNode Name="ReturnStatement" Inherits="Statement" Description="A return statement.">
+				<AstNodeProperty PropertyType="AstNodeList" Name="Values" Description="The values to be returned." />
+				<AstNodeDeclarations><![CDATA[	
+
+					/// <summary>
+					/// Gets text representing the node that can be used for display, such as in a document outline.
+					/// </summary>
+					/// <value>Text representing the node that can be used for display, such as in a document outline.</value>
+					public override string DisplayText {
+						get {
+							StringBuilder text = new StringBuilder();
+							text.Append( "Return" );
+							
+							IAstNodeList parameters = this.Values;
+							for (int index = 0; index < Values.Count; index++) {
+								text.Append( (index > 0) ? ", " : " " );
+								text.Append(((Identifier)Values[index]).Text);
+							}
+							
+							return text.ToString();
+						}
+					}
+
+				]]></AstNodeDeclarations>
+			</AstNode>
+
+			<!-- 
+			======================================================
+			===================== Expression =====================
+			======================================================
+			-->
+			<AstNode Name="Expression" Inherits="LuatAstNodeBase" IsAbstract="true" Description="The base class for an expression.">
+			</AstNode>
+			
+			<!-- 
+			======================================================
+			================= LiteralExpression ==================
+			======================================================
+			-->
+			<AstNode Name="LiteralExpression" Inherits="Expression" IsAbstract="true" Description="The base class for a literal expression.">
+			</AstNode>
+			
+			<!-- 
+			======================================================
+			================= IncompleteExpression ===============
+			======================================================
+			-->
+			<AstNode Name="IncompleteExpression" Inherits="Expression" Description="An incomplete statement.">
+				<AstNodeProperty PropertyType="AstNode" Name="Body" Type="IAstNode" Description="The partial statement." />
+				<AstNodeDeclarations Type="Constructor"><![CDATA[	
+					public IncompleteExpression( IAstNode body, TextRange textTange ) : this( textTange ) 
+					{
+						if ( null != body )
+						{
+							body.StartOffset = textTange.StartOffset;
+							body.EndOffset   = textTange.EndOffset;
+						}
+						this.Body = body;
+					}
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			==================== FunctionCall ====================
+			======================================================
+			-->
+			<AstNode Name="FunctionCall" Inherits="Expression" Description="A function call.">
+				<AstNodeProperty PropertyType="AstNode"     Name="Owner"      Type="Expression" 	 Description="The function owner." />
+				<AstNodeProperty PropertyType="AstNode"     Name="Name"       Type="Identifier" 	 Description="The function name." />
+				<AstNodeProperty PropertyType="AstNode" 	Name="Arguments"  Type="LuatAstNodeBase" Description="The arguments to the call." />
+				<AstNodeProperty PropertyType="Simple" 		Name="PassesSelf" Type="bool" 			 Description="Does the call use ':' instead of '.'?" />
+				<AstNodeDeclarations Type="Constructor"><![CDATA[	
+
+					public FunctionCall(Expression owner, Identifier name) 
+						: this(new TextRange( owner.StartOffset, owner == null ? name.EndOffset : owner.EndOffset ) )
+					{
+						// Initialize parameters
+						this.Owner		= owner;
+						this.Name		= name;
+					}
+						
+				]]></AstNodeDeclarations>
+				<AstNodeDeclarations><![CDATA[	
+					public override string DisplayText {
+						get {
+							StringBuilder sb = new StringBuilder();
+							
+							sb.Append( Owner.DisplayText );
+							
+							if ( null != Name )
+							{
+								sb.Append( ":" );
+								sb.Append( Name.DisplayText );
+							}
+							
+							if ( null != Arguments )
+							{
+								sb.Append( Arguments.DisplayText );
+							}
+							
+							return sb.ToString();
+						}
+					}
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			==================== ArgumentList ====================
+			======================================================
+			-->
+			<AstNode Name="ArgumentList" Inherits="LuatAstNodeBase" Description="A parenthesised list of arguments.">
+				<AstNodeProperty PropertyType="AstNodeList" Name="Arguments" 					  Description="The list of arguments." />
+				<AstNodeProperty PropertyType="Simple"      Name="ListTextRange" Type="TextRange" Description="The text range of the list of arguments." />
+				<AstNodeProperty PropertyType="Simple"      Name="IsClosed"      Type="bool"      Description="Is this argument list terminated with a closing bracket?" />
+				<AstNodeDeclarations><![CDATA[	
+					public override string DisplayText {
+						get {
+							StringBuilder sb = new StringBuilder();
+							
+							sb.Append( "( " );
+							sb.Append( Arguments.ToArray().ToCommaSeperatedList( a => a.DisplayText ) );
+							sb.Append( " )" );
+							
+							return sb.ToString();
+						}
+					}
+					
+					public bool InsideBrackets( int offset )
+					{
+						if( offset <= this.StartOffset ) { return false; }
+						if( false  == IsClosed )         { return true;  }
+						if( offset >= this.EndOffset )   { return false; }
+						return true;
+					}
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			================== UnaryExpression ===================
+			======================================================
+			-->
+			<AstNode Name="UnaryExpression" Inherits="Expression" Description="A unary expression." ImageIndex="(System.Int32)ActiproSoftware.Products.SyntaxEditor.IconResource.Operator">
+				<AstNodeProperty PropertyType="AstNode" Name="Expression" Type="Expression" Description="The expression affected by the unary operator." />
+				<AstNodeProperty PropertyType="Simple" Name="OperatorType" Type="OperatorType" Description="An operator type indicating the unary operator type." />
+				<AstNodeDeclarations Type="Constructor"><![CDATA[	
+					public UnaryExpression(OperatorType operatorType, Expression expression, TextRange textRange) : this( textRange ) 
+					{
+						// Initialize parameters
+						this.operatorType	= operatorType;
+						this.Expression		= expression;
+					}
+						
+				]]></AstNodeDeclarations>
+				<AstNodeDeclarations><![CDATA[	
+					public override string DisplayText {
+						get {
+							return "Unary Expression " + this.OperatorType;
+						}
+					}
+				
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			================== BinaryExpression ==================
+			======================================================
+			-->
+			<AstNode Name="BinaryExpression" Inherits="Expression" Description="A binary expression." ImageIndex="(System.Int32)ActiproSoftware.Products.SyntaxEditor.IconResource.Operator">
+				<AstNodeProperty PropertyType="AstNode" Name="LeftExpression" Type="Expression" Description="The left expression affected by the binary operator." />
+				<AstNodeProperty PropertyType="AstNode" Name="RightExpression" Type="Expression" Description="The right expression affected by the binary operator." />
+				<AstNodeProperty PropertyType="Simple" Name="OperatorType" Type="OperatorType" Description="An operator type indicating the binary operator type." />
+				<AstNodeDeclarations Type="Constructor"><![CDATA[	
+					public BinaryExpression(OperatorType operatorType, Expression lhs, Expression rhs) : this( new TextRange( lhs.StartOffset, rhs.EndOffset ) ) 
+					{
+						// Initialize parameters
+						this.operatorType		= operatorType;
+						this.LeftExpression		= lhs;
+						this.RightExpression	= rhs;
+					}
+						
+				]]></AstNodeDeclarations>
+				<AstNodeDeclarations><![CDATA[	
+					public override string DisplayText {
+						get {
+							return "Binary Expression " + this.OperatorType;
+						}
+					}
+				
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			====================== Function ======================
+			======================================================
+			-->
+			<AstNode Name="Function" Inherits="Expression" Implements="ICollapsibleNode" Description="A function declaration." ImageIndex="(System.Int32)ActiproSoftware.Products.SyntaxEditor.IconResource.PublicMethod">
+				<AstNodeProperty PropertyType="AstNode"     Name="Block"      Type="BlockStatement" Description="The block statement." />
+				<AstNodeProperty PropertyType="AstNodeList" Name="Parameters"                       Description="The collection of parameters." />
+				<AstNodeProperty PropertyType="Simple" 		Name="ExpectsSelf" Type="bool" 			Description="Does function expect the caller to use ':' instead of '.'?" />
+				<AstNodeDeclarations><![CDATA[	
+
+					public int CollapsibleStartOffset = -1;
+					public int CollapsibleEndOffset = -1;
+					
+					/// <summary>
+					/// Gets whether the node is collapsible.
+					/// </summary>
+					/// <value>
+					/// <c>true</c> if the node is collapsible; otherwise, <c>false</c>.
+					/// </value>
+					bool ICollapsibleNode.IsCollapsible { 
+						get {
+							return (CollapsibleStartOffset != -1) &&
+							       (CollapsibleEndOffset   != -1);
+						}
+					}
+
+					/// <summary>
+					/// Gets the offset at which the outlining node starts.
+					/// </summary>
+					/// <value>The offset at which the outlining node starts.</value>
+					int ICollapsibleNode.StartOffset { 
+						get {
+							return CollapsibleStartOffset;
+						}
+					}
+					
+					/// <summary>
+					/// Gets the offset at which the outlining node ends.
+					/// </summary>
+					/// <value>The offset at which the outlining node ends.</value>
+					int ICollapsibleNode.EndOffset { 
+						get {
+							return CollapsibleEndOffset;
+						}
+					}
+					
+					/// <summary>
+					/// Gets whether the outlining indicator should be visible for the node.
+					/// </summary>
+					/// <value>
+					/// <c>true</c> if the outlining indicator should be visible for the node; otherwise, <c>false</c>.
+					/// </value>
+					bool IOutliningNodeParseData.IndicatorVisible { 
+						get {
+							return true;
+						}
+					}
+
+					/// <summary>
+					/// Gets whether the outlining node is for a language transition.
+					/// </summary>
+					/// <value>
+					/// <c>true</c> if the outlining node is for a language transition; otherwise, <c>false</c>.
+					/// </value>
+					bool IOutliningNodeParseData.IsLanguageTransition { 
+						get {
+							return false;
+						}
+					}
+
+					/// <summary>
+					/// Gets the character offset at which to navigate when the editor's caret should jump to the text representation of the AST node.
+					/// </summary>
+					/// <value>The character offset at which to navigate when the editor's caret should jump to the text representation of the AST node.</value>
+					public override int NavigationOffset {
+						get {
+							return base.NavigationOffset;
+						}
+					}
+				
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			=================== IndexExpression ==================
+			======================================================
+			-->
+			<AstNode Name="IndexExpression" Inherits="Expression" Description="Indexer.">
+				<AstNodeProperty PropertyType="AstNode" Name="LHS"        Type="Expression"      Description="The left-hand-side of the index." />
+				<AstNodeProperty PropertyType="Simple"  Name="IndexToken" Type="IToken"          Description="The token used for indexing." />
+				<AstNodeProperty PropertyType="AstNode" Name="RHS"        Type="LuatAstNodeBase" Description="The right-hand-side of the index." />
+				<AstNodeDeclarations Type="Constructor"><![CDATA[	
+
+					/// <summary>
+					/// Initializes a new instance of the <c>IndexExpression</c> class. 
+					/// </summary>
+					/// <param name="lhs">The LHS expression.</param>
+					/// <param name="rhs">The RHS index.</param>
+					/// <param name="textRange">The <see cref="TextRange"/> of the AST node.</param>
+					public IndexExpression(Expression lhs, IToken indexToken, LuatAstNodeBase rhs) : this(new TextRange( lhs.StartOffset, rhs.EndOffset ) ) {
+						// Initialize parameters
+						this.LHS        = lhs;
+						this.IndexToken = indexToken;
+						this.RHS        = rhs;
+					}
+					
+					public IndexExpression(Expression lhs, IToken indexToken, LuatAstNodeBase rhs, TextRange textRange) : this( textRange ) {
+						// Initialize parameters
+						this.LHS        = lhs;
+						this.IndexToken = indexToken;
+						this.RHS        = rhs;
+					}
+					
+				]]></AstNodeDeclarations>
+				<AstNodeDeclarations><![CDATA[	
+
+					/// <summary>
+					/// Gets text representing the node that can be used for display, such as in a document outline.
+					/// </summary>
+					/// <value>Text representing the node that can be used for display, such as in a document outline.</value>
+					public override string DisplayText {
+						get {
+							StringBuilder text = new StringBuilder();
+							
+							text.Append( ( null != LHS ) ? LHS.DisplayText : "?" );
+							
+							text.Append( "." );
+							
+							if ( null != RHS )
+							{
+								text.Append( RHS.DisplayText );
+							}
+							
+							return text.ToString();
+						}
+					}
+
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			================= VariableExpression =================
+			======================================================
+			-->
+			<AstNode Name="VariableExpression" Inherits="Expression" Description="A variable.">
+				<AstNodeProperty PropertyType="AstNode" Name="Name" Type="Identifier" Description="The name of the variable." />
+				<AstNodeDeclarations Type="Constructor"><![CDATA[	
+
+					/// <summary>
+					/// Initializes a new instance of the <c>VariableExpression</c> class. 
+					/// </summary>
+					/// <param name="name">The name of the variable.</param>
+					/// <param name="textRange">The <see cref="TextRange"/> of the AST node.</param>
+					public VariableExpression(Identifier name) : this(name.TextRange) {
+						// Initialize parameters
+						this.Name = name;
+					}
+					
+				]]></AstNodeDeclarations>
+				<AstNodeDeclarations><![CDATA[	
+
+					/// <summary>
+					/// Gets text representing the node that can be used for display, such as in a document outline.
+					/// </summary>
+					/// <value>Text representing the node that can be used for display, such as in a document outline.</value>
+					public override string DisplayText {
+						get {
+							return this.Name.Text;
+						}
+					}
+
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			<!-- 
+			======================================================
+			================== NumberExpression ==================
+			======================================================
+			-->
+			<AstNode Name="NumberExpression" Inherits="LiteralExpression" Description="A number expression.">
+				<AstNodeProperty PropertyType="Simple" Name="Number" Type="System.Double" Description="The number." />
+				<AstNodeDeclarations Type="Constructor"><![CDATA[	
+					public NumberExpression(double number, TextRange textRange) : this(textRange) {
+						// Initialize parameters
+						this.Number = number;
+					}
+					
+				]]></AstNodeDeclarations>
+				<AstNodeDeclarations><![CDATA[	
+					public override string DisplayText {
+						get {
+							return this.Number.ToString();
+						}
+					}
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			<!-- 
+			======================================================
+			=================== NilExpression ====================
+			======================================================
+			-->
+			<AstNode Name="NilExpression" Inherits="LiteralExpression" Description="The value of nil.">
+				<AstNodeDeclarations><![CDATA[	
+					public override string DisplayText {
+						get {
+							return "nil";
+						}
+					}
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			<!-- 
+			======================================================
+			================= BooleanExpression ==================
+			======================================================
+			-->
+			<AstNode Name="BooleanExpression" Inherits="LiteralExpression" Description="A number expression.">
+				<AstNodeProperty PropertyType="Simple" Name="BoolValue" Type="System.Boolean" Description="The value." />
+				<AstNodeDeclarations Type="Constructor"><![CDATA[	
+					public BooleanExpression( bool value, TextRange textRange) : this(textRange) {
+						this.BoolValue = value;
+					}
+				]]></AstNodeDeclarations>
+				<AstNodeDeclarations><![CDATA[	
+					public override string DisplayText {
+						get {
+							return this.BoolValue.ToString();
+						}
+					}
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			================== StringExpression ==================
+			======================================================
+			-->
+			<AstNode Name="StringExpression" Inherits="LiteralExpression" Description="A string expression.">
+				<AstNodeProperty PropertyType="Simple" Name="String" Type="System.String" Description="The string." />
+				<AstNodeDeclarations Type="Constructor"><![CDATA[	
+
+					/// <summary>
+					/// Initializes a new instance of the <c>StringExpression</c> class. 
+					/// </summary>
+					/// <param name="string">The string.</param>
+					/// <param name="textRange">The <see cref="TextRange"/> of the AST node.</param>
+					public StringExpression(string str, TextRange textRange) : this(textRange) {
+						// Initialize parameters
+						this.String = str;
+					}
+					
+				]]></AstNodeDeclarations>
+				<AstNodeDeclarations><![CDATA[	
+					/// <summary>
+					/// Gets text representing the node that can be used for display, such as in a document outline.
+					/// </summary>
+					/// <value>Text representing the node that can be used for display, such as in a document outline.</value>
+					public override string DisplayText {
+						get {
+							return "\"" + this.String + "\"";
+						}
+					}
+
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			<!-- 
+			======================================================
+			=============== ParenthesizedExpression ==============
+			======================================================
+			-->
+			<AstNode Name="ParenthesizedExpression" Inherits="Expression" Description="A parenthesized expression.">
+				<AstNodeProperty PropertyType="AstNode" Name="Expression" Type="Expression" Description="The expression contained by the parenthesis." />
+				<AstNodeDeclarations Type="Constructor"><![CDATA[	
+
+					/// <summary>
+					/// Initializes a new instance of the <c>ParenthesizedExpression</c> class. 
+					/// </summary>
+					/// <param name="expression">The <see cref="Expression"/> affected by the checked modifier.</param>
+					/// <param name="textRange">The <see cref="TextRange"/> of the AST node.</param>
+					public ParenthesizedExpression(Expression expression, TextRange textRange) : this(textRange) {
+						// Initialize parameters
+						this.Expression = expression;
+					}
+					
+				]]></AstNodeDeclarations>
+				<AstNodeDeclarations><![CDATA[	
+
+					/// <summary>
+					/// Gets text representing the node that can be used for display, such as in a document outline.
+					/// </summary>
+					/// <value>Text representing the node that can be used for display, such as in a document outline.</value>
+					public override string DisplayText {
+						get {
+							return "( Parenthesized Expression )";
+						}
+					}
+
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			
+			<!-- 
+			======================================================
+			================== TableConstructor ==================
+			======================================================
+			-->
+			<AstNode Name="TableConstructor" Inherits="Expression" Description="A table constructor expression.">
+				<AstNodeProperty PropertyType="AstNodeList" Name="Fields" Description="The initial table values." />
+				<AstNodeDeclarations><![CDATA[	
+					/// <summary>
+					/// Gets text representing the node that can be used for display, such as in a document outline.
+					/// </summary>
+					/// <value>Text representing the node that can be used for display, such as in a document outline.</value>
+					public override string DisplayText {
+						get {
+							return "Table constructor";
+						}
+					}
+
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+			<!-- 
+			======================================================
+			===================== Identifier =====================
+			======================================================
+			-->
+			<AstNode Name="Identifier" Inherits="LuatAstNodeBase" Description="An identifier.">
+				<AstNodeProperty PropertyType="Simple" Name="Text" Type="System.String" Description="The text of the qualified identifier." />
+				<AstNodeDeclarations Type="Constructor"><![CDATA[	
+
+					/// <summary>
+					/// Initializes a new instance of the <c>Identifier</c> class. 
+					/// </summary>
+					/// <param name="text">The text of the qualified identifier.</param>
+					/// <param name="textRange">The <see cref="TextRange"/> of the AST node.</param>
+					public Identifier(string text, TextRange textRange) : this(textRange) {
+						// Initialize parameters
+						this.text = text;
+					}
+
+				]]></AstNodeDeclarations>
+				<AstNodeDeclarations><![CDATA[	
+
+					/// <summary>
+					/// Gets text representing the node that can be used for display, such as in a document outline.
+					/// </summary>
+					/// <value>Text representing the node that can be used for display, such as in a document outline.</value>
+					public override string DisplayText {
+						get {
+							return text;
+						}
+					}
+
+				]]></AstNodeDeclarations>
+			</AstNode>
+		
+		
+			<!-- 
+			======================================================
+			======================== Field =======================
+			======================================================
+			-->
+			<AstNode Name="Field" Inherits="LuatAstNodeBase" Description="A field.">
+				<AstNodeProperty PropertyType="AstNode" Name="Key"   Type="IAstNode"   Description="The key." />
+				<AstNodeProperty PropertyType="AstNode" Name="Value" Type="Expression" Description="The value." />
+				<AstNodeDeclarations Type="Constructor"><![CDATA[	
+					public Field(IAstNode key, Expression value, TextRange textRange) : this(textRange) {
+						this.Key   = key;
+						this.Value = value;
+					}
+				]]></AstNodeDeclarations>
+			</AstNode>
+			
+		</AstNodes>
+	</Ast>
+	<Declarations><![CDATA[
+		
+		private CompilationUnit	compilationUnit;
+
+		/// <summary>
+		/// Initializes a new instance of the <c>LuatSemanticParser</c> class.
+		/// </summary>
+		/// <param name="lexicalParser">The <see cref="ActiproSoftware.SyntaxEditor.ParserGenerator.IRecursiveDescentLexicalParser"/> to use for lexical parsing.</param>
+		public LuatSemanticParser(ActiproSoftware.SyntaxEditor.ParserGenerator.IRecursiveDescentLexicalParser lexicalParser) : base(lexicalParser) {}
+
+		/// <summary>
+		/// Gets the <see cref="CompilationUnit"/> that was parsed.
+		/// </summary>
+		/// <value>The <see cref="CompilationUnit"/> that was parsed.</value>
+		public CompilationUnit CompilationUnit {
+			get {
+				return compilationUnit;
+			}
+		}
+	
+		/// <summary>
+		/// Reports a syntax error.
+		/// </summary>
+		/// <param name="textRange">The <see cref="TextRange"/> of the error.</param>
+		/// <param name="message">The error message.</param>
+		protected override void ReportSyntaxError(TextRange textRange, System.String message) {
+			// Don't allow multiple errors at the same offset
+			if ((compilationUnit.SyntaxErrors.Count > 0) && (((SyntaxError)compilationUnit.SyntaxErrors[compilationUnit.SyntaxErrors.Count - 1]).TextRange.StartOffset == textRange.StartOffset))
+				return;
+			
+			compilationUnit.SyntaxErrors.Add(new SyntaxError(textRange, message));
+		}
+		
+		protected bool RaiseError( int startOffset, string message )
+		{
+            int endOffset = (this.Token == null) ? this.LookAheadToken.StartOffset : this.Token.EndOffset;
+            ReportSyntaxError(new TextRange(startOffset, endOffset), message);
+			return false;
+		}
+		protected bool IsIdentifierAndAssignment()
+		{
+			bool v = true;
+			StartPeek();
+			v &= Peek().ID == LuatTokenID.Identifier;
+			v &= Peek().ID == LuatTokenID.Assignment;
+			StopPeek();
+			return v;
+		}
+		
+		protected bool IsVariable( Expression expression )
+		{
+			return expression is VariableExpression ||
+			       expression is IndexExpression;
+		}
+		
+		protected bool IsFunctionCall( Expression expression )
+		{
+			return expression is FunctionCall;
+		}
+
+		public string GetDescription()
+		{
+			string description = (this.LexicalParser as LuatRecursiveDescentLexicalParser).PrecedingComment;
+			
+			// Use the preceding comment as the function description
+			description = (null != description) 
+							? Helpers.Decorate( description.Trim( '\n', '\r' ), DecorationType.Comment )
+							: null;
+							
+			return description;
+		}
+	]]></Declarations>
+	<NonTerminals>
+	
+		<!-- 
+		======================================================
+		=================== CompilationUnit ==================
+		======================================================
+		-->
+		<NonTerminal Key="CompilationUnit">
+			<Production><![CDATA[
+																<%
+																	compilationUnit = new CompilationUnit();
+																	compilationUnit.StartOffset = 0;
+																	BlockStatement block;
+																%>
+					
+				"CUBlock<@out block@>"							<% 
+																	compilationUnit.Block = block;
+																	compilationUnit.EndOffset = this.LookAheadToken.EndOffset;
+																%>
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		======================= CUBlock ======================
+		======================================================
+		-->
+		<NonTerminal Key="CUBlock" Parameters="out BlockStatement block">
+			<Production><![CDATA[
+																<%
+																	block = new BlockStatement();
+																	block.StartOffset = 0;
+																	
+																	while( !this.IsAtEnd )
+																	{
+																		IToken prevToken      = this.Token;
+																		bool   bChunkError    = true;
+																		int    prevErrorCount = compilationUnit.SyntaxErrors.Count;
+																
+																%>
+					
+					"Chunk<@block@> 							<+		bChunkError = false; +><-->"
+																<%
+																		// Did the Block non-terminal raise its own error message?
+																		bool bErrorsReported = compilationUnit.SyntaxErrors.Count > prevErrorCount;
+																		
+																		// Should we display an error for the text range of this block?
+																		bool bDisplayError = bChunkError && !bErrorsReported;
+																		
+																		if ( bDisplayError )
+																		{
+																			int  errorStart = ( block != null && block.FirstUnconsumedToken != null ) ? block.FirstUnconsumedToken.StartOffset : 0;
+																			int  errorEnd   = ( this.Token != null ) ? this.Token.EndOffset : this.LookAheadToken.EndOffset;
+
+																			this.ReportSyntaxError( new TextRange( errorStart, errorEnd ), "Invalid statement" );
+																		}
+																		
+																		if ( this.Token == prevToken )
+																		{
+																			// Token did not advance, probably due to error.
+																			// Move it along.
+																			this.AdvanceToNext();
+																		}
+																	};
+																%>
+																
+																<%  
+																	block.EndOffset = this.LookAheadToken.StartOffset; 
+																%>
+			]]></Production>
+		</NonTerminal>
+		
+		
+		<!-- 
+		======================================================
+		======================== Block =======================
+		======================================================
+		-->
+		<NonTerminal Key="Block" Parameters="out BlockStatement block">
+			<Production><![CDATA[
+																<%
+																	block = new BlockStatement();
+																	block.StartOffset = this.LookAheadToken.StartOffset;
+																%>
+					
+					["Chunk<@block@><-->"]
+																<%  block.EndOffset = this.LookAheadToken.StartOffset; %>
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		======================== Chunk =======================
+		======================================================
+		-->
+		<NonTerminal Key="Chunk" Parameters="BlockStatement block">
+			<Production><![CDATA[
+				{ 												
+					"Statement<@ block @>"						
+					[ 'SemiColon' ]
+																<% block.FirstUnconsumedToken = this.LookAheadToken; %>
+				}
+				[ 												
+					"LastStatement<@ block @>"
+					[ 'SemiColon' ]
+																<% block.FirstUnconsumedToken = this.LookAheadToken; %>
+				]
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		====================== Statement =====================
+		======================================================
+		-->
+		<NonTerminal Key="Statement" Parameters="BlockStatement block">
+			<Production><![CDATA[
+																<% 
+																	Statement statement = null; 
+																	int start = this.LookAheadToken.StartOffset;
+																%>
+				  "StatementInner<@out statement@>				<- statement = new IncompleteStatement( statement, new TextRange( start, this.Token.EndOffset ) ); ->"
+																<%
+																	if ( statement != null ) 
+																	{ 
+																		block.Statements.Add( statement );
+																	}
+																%>
+			]]></Production>
+		</NonTerminal>
+		
+		<NonTerminal Key="StatementInner" Parameters="out Statement statement">
+			<Production><![CDATA[
+																<% statement = null; %>
+				  "AssignmentOrFunctionCall<@ out statement @>"
+				| "DoStatement<@ out statement @>"
+				| "WhileStatement<@ out statement @>"
+				| "RepeatStatement<@ out statement @>"
+				| "IfStatement<@ out statement @>"
+				| "ForStatement<@ out statement @>"
+				| "FunctionDeclaration<@ out statement @>"
+				| "LocalDeclaration<@ out statement @>"
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		==================== LastStatement ===================
+		======================================================
+		-->
+		<NonTerminal Key="LastStatement" Parameters="BlockStatement block">
+			<Production><![CDATA[
+																<% 
+																	Statement statement = null; 
+																	int start = this.LookAheadToken.StartOffset;
+																%>
+				  "LastStatementInner<@ out statement @>		<- statement = new IncompleteStatement( statement, new TextRange( start, this.Token.EndOffset ) ); ->"
+																<%
+																	if ( statement != null ) 
+																	{ 
+																		block.Statements.Add( statement );
+																	}
+																%>
+			]]></Production>
+		</NonTerminal>
+		
+		<NonTerminal Key="LastStatementInner" Parameters="out Statement statement">
+			<Production><![CDATA[
+																<% statement = null; %>
+				  "ReturnStatement<@ out statement @>"
+				| "BreakStatement<@ out statement @>"
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		============== AssignmentOrFunctionCall ============== 
+		======================================================
+		-->
+		<NonTerminal Key="AssignmentOrFunctionCall" Parameters="out Statement statement">
+			<Production><![CDATA[
+																<% 
+																	Expression expression = null; 
+																	statement             = null;
+																%>
+																<% int start = this.LookAheadToken.StartOffset; %>
+				"ExpressionNoFunction<@ out expression @>"
+																<% 	
+																	if ( IsFunctionCall( expression ) )
+																	{
+																		statement = new ExpressionStatement( expression );
+																		return true;
+																	}
+																	
+																	AssignmentStatement assignment = new AssignmentStatement();
+																	statement = assignment;
+																	
+																	assignment.Variables.Add( expression );
+																%>
+					{
+						'Comma'									
+						"ExpressionNoFunction<@ out expression @>" <% assignment.Variables.Add( expression ); %>
+					}
+				
+					'Assignment'								
+					"ExpressionList<@ assignment.Values @>"	
+																<% 
+																	foreach( Expression variable in assignment.Variables )
+																	{
+																		// Mark the LHS expression as being assigned. 
+																		// This alters the way certain variables are resolved.
+																		variable.IsLHSOfAssignment = true;
+																		
+																		if( false == IsVariable( variable ) )
+																		{
+																			// First expression was not a variable or a function call.
+																			// Invalid statement
+																			string message = "The left-hand side of an assignment must be a variable";
+																			compilationUnit.SyntaxErrors.Add(new SyntaxError( variable.TextRange, message ) );
+																		}
+																	}
+																	
+																	assignment.StartOffset = start;
+																	assignment.EndOffset   = this.Token.EndOffset;
+																%>
+			]]></Production>
+		</NonTerminal>
+		
+		
+		<!-- 
+		======================================================
+		===================== CallSuffix ===================== 
+		======================================================
+		-->
+		<NonTerminal Key="CallSuffix" Parameters="ref Expression expression">
+			<Production><![CDATA[
+																<% Identifier name = null; %>
+																<% bool bPassesSelf = false; %>
+				[												
+					'Colon'										<% bPassesSelf = true; %>
+					"Identifier<@ out name @><-->"			
+				]
+				(												<% FunctionCall functionCall = new FunctionCall( expression, name ); %>
+																<% LuatAstNodeBase arguments; %>
+					"Arguments<@ out arguments @><-->"			<% functionCall.Arguments = arguments; %>
+				)												<% functionCall.EndOffset = this.Token.EndOffset; %>
+																<% functionCall.PassesSelf = bPassesSelf; %>
+																<% expression = functionCall; %>
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		===================== DoStatement ==================== 
+		======================================================
+		-->
+		<NonTerminal Key="DoStatement" Parameters="out Statement statement">
+			<Production><![CDATA[
+																<% statement = null; %>
+																<% DoStatement doStatement = new DoStatement(); %>
+																<% doStatement.StartOffset = this.Token.StartOffset; %>
+																<% statement = doStatement; %>
+				'Do'											<% BlockStatement body; %>
+				"Block<@ out body @>"							<% doStatement.Body = body; %>
+				'End'											
+																<% doStatement.EndOffset = this.Token.EndOffset; %>
+			]]></Production>
+		</NonTerminal>
+
+		
+		<!-- 
+		======================================================
+		=================== WhileStatement ===================
+		======================================================
+		-->
+		<NonTerminal Key="WhileStatement" Parameters="out Statement statement">
+			<Production><![CDATA[
+																<% statement = null; %>
+				'While'											<% WhileStatement whileStatement = new WhileStatement(); %>
+																<% whileStatement.StartOffset = this.Token.StartOffset; %>
+																<% statement = whileStatement; %>
+																<% Expression conditional; %>
+				"Expression<@ out conditional @>"
+																<% whileStatement.Conditional = conditional; %>
+				'Do'											<% BlockStatement Block; %>
+				"Block<@ out Block @>"							<% whileStatement.Block = Block; %>
+				'End'											
+																<% whileStatement.EndOffset = this.Token.EndOffset; %>
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		=================== RepeatStatement ==================
+		======================================================
+		-->
+		<NonTerminal Key="RepeatStatement" Parameters="out Statement statement">
+			<Production><![CDATA[
+																<% statement = null; %>
+																<% RepeatStatement repeatStatement = new RepeatStatement(); %>
+																<% repeatStatement.StartOffset = this.Token.StartOffset; %>
+																<% statement = repeatStatement; %>
+				'Repeat'										<% BlockStatement Block; %>
+				"Block<@ out Block @>"							<% repeatStatement.Block = Block; %>
+				'Until'											<% Expression conditional; %>
+				"Expression<@ out conditional @>"				<% repeatStatement.Conditional = conditional; %>
+																<% repeatStatement.EndOffset = this.Token.EndOffset; %>
+			]]></Production>									
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		===================== IfStatement ====================
+		======================================================
+		-->
+		<NonTerminal Key="IfStatement" Parameters="out Statement statement">
+			<Production><![CDATA[
+																<% IfStatement ifStatement = new IfStatement(); %>
+																<% statement = ifStatement; %>
+																<% Expression       conditional; %>
+																<% BlockStatement   block; %>
+																<% ifStatement.StartOffset = this.LookAheadToken.StartOffset; %>
+				'If'											
+				"Expression<@ out conditional @>"				<% ifStatement.Conditional = conditional; %>
+				'Then'											
+				"Block<@ out block @>"							<% ifStatement.Block       = block; %>
+				{
+					'Elseif'									<% ConditionalBlock conditionalBlock = new ConditionalBlock(); %>
+					"Expression<@ out conditional @>"			<% conditionalBlock.Conditional = conditional; %>
+					'Then'
+					"Block<@ out block @>"						<% conditionalBlock.Block = block; %>
+																<% ifStatement.ElseIfs.Add( conditionalBlock ); %>
+				}
+				[
+					'Else'
+					"Block<@ out block @>"						<% ifStatement.Else = block; %>
+				]
+				'End'											<% ifStatement.EndOffset = this.Token.EndOffset; %>
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		==================== ForStatement ====================
+		======================================================
+		-->
+		<NonTerminal Key="ForStatement" Parameters="out Statement statement">
+			<Production><![CDATA[
+																<% statement = null; %>
+																<% int startOffset = this.LookAheadToken.StartOffset; %>
+				'For'
+				(												<% Identifier firstIdent = null; %>
+					"Identifier<@ out firstIdent @>"				
+					(											<!-- for a = b, c, d do ... end -->
+																<% 
+																	VariableExpression firstVar = new VariableExpression( firstIdent );
+																	ForStatement forStatement = new ForStatement();
+																	statement = forStatement;
+																	forStatement.Iterator = firstVar as VariableExpression; 
+																%> 
+					
+						'Assignment'
+																<% Expression start = null; %>
+						"Expression<@ out start @>"				<% forStatement.Start = start; %>
+						'Comma'									<% Expression end = null; %>
+						"Expression<@ out end @>"				<% forStatement.End = end; %>
+						[
+							'Comma'								<% Expression step = null; %>
+							"Expression<@ out step @>"			<% forStatement.Step = step; %>
+						]
+						
+						'Do'
+																<% BlockStatement body; %>
+						"Block<@ out body @>"					<% forStatement.Body = body; %>
+						'End'
+																<% forStatement.StartOffset = startOffset; forStatement.EndOffset = this.Token.EndOffset; %>
+					)
+					|
+					(											<!-- for a,b in c,d do ... end -->
+																<% 
+																	ForInStatement forInStatement = new ForInStatement();
+																	statement = forInStatement;
+																	forInStatement.Iterators.Add( firstIdent );
+																%>
+						[
+							'Comma'
+							"IdentifierList<@ forInStatement.Iterators @>"
+						]
+						'In'
+						"ExpressionList<@ forInStatement.Tables @>"
+						
+						'Do'
+																<% BlockStatement body; %>
+						"Block<@ out body @>"					<% forInStatement.Body = body; %>
+						'End'
+																<% forInStatement.StartOffset = startOffset; forInStatement.EndOffset = this.Token.EndOffset; %>
+					)
+				)
+				
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		================== LocalDeclaration ==================
+		======================================================
+		-->
+		<NonTerminal Key="LocalDeclaration" Parameters="out Statement statement">
+			<Production><![CDATA[
+																<% statement = null; %>
+																<% int start = this.LookAheadToken.StartOffset; %>
+				'Local'
+				"LocalSuffix<@ out statement @>					<+ 
+																	statement.StartOffset = start; 
+																	statement.EndOffset = this.Token.EndOffset; 
+																+><- 
+																	return this.RaiseError( start, "Expected identifier or function declaration." ); 
+																->
+																"
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		===================== LocalSuffix ====================
+		======================================================
+		-->
+		<NonTerminal Key="LocalSuffix" Parameters="out Statement statement">
+			<Production><![CDATA[
+																<% 
+																	statement = null;
+																	AssignmentStatement assignment = new AssignmentStatement(); 
+																	assignment.IsLocal = true;
+																	Identifier type = null;
+																%>
+				(												
+					"VariableList<@ assignment.Variables @>"
+					[
+						'Colon'									
+						"Identifier<@ out type @>"
+					]
+					[
+						'Assignment'
+						"ExpressionList<@ assignment.Values @>"
+					]
+				)
+				|
+				(
+					'Function'									<% Expression variableNode; %>			
+					"Variable<@ out variableNode @>"			<% Function function; %>
+					"FunctionBody<@ out function @>"			<% 
+																	VariableExpression variableExpression = variableNode as VariableExpression;
+																	assignment.Variables.Add( variableNode );
+																	assignment.Values.Add( function );
+																%>
+																
+				)												<% 
+																	foreach ( VariableExpression v in assignment.Variables )
+																	{
+																		v.IsLHSOfAssignment = true;
+																		v.IsLocal           = true;
+																		v.Type              = type == null ? null : type.Text;
+																	}
+																	
+																	statement = assignment; 
+																%>
+				
+			]]></Production>
+		</NonTerminal>
+		
+		
+		<!-- 
+		======================================================
+		==================== FunctionName ====================
+		======================================================
+		-->
+		<NonTerminal Key="FunctionName" Parameters="out Expression expression, out bool expectsSelf">
+			<Production><![CDATA[
+																<% 
+																	expression = null;
+																	Identifier identifier; 
+																	IToken     indexToken;
+																	expectsSelf = false;
+																%>
+				"Identifier<@ out identifier @>"				<% expression = new VariableExpression( identifier ); %>
+				{
+					'Dot'										<% indexToken = this.Token; %>
+					"Identifier<@ out identifier @>"			<% expression = new IndexExpression( expression, indexToken, identifier ); %>
+				}
+				[
+					'Colon'										<% 
+																   indexToken = this.Token; 
+																   expectsSelf = true;
+																%>
+					"Identifier<@ out identifier @>"			<% expression = new IndexExpression( expression, indexToken, identifier ); %>
+				]
+			]]></Production>
+		</NonTerminal>
+
+		<!-- 
+		======================================================
+		================ FunctionDeclaration =================
+		======================================================
+		-->
+		<NonTerminal Key="FunctionDeclaration" Parameters="out Statement statement">
+			<Production><![CDATA[
+																<% statement = null; %>
+																<% int start = this.LookAheadToken.StartOffset; %>
+																<% string description = this.GetDescription(); %>
+																<% bool expectsSelf; %>
+				'Function'										<% Expression name; %>			
+				"FunctionName<@ out name, out expectsSelf @>"	<% Function function; %>
+				"FunctionBody<@ out function @>"				<% 
+																	AssignmentStatement assignment = new AssignmentStatement();
+																	assignment.Variables.Add( name );
+																	assignment.Values.Add( function );
+																
+																	// Use the preceding comment as the function description
+																	function.Description = (null != description) 
+																						 ? description.Trim( '\n', '\r' )
+																						 : null;
+																	
+																	function.ExpectsSelf = expectsSelf;
+																	
+																	// Mark the LHS expression as being assigned. 
+																	// This alters the way certain variables are resolved.
+																	name.IsLHSOfAssignment = true;
+																
+																	assignment.StartOffset = start; assignment.EndOffset = this.Token.EndOffset; 
+																	statement = assignment; 
+																%>
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		=================== ReturnStatement ==================
+		======================================================
+		-->
+		<NonTerminal Key="ReturnStatement" Parameters="out Statement statement">
+			<Production><![CDATA[
+																<% statement = null; %>
+																<% int start = this.LookAheadToken.StartOffset; %>
+				'Return'										<% 
+																   ReturnStatement returnStatement = new ReturnStatement(); 
+																   returnStatement.IsMultiline     = this.LexicalParser.LookAheadTokenIsOnDifferentLine;
+																%>
+				["ExpressionList<@ returnStatement.Values @>"]	<%
+																   returnStatement.StartOffset = start; returnStatement.EndOffset = this.Token.EndOffset; 
+																   if ( returnStatement.Values.Count == 0 ) { returnStatement.IsMultiline = false; }
+																%>
+																<% statement = returnStatement; %>
+			]]></Production>
+		</NonTerminal>
+		
+		
+		<!-- 
+		======================================================
+		==================== BreakStatement ==================
+		======================================================
+		-->
+		<NonTerminal Key="BreakStatement" Parameters="out Statement statement">
+			<Production><![CDATA[
+																<% statement = null; %>
+				'Break'											<% statement = new BreakStatement( this.Token.TextRange ); %>
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		==================== FunctionBody ====================
+		======================================================
+		-->
+		<NonTerminal Key="FunctionBody" Parameters="out Function function">
+			<Production><![CDATA[
+																<% function  = null; %>
+																<% int start = this.LookAheadToken.StartOffset; %>
+																<% function  = new Function(); %>
+				'OpenParenthesis'
+				[ "ParameterList<@function.Parameters@>" ]
+				'CloseParenthesis'								<% BlockStatement block; %>
+																<% int collapsibleStart = this.Token.EndOffset; %>
+				"Block<@ out block @>"							<% function.Block = block; %> 
+				'End											<- this.RaiseError( start, "Missing end" ); ->'
+																<% 
+																	function.StartOffset   	        = start; 
+																	function.EndOffset     	        = this.Token.EndOffset; 
+																	function.CollapsibleStartOffset = collapsibleStart;
+																	function.CollapsibleEndOffset   = this.Token.EndOffset;
+																%>
+			]]></Production>
+		</NonTerminal>
+	
+		<!-- 
+		======================================================
+		====================== Arguments =====================
+		======================================================
+		-->
+		<NonTerminal Key="Arguments" Parameters="out LuatAstNodeBase arguments" >
+			<Production><![CDATA[
+																<% arguments = null; %>
+				(
+																<% ArgumentList arglist; %>
+					"ArgumentList<@ out arglist @>"				<% arguments = arglist; %>
+				)
+				|
+				(
+																<% Expression table; %>
+					"TableConstructor<@ out table @>"			<% arguments = table; %>
+				)
+				|	
+				(
+																<% Expression stringExp; %>
+					"StringExpression<@ out stringExp @>"		<% arguments = stringExp; %>
+				)
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		==================== ArgumentList ====================
+		======================================================
+		-->
+		<NonTerminal Key="ArgumentList" Parameters="out ArgumentList arglist" >
+			<Production><![CDATA[
+																<% arglist = new ArgumentList(); %>
+																<% arglist.StartOffset = this.LookAheadToken.StartOffset; %>
+				'OpenParenthesis'
+																<% int listStart = this.Token.EndOffset; %>
+				[ "ExpressionList<@ arglist.Arguments @> <-->" ]
+																<% arglist.ListTextRange = new TextRange( listStart, this.LookAheadToken.StartOffset ); %>
+				'CloseParenthesis 								<+ arglist.IsClosed = true; +><- this.ReportSyntaxError( "Missing argument" ); ->'
+																<% arglist.EndOffset = this.Token.EndOffset; %>
+			]]></Production>
+		</NonTerminal>
+					
+		<!-- 
+		======================================================
+		======================= Function =====================
+		======================================================
+		-->
+		<NonTerminal Key="Function" Parameters="out Expression expression" >
+			<Production><![CDATA[
+																<% expression = null; %>
+				'Function'										<% Function function; %>
+				"FunctionBody<@ out function @>"				<% expression = function; %>
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		================== TableConstructor ==================
+		======================================================
+		-->
+		<NonTerminal Key="TableConstructor" Parameters="out Expression expression">
+			<Production><![CDATA[
+																<% expression = null; %>
+																<% int start = this.LookAheadToken.StartOffset; %>
+				'OpenCurlyBrace'								<% TableConstructor table = new TableConstructor(); %>
+				[ "FieldList<@ table.Fields @>" ]												
+				'CloseCurlyBrace'								<% table.StartOffset = start; table.EndOffset = this.Token.EndOffset; %>
+																<% expression = table; %>
+			]]></Production>
+		</NonTerminal>
+		
+		
+		<!-- 
+		======================================================
+		====================== FieldList =====================
+		======================================================
+		-->
+		<NonTerminal Key="FieldList" Parameters="IAstNodeList fields">
+			<Production><![CDATA[
+																<% Field field; %>
+				"Field<@ out field @>"							<% fields.Add( field ); %>
+				[
+					"FieldSep"
+					["FieldList<@fields@>"]
+				]
+				
+			]]></Production>
+		</NonTerminal>
+		
+		
+		<!-- 
+		======================================================
+		======================== Field =======================
+		======================================================
+		-->
+		<NonTerminal Key="Field" Parameters="out Field field">
+			<Production><![CDATA[
+																<% field = null; %>
+																<% int start = this.LookAheadToken.StartOffset; %>
+																<% IAstNode   key   = null; %>
+																<% Expression value = null; %>
+				(
+					'OpenSquareBracket'							<% Expression keyExpr; %>
+					"Expression<@ out keyExpr @>"				<% key = keyExpr; %>
+					'CloseSquareBracket'
+					'Assignment'									
+					"Expression<@ out value @>"
+				)
+				| <? this.IsIdentifierAndAssignment() ?>
+				(												<% Identifier keyIdent; %>
+					"Identifier<@ out keyIdent @>"				<% key = keyIdent; %>
+					'Assignment'								
+					"Expression<@ out value @>"
+				)
+				|
+				(												
+					"Expression<@ out value @>"
+				)
+																<% field = new Field( key, value, new TextRange( start, this.Token.EndOffset ) ); %>
+				
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		====================== FieldSep ======================
+		======================================================
+		-->
+		<NonTerminal Key="FieldSep">
+			<Production><![CDATA[
+					'Comma'
+				|	'SemiColon'
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		===================== Identifier =====================
+		======================================================
+		-->
+		<NonTerminal Key="Identifier" Parameters="out Identifier identifier">
+			<Production><![CDATA[
+																<% identifier = null; %>
+				'Identifier'									<% identifier = new Identifier( this.TokenText, this.Token.TextRange ); %>
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		=================== ParameterList ====================
+		======================================================
+		-->
+		<NonTerminal Key="ParameterList" Parameters="IAstNodeList list">
+			<Production><![CDATA[
+				(												<% Identifier identifier = null; %>
+					"Identifier<@ out identifier @>"			<% list.Add( identifier ); %>
+					{
+						'Comma' 
+						(
+							(
+								"Identifier<@ out identifier @>"<% list.Add( identifier ); %>
+							)
+						|	'TripleDot'
+						)
+					}
+				)
+				|   
+				(
+					'TripleDot'
+				)
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		=================== IdentifierList ===================
+		======================================================
+		-->
+		<NonTerminal Key="IdentifierList" Parameters="IAstNodeList list">
+			<Production><![CDATA[
+																<% Identifier identifier = null; %>
+				"Identifier<@ out identifier @>"				<% list.Add( identifier ); %>
+				{
+					'Comma' 
+					"Identifier<@ out identifier @>"			<% list.Add( identifier ); %>
+				}
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		================ ExpressionNoFunction ================
+		======================================================
+		-->
+		<NonTerminal Key="ExpressionNoFunction" Parameters="out Expression expression">
+			<Production><![CDATA[
+																<%
+																	expression = null;
+																	int start = this.LookAheadToken.StartOffset;
+																%>
+				"ExpressionNoFunctionInner<@ out expression @>	<- expression = new IncompleteExpression( expression, new TextRange( start, this.Token.EndOffset ) ); ->"
+			]]></Production>
+		</NonTerminal>
+		
+		<NonTerminal Key="ExpressionNoFunctionInner" Parameters="out Expression expression">
+			<Production><![CDATA[
+																<% expression = null; %>
+				  "Primary<@out expression@>"
+				| (
+					'TripleDot'									<% expression = new NilExpression( this.Token.TextRange ); %>
+				  )
+				| (
+				 	(
+						"Variable<@ out expression @>"
+					  | "TableConstructor<@ out expression @>"
+					  | "Parenthesis<@out expression@>"
+					)
+					{
+						"Index<@ ref expression @>" 
+					  | "CallSuffix<@ ref expression @>" 
+					}
+				  )
+				| ( 
+																<% int start = this.LookAheadToken.StartOffset; %>
+																<% OperatorType operatorType; %>
+					"UnaryOp<@ out operatorType @>"				<% Expression rhs = null; %>
+					"Expression<@ out rhs @>" 					<% expression = new UnaryExpression( operatorType, rhs, new TextRange( start, this.Token.EndOffset) ); %>
+				  )
+				{ 
+																<% OperatorType operatorType; %>
+				  "BinaryOp<@ out operatorType @>"				<% Expression rhs = null; %>
+				  "Expression<@ out rhs @>" 					<% expression = new BinaryExpression( operatorType, expression, rhs ); %>
+				}
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		===================== Expression =====================
+		======================================================
+		-->
+		<NonTerminal Key="Expression" Parameters="out Expression expression">
+			<Production><![CDATA[
+																<% 
+																	expression = null; 
+																	int start = this.LookAheadToken.StartOffset; 
+																%>
+				"ExpressionInner<@out expression@>				<- expression = new IncompleteExpression( expression, new TextRange( start, this.Token.EndOffset ) ); ->"
+			]]></Production>
+		</NonTerminal>
+		
+		<NonTerminal Key="ExpressionInner" Parameters="out Expression expression">
+			<Production><![CDATA[
+																<% expression = null; %>
+																<% string description = this.GetDescription(); %>
+				( "ExpressionNoFunction<@out expression@>"
+				| "Function<@out expression@>"
+				)
+																<% expression.Description = description; %>
+			]]></Production>
+		</NonTerminal>
+		
+		
+		<!-- 
+		======================================================
+		======================= Primary ======================
+		======================================================
+		-->
+		<NonTerminal Key="Primary" Parameters="out Expression expression">
+			<Production><![CDATA[
+																<% expression = null; %>
+				  ('Nil'										<% expression = new NilExpression( this.Token.TextRange ); %>
+				)|('False'										<% expression = new BooleanExpression( false, this.Token.TextRange); %>
+				)|('True' 										<% expression = new BooleanExpression( true,  this.Token.TextRange); %>
+				)|('Number'										<% expression = new NumberExpression( Convert.ToDouble(this.TokenText), this.Token.TextRange ); %>
+				)|("StringExpression<@out expression@>")
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		===================== Parenthesis ====================
+		======================================================
+		-->
+		<NonTerminal Key="Parenthesis" Parameters="out Expression expression">
+			<Production><![CDATA[
+																<% expression = null; %>
+				'OpenParenthesis'								<% int start = this.Token.StartOffset; %>
+				"Expression<@ out expression @>"				
+				'CloseParenthesis'								<% TextRange textRange = new TextRange( start, this.Token.EndOffset ); %>
+																<% expression = new ParenthesizedExpression( expression, textRange ); %>
+			]]></Production>
+		</NonTerminal>
+		
+		
+		<!-- 
+		======================================================
+		====================== Variable ======================
+		======================================================
+		-->
+		<NonTerminal Key="Variable" Parameters="out Expression expression">
+			<Production><![CDATA[
+																<% expression = null; %>
+																<% Identifier identifier; %>
+				"Identifier<@ out identifier @>"				<% expression = new VariableExpression( identifier ); %>
+			]]></Production>
+		</NonTerminal>
+		
+		
+		<!-- 
+		======================================================
+		==================== VariableList ====================
+		======================================================
+		-->
+		<NonTerminal Key="VariableList" Parameters="IAstNodeList variables">
+			<Production><![CDATA[
+																<% Expression variable; %>
+				"Variable<@ out variable @>"					<% variables.Add( variable ); %>
+				{
+					'Comma'
+					"Variable<@ out variable @>"				<% variables.Add( variable ); %>
+				}
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		======================= Index ========================
+		======================================================
+		-->
+		<NonTerminal Key="Index" Parameters="ref Expression expression">
+			<Production><![CDATA[
+																<% 
+																	LuatAstNodeBase index;
+																	IToken          indexToken;
+																	int start = expression.StartOffset; 
+																%>
+				(
+					'OpenSquareBracket'							<% 
+																	indexToken = this.Token;
+																	Expression indexExpression = null; 
+																%>
+					"Expression<@ out indexExpression @>"		<% index = indexExpression; %>
+					'CloseSquareBracket'
+																<% expression.EndOffset = this.Token.EndOffset; // Expand to encompass ']' %>
+				)
+				|
+				(
+					'Dot'										<% 
+																	indexToken = this.Token;
+																	Identifier indexIdentifier = null; 
+																%>
+					"Identifier<@ out indexIdentifier @>		<- this.RaiseError( this.Token.EndOffset - 1, "Expected identifier." ); ->"		
+																<% index = indexIdentifier; %>
+				)
+																<% expression = new IndexExpression( expression, indexToken, index, new TextRange( start, this.Token.EndOffset ) ); %>
+																
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		=================== ExpressionList ===================
+		======================================================
+		-->
+		<NonTerminal Key="ExpressionList" Parameters="IAstNodeList expressions">
+			<Production><![CDATA[
+																<% Expression expression = null; %>
+				"Expression<@out expression@>"					<% expressions.Add( expression ); %>
+				{
+					'Comma'
+					"Expression<@out expression@>"				<% expressions.Add( expression ); %>
+				}
+			]]></Production>
+		</NonTerminal>
+		
+		
+		<!-- 
+		======================================================
+		====================== UnaryOp =======================
+		======================================================
+		-->
+		<NonTerminal Key="UnaryOp" Parameters="out OperatorType operatorType">
+			<Production><![CDATA[
+																<% operatorType = OperatorType.None;    %>
+				  'Subtraction									<+ operatorType = OperatorType.Negate;  +>'
+				| 'Not											<+ operatorType = OperatorType.Not;     +>'
+				| 'Hash											<+ operatorType = OperatorType.Length;  +>'
+			]]></Production>
+		</NonTerminal>
+		
+		<!-- 
+		======================================================
+		====================== BinaryOp ======================
+		======================================================
+		-->
+		<NonTerminal Key="BinaryOp" Parameters="out OperatorType operatorType">
+			<Production><![CDATA[
+																<% operatorType = OperatorType.None;             %>
+				  'Addition										<+ operatorType = OperatorType.Addition;         +>'
+				| 'Subtraction									<+ operatorType = OperatorType.Subtraction;      +>'
+				| 'Multiplication								<+ operatorType = OperatorType.Multiplication;   +>'
+				| 'Division										<+ operatorType = OperatorType.Division;         +>'
+				| 'Modulus										<+ operatorType = OperatorType.Modulus;          +>'
+				| 'Hat											<+ operatorType = OperatorType.Power;            +>'
+				| 'Equality										<+ operatorType = OperatorType.Equality;         +>'
+				| 'Inequality									<+ operatorType = OperatorType.Inequality;       +>'
+				| 'LessThanEqual								<+ operatorType = OperatorType.LessThanEqual;    +>'
+				| 'GreaterThanEqual								<+ operatorType = OperatorType.GreaterThanEqual; +>'
+				| 'LessThan										<+ operatorType = OperatorType.LessThan;         +>'
+				| 'GreaterThan									<+ operatorType = OperatorType.GreaterThan;      +>'
+				| 'And											<+ operatorType = OperatorType.And;              +>'
+				| 'Or											<+ operatorType = OperatorType.Or;               +>'
+				| 'DoubleDot									<+ operatorType = OperatorType.Concatenate;      +>'
+			]]></Production>
+		</NonTerminal>
+				
+		<!-- 
+		======================================================
+		================== StringExpression ==================
+		======================================================
+		-->
+		<NonTerminal Key="StringExpression" Parameters="out Expression expression">
+			<Production><![CDATA[
+																<% expression = null; %>
+				'String'										<% 
+																	string text = this.TokenText;
+																	if ( text.StartsWith("\"") ) { text = text.Substring( 1 ); }
+																	if ( text.EndsWith("\"") )   { text = text.Substring( 0, text.Length - 1 ); }
+																	expression = new StringExpression(text, this.Token.TextRange);
+																%>
+			]]></Production>
+		</NonTerminal>
+		
+		
+	</NonTerminals>
+</Grammar>
+	

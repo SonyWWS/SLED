@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lua.Utilities.5.1.4.x86", "Lua.Utilities\Lua.Utilities.5.1.4.x86.vs2013.vcxproj", "{BC7BF7FF-72C6-48D1-BE1B-C61B2FF616C3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A72E51D1-1F48-4336-BB40-33DC165EFDD0} = {A72E51D1-1F48-4336-BB40-33DC165EFDD0}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lua.Utilities.Shared.vs2013", "Lua.Utilities.Shared\Lua.Utilities.Shared.vs2013.csproj", "{A72E51D1-1F48-4336-BB40-33DC165EFDD0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liblua-5.1.4_dotnet", "..\lua-5.1.4\src\liblua-5.1.4_dotnet_vs2013.vcxproj", "{2A55ABCD-1234-45BE-9A54-2F4321CF0BAF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lua.Utilities.5.1.4.x64", "Lua.Utilities\Lua.Utilities.5.1.4.x64.vs2013.vcxproj", "{3937C775-5140-46A1-A2D3-6A7AFE710B4C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A72E51D1-1F48-4336-BB40-33DC165EFDD0} = {A72E51D1-1F48-4336-BB40-33DC165EFDD0}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liblua-5.2.3_dotnet", "..\lua-5.2.3\src\liblua-5.2.3_dotnet_vs2013.vcxproj", "{2A55ABCD-1234-1234-9A54-2F4321CF0BAF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lua.Utilities.5.2.3.x64", "Lua.Utilities\Lua.Utilities.5.2.3.x64.vs2013.vcxproj", "{D1F9403A-1378-4544-ACD8-36ACD49F4252}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2A55ABCD-1234-1234-9A54-2F4321CF0BAF} = {2A55ABCD-1234-1234-9A54-2F4321CF0BAF}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lua.Utilities.5.2.3.x86", "Lua.Utilities\Lua.Utilities.5.2.3.x86.vs2013.vcxproj", "{DA52C603-6FE3-4C35-BFAB-12E6177922A5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2A55ABCD-1234-1234-9A54-2F4321CF0BAF} = {2A55ABCD-1234-1234-9A54-2F4321CF0BAF}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		win32_dotnet_clr4_debug|Any CPU = win32_dotnet_clr4_debug|Any CPU
+		win32_dotnet_clr4_release|Any CPU = win32_dotnet_clr4_release|Any CPU
+		win64_dotnet_clr4_debug|Any CPU = win64_dotnet_clr4_debug|Any CPU
+		win64_dotnet_clr4_release|Any CPU = win64_dotnet_clr4_release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC7BF7FF-72C6-48D1-BE1B-C61B2FF616C3}.win32_dotnet_clr4_debug|Any CPU.ActiveCfg = win32_dotnet_clr4_debug|Win32
+		{BC7BF7FF-72C6-48D1-BE1B-C61B2FF616C3}.win32_dotnet_clr4_debug|Any CPU.Build.0 = win32_dotnet_clr4_debug|Win32
+		{BC7BF7FF-72C6-48D1-BE1B-C61B2FF616C3}.win32_dotnet_clr4_release|Any CPU.ActiveCfg = win32_dotnet_clr4_release|Win32
+		{BC7BF7FF-72C6-48D1-BE1B-C61B2FF616C3}.win32_dotnet_clr4_release|Any CPU.Build.0 = win32_dotnet_clr4_release|Win32
+		{BC7BF7FF-72C6-48D1-BE1B-C61B2FF616C3}.win64_dotnet_clr4_debug|Any CPU.ActiveCfg = win32_dotnet_clr4_debug|Win32
+		{BC7BF7FF-72C6-48D1-BE1B-C61B2FF616C3}.win64_dotnet_clr4_release|Any CPU.ActiveCfg = win32_dotnet_clr4_release|Win32
+		{A72E51D1-1F48-4336-BB40-33DC165EFDD0}.win32_dotnet_clr4_debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A72E51D1-1F48-4336-BB40-33DC165EFDD0}.win32_dotnet_clr4_debug|Any CPU.Build.0 = Debug|Any CPU
+		{A72E51D1-1F48-4336-BB40-33DC165EFDD0}.win32_dotnet_clr4_release|Any CPU.ActiveCfg = Release|Any CPU
+		{A72E51D1-1F48-4336-BB40-33DC165EFDD0}.win32_dotnet_clr4_release|Any CPU.Build.0 = Release|Any CPU
+		{A72E51D1-1F48-4336-BB40-33DC165EFDD0}.win64_dotnet_clr4_debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A72E51D1-1F48-4336-BB40-33DC165EFDD0}.win64_dotnet_clr4_debug|Any CPU.Build.0 = Debug|Any CPU
+		{A72E51D1-1F48-4336-BB40-33DC165EFDD0}.win64_dotnet_clr4_release|Any CPU.ActiveCfg = Release|Any CPU
+		{A72E51D1-1F48-4336-BB40-33DC165EFDD0}.win64_dotnet_clr4_release|Any CPU.Build.0 = Release|Any CPU
+		{2A55ABCD-1234-45BE-9A54-2F4321CF0BAF}.win32_dotnet_clr4_debug|Any CPU.ActiveCfg = win32_dotnet_clr4_debug|Win32
+		{2A55ABCD-1234-45BE-9A54-2F4321CF0BAF}.win32_dotnet_clr4_debug|Any CPU.Build.0 = win32_dotnet_clr4_debug|Win32
+		{2A55ABCD-1234-45BE-9A54-2F4321CF0BAF}.win32_dotnet_clr4_release|Any CPU.ActiveCfg = win32_dotnet_clr4_release|Win32
+		{2A55ABCD-1234-45BE-9A54-2F4321CF0BAF}.win32_dotnet_clr4_release|Any CPU.Build.0 = win32_dotnet_clr4_release|Win32
+		{2A55ABCD-1234-45BE-9A54-2F4321CF0BAF}.win64_dotnet_clr4_debug|Any CPU.ActiveCfg = win64_dotnet_clr4_debug|x64
+		{2A55ABCD-1234-45BE-9A54-2F4321CF0BAF}.win64_dotnet_clr4_debug|Any CPU.Build.0 = win64_dotnet_clr4_debug|x64
+		{2A55ABCD-1234-45BE-9A54-2F4321CF0BAF}.win64_dotnet_clr4_release|Any CPU.ActiveCfg = win64_dotnet_clr4_release|x64
+		{2A55ABCD-1234-45BE-9A54-2F4321CF0BAF}.win64_dotnet_clr4_release|Any CPU.Build.0 = win64_dotnet_clr4_release|x64
+		{3937C775-5140-46A1-A2D3-6A7AFE710B4C}.win32_dotnet_clr4_debug|Any CPU.ActiveCfg = win64_dotnet_clr4_debug|x64
+		{3937C775-5140-46A1-A2D3-6A7AFE710B4C}.win32_dotnet_clr4_release|Any CPU.ActiveCfg = win64_dotnet_clr4_release|x64
+		{3937C775-5140-46A1-A2D3-6A7AFE710B4C}.win64_dotnet_clr4_debug|Any CPU.ActiveCfg = win64_dotnet_clr4_debug|x64
+		{3937C775-5140-46A1-A2D3-6A7AFE710B4C}.win64_dotnet_clr4_debug|Any CPU.Build.0 = win64_dotnet_clr4_debug|x64
+		{3937C775-5140-46A1-A2D3-6A7AFE710B4C}.win64_dotnet_clr4_release|Any CPU.ActiveCfg = win64_dotnet_clr4_release|x64
+		{3937C775-5140-46A1-A2D3-6A7AFE710B4C}.win64_dotnet_clr4_release|Any CPU.Build.0 = win64_dotnet_clr4_release|x64
+		{2A55ABCD-1234-1234-9A54-2F4321CF0BAF}.win32_dotnet_clr4_debug|Any CPU.ActiveCfg = win32_dotnet_clr4_debug|Win32
+		{2A55ABCD-1234-1234-9A54-2F4321CF0BAF}.win32_dotnet_clr4_debug|Any CPU.Build.0 = win32_dotnet_clr4_debug|Win32
+		{2A55ABCD-1234-1234-9A54-2F4321CF0BAF}.win32_dotnet_clr4_release|Any CPU.ActiveCfg = win32_dotnet_clr4_release|Win32
+		{2A55ABCD-1234-1234-9A54-2F4321CF0BAF}.win32_dotnet_clr4_release|Any CPU.Build.0 = win32_dotnet_clr4_release|Win32
+		{2A55ABCD-1234-1234-9A54-2F4321CF0BAF}.win64_dotnet_clr4_debug|Any CPU.ActiveCfg = win64_dotnet_clr4_debug|x64
+		{2A55ABCD-1234-1234-9A54-2F4321CF0BAF}.win64_dotnet_clr4_debug|Any CPU.Build.0 = win64_dotnet_clr4_debug|x64
+		{2A55ABCD-1234-1234-9A54-2F4321CF0BAF}.win64_dotnet_clr4_release|Any CPU.ActiveCfg = win64_dotnet_clr4_release|x64
+		{2A55ABCD-1234-1234-9A54-2F4321CF0BAF}.win64_dotnet_clr4_release|Any CPU.Build.0 = win64_dotnet_clr4_release|x64
+		{D1F9403A-1378-4544-ACD8-36ACD49F4252}.win32_dotnet_clr4_debug|Any CPU.ActiveCfg = win64_dotnet_clr4_debug|x64
+		{D1F9403A-1378-4544-ACD8-36ACD49F4252}.win32_dotnet_clr4_release|Any CPU.ActiveCfg = win64_dotnet_clr4_release|x64
+		{D1F9403A-1378-4544-ACD8-36ACD49F4252}.win64_dotnet_clr4_debug|Any CPU.ActiveCfg = win64_dotnet_clr4_debug|x64
+		{D1F9403A-1378-4544-ACD8-36ACD49F4252}.win64_dotnet_clr4_debug|Any CPU.Build.0 = win64_dotnet_clr4_debug|x64
+		{D1F9403A-1378-4544-ACD8-36ACD49F4252}.win64_dotnet_clr4_release|Any CPU.ActiveCfg = win64_dotnet_clr4_release|x64
+		{D1F9403A-1378-4544-ACD8-36ACD49F4252}.win64_dotnet_clr4_release|Any CPU.Build.0 = win64_dotnet_clr4_release|x64
+		{DA52C603-6FE3-4C35-BFAB-12E6177922A5}.win32_dotnet_clr4_debug|Any CPU.ActiveCfg = win32_dotnet_clr4_debug|Win32
+		{DA52C603-6FE3-4C35-BFAB-12E6177922A5}.win32_dotnet_clr4_debug|Any CPU.Build.0 = win32_dotnet_clr4_debug|Win32
+		{DA52C603-6FE3-4C35-BFAB-12E6177922A5}.win32_dotnet_clr4_release|Any CPU.ActiveCfg = win32_dotnet_clr4_release|Win32
+		{DA52C603-6FE3-4C35-BFAB-12E6177922A5}.win32_dotnet_clr4_release|Any CPU.Build.0 = win32_dotnet_clr4_release|Win32
+		{DA52C603-6FE3-4C35-BFAB-12E6177922A5}.win64_dotnet_clr4_debug|Any CPU.ActiveCfg = win32_dotnet_clr4_debug|Win32
+		{DA52C603-6FE3-4C35-BFAB-12E6177922A5}.win64_dotnet_clr4_release|Any CPU.ActiveCfg = win32_dotnet_clr4_release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

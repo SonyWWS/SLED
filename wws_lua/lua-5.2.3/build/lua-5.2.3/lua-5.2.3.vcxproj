@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- wws_premake -->
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug Win32 Static DCRT|Win32">
+      <Configuration>Debug Win32 Static DCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win32 Static DCRT|x64">
+      <Configuration>Debug Win32 Static DCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win32 Static SCRT|Win32">
+      <Configuration>Debug Win32 Static SCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win32 Static SCRT|x64">
+      <Configuration>Debug Win32 Static SCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win64 Static DCRT|Win32">
+      <Configuration>Debug Win64 Static DCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win64 Static DCRT|x64">
+      <Configuration>Debug Win64 Static DCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win64 Static SCRT|Win32">
+      <Configuration>Debug Win64 Static SCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug Win64 Static SCRT|x64">
+      <Configuration>Debug Win64 Static SCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win32 Static DCRT|Win32">
+      <Configuration>Release Win32 Static DCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win32 Static DCRT|x64">
+      <Configuration>Release Win32 Static DCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win32 Static SCRT|Win32">
+      <Configuration>Release Win32 Static SCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win32 Static SCRT|x64">
+      <Configuration>Release Win32 Static SCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win64 Static DCRT|Win32">
+      <Configuration>Release Win64 Static DCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win64 Static DCRT|x64">
+      <Configuration>Release Win64 Static DCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win64 Static SCRT|Win32">
+      <Configuration>Release Win64 Static SCRT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release Win64 Static SCRT|x64">
+      <Configuration>Release Win64 Static SCRT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DFE31890-74BB-4EEB-AC15-1D003211FED6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>lua-5.2.3</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static DCRT|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static SCRT|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static DCRT|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static SCRT|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static DCRT|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static SCRT|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static DCRT|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static SCRT|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static DCRT|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static SCRT|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static DCRT|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static SCRT|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static DCRT|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static SCRT|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static DCRT|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static SCRT|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static DCRT|Win32'">
+    <OutDir>..\..\..\..\lib\win32_static_dcrt_vc100_debug\</OutDir>
+    <IntDir>..\..\..\..\tmp\wws_lua\lua-5.2.3\win32_static_dcrt_vc100_debug\</IntDir>
+    <TargetName>liblua-5.2.3</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static SCRT|Win32'">
+    <OutDir>..\..\..\..\lib\win32_static_scrt_vc100_debug\</OutDir>
+    <IntDir>..\..\..\..\tmp\wws_lua\lua-5.2.3\win32_static_scrt_vc100_debug\</IntDir>
+    <TargetName>liblua-5.2.3</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static DCRT|x64'">
+    <OutDir>..\..\..\..\lib\win64_static_dcrt_vc100_debug\</OutDir>
+    <IntDir>..\..\..\..\tmp\wws_lua\lua-5.2.3\win64_static_dcrt_vc100_debug\</IntDir>
+    <TargetName>liblua-5.2.3</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static SCRT|x64'">
+    <OutDir>..\..\..\..\lib\win64_static_scrt_vc100_debug\</OutDir>
+    <IntDir>..\..\..\..\tmp\wws_lua\lua-5.2.3\win64_static_scrt_vc100_debug\</IntDir>
+    <TargetName>liblua-5.2.3</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static DCRT|Win32'">
+    <OutDir>..\..\..\..\lib\win32_static_dcrt_vc100_release\</OutDir>
+    <IntDir>..\..\..\..\tmp\wws_lua\lua-5.2.3\win32_static_dcrt_vc100_release\</IntDir>
+    <TargetName>liblua-5.2.3</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static SCRT|Win32'">
+    <OutDir>..\..\..\..\lib\win32_static_scrt_vc100_release\</OutDir>
+    <IntDir>..\..\..\..\tmp\wws_lua\lua-5.2.3\win32_static_scrt_vc100_release\</IntDir>
+    <TargetName>liblua-5.2.3</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static DCRT|x64'">
+    <OutDir>..\..\..\..\lib\win64_static_dcrt_vc100_release\</OutDir>
+    <IntDir>..\..\..\..\tmp\wws_lua\lua-5.2.3\win64_static_dcrt_vc100_release\</IntDir>
+    <TargetName>liblua-5.2.3</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static SCRT|x64'">
+    <OutDir>..\..\..\..\lib\win64_static_scrt_vc100_release\</OutDir>
+    <IntDir>..\..\..\..\tmp\wws_lua\lua-5.2.3\win64_static_scrt_vc100_release\</IntDir>
+    <TargetName>liblua-5.2.3</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static DCRT|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>_DEBUG;DEBUG;WWS_BUILD_DEBUG;WWS_ASSERTS_ENABLED=1;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDebug;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;WWS_LUA_VER=523;SCE_LUA_VER=523;LUA_USE_APICHECK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalOptions>/wd4709 %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <TreatLibWarningAsErrors>true</TreatLibWarningAsErrors>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win32 Static SCRT|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>_DEBUG;DEBUG;WWS_BUILD_DEBUG;WWS_ASSERTS_ENABLED=1;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDebug;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;WWS_LUA_VER=523;SCE_LUA_VER=523;LUA_USE_APICHECK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/wd4709 %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <TreatLibWarningAsErrors>true</TreatLibWarningAsErrors>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static DCRT|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>_DEBUG;DEBUG;WWS_BUILD_DEBUG;WWS_ASSERTS_ENABLED=1;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDebug;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;WIN64;_WIN64;WWS_LUA_VER=523;SCE_LUA_VER=523;LUA_USE_APICHECK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalOptions>/wd4324 /wd4709 %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <TreatLibWarningAsErrors>true</TreatLibWarningAsErrors>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Win64 Static SCRT|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>_DEBUG;DEBUG;WWS_BUILD_DEBUG;WWS_ASSERTS_ENABLED=1;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDebug;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;WIN64;_WIN64;WWS_LUA_VER=523;SCE_LUA_VER=523;LUA_USE_APICHECK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/wd4324 /wd4709 %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <TreatLibWarningAsErrors>true</TreatLibWarningAsErrors>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static DCRT|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>NDEBUG;WWS_BUILD_RELEASE;WWS_ASSERTS_ENABLED=0;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDisable;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;WWS_LUA_VER=523;SCE_LUA_VER=523;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <AdditionalOptions>/wd4709 %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <TreatLibWarningAsErrors>true</TreatLibWarningAsErrors>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Win32 Static SCRT|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>NDEBUG;WWS_BUILD_RELEASE;WWS_ASSERTS_ENABLED=0;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDisable;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;WWS_LUA_VER=523;SCE_LUA_VER=523;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/wd4709 %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <TreatLibWarningAsErrors>true</TreatLibWarningAsErrors>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static DCRT|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>NDEBUG;WWS_BUILD_RELEASE;WWS_ASSERTS_ENABLED=0;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDisable;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;WIN64;_WIN64;WWS_LUA_VER=523;SCE_LUA_VER=523;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <AdditionalOptions>/wd4324 /wd4709 %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <TreatLibWarningAsErrors>true</TreatLibWarningAsErrors>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Win64 Static SCRT|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PreprocessorDefinitions>NDEBUG;WWS_BUILD_RELEASE;WWS_ASSERTS_ENABLED=0;WWS_MINIMUM_LOG_LEVEL_COMPILE_TIME=kWwsLogDisable;WIN32;_WIN32;_WINDOWS;_MBCS;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;WIN64;_WIN64;WWS_LUA_VER=523;SCE_LUA_VER=523;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/wd4324 /wd4709 %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <TreatLibWarningAsErrors>true</TreatLibWarningAsErrors>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\lapi.h" />
+    <ClInclude Include="..\..\src\lauxlib.h" />
+    <ClInclude Include="..\..\src\lcode.h" />
+    <ClInclude Include="..\..\src\lctype.h" />
+    <ClInclude Include="..\..\src\ldebug.h" />
+    <ClInclude Include="..\..\src\ldo.h" />
+    <ClInclude Include="..\..\src\lfunc.h" />
+    <ClInclude Include="..\..\src\lgc.h" />
+    <ClInclude Include="..\..\src\llex.h" />
+    <ClInclude Include="..\..\src\llimits.h" />
+    <ClInclude Include="..\..\src\lmem.h" />
+    <ClInclude Include="..\..\src\lobject.h" />
+    <ClInclude Include="..\..\src\lopcodes.h" />
+    <ClInclude Include="..\..\src\lparser.h" />
+    <ClInclude Include="..\..\src\lstate.h" />
+    <ClInclude Include="..\..\src\lstring.h" />
+    <ClInclude Include="..\..\src\ltable.h" />
+    <ClInclude Include="..\..\src\ltm.h" />
+    <ClInclude Include="..\..\src\lua.h" />
+    <ClInclude Include="..\..\src\luaconf.h" />
+    <ClInclude Include="..\..\src\lualib.h" />
+    <ClInclude Include="..\..\src\lundump.h" />
+    <ClInclude Include="..\..\src\lvm.h" />
+    <ClInclude Include="..\..\src\lzio.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\lapi.c" />
+    <ClCompile Include="..\..\src\lauxlib.c" />
+    <ClCompile Include="..\..\src\lbaselib.c" />
+    <ClCompile Include="..\..\src\lbitlib.c" />
+    <ClCompile Include="..\..\src\lcode.c" />
+    <ClCompile Include="..\..\src\lcorolib.c" />
+    <ClCompile Include="..\..\src\lctype.c" />
+    <ClCompile Include="..\..\src\ldblib.c" />
+    <ClCompile Include="..\..\src\ldebug.c" />
+    <ClCompile Include="..\..\src\ldo.c" />
+    <ClCompile Include="..\..\src\ldump.c" />
+    <ClCompile Include="..\..\src\lfunc.c" />
+    <ClCompile Include="..\..\src\lgc.c" />
+    <ClCompile Include="..\..\src\linit.c" />
+    <ClCompile Include="..\..\src\liolib.c" />
+    <ClCompile Include="..\..\src\llex.c" />
+    <ClCompile Include="..\..\src\lmathlib.c" />
+    <ClCompile Include="..\..\src\lmem.c" />
+    <ClCompile Include="..\..\src\loadlib.c" />
+    <ClCompile Include="..\..\src\lobject.c" />
+    <ClCompile Include="..\..\src\lopcodes.c" />
+    <ClCompile Include="..\..\src\loslib.c" />
+    <ClCompile Include="..\..\src\lparser.c" />
+    <ClCompile Include="..\..\src\lstate.c" />
+    <ClCompile Include="..\..\src\lstring.c" />
+    <ClCompile Include="..\..\src\lstrlib.c" />
+    <ClCompile Include="..\..\src\ltable.c" />
+    <ClCompile Include="..\..\src\ltablib.c" />
+    <ClCompile Include="..\..\src\ltm.c" />
+    <ClCompile Include="..\..\src\lundump.c" />
+    <ClCompile Include="..\..\src\lvm.c" />
+    <ClCompile Include="..\..\src\lzio.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,3 @@
+libsleddebugger		5.1.2
+libsledluaplugin	5.1.2
+SLED				5.1.2

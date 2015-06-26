@@ -1,0 +1,7 @@
+--------------------------------
+Runtime Changes Between Versions
+--------------------------------
+
+libsleddebugger 5.1.2 & libsledluaplugin 5.1.2
+---------------
+* Initial open source release

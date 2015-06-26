@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- wws_premake -->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{C196CD9C-2D76-4C38-368E-D70EA2ECB299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{56EB95D1-428D-C0A7-2B48-D4FB178947F8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sledcore">
+      <UniqueIdentifier>{3657BA09-2224-1515-4B3D-03BD37694AA3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sledcore\windows">
+      <UniqueIdentifier>{906FB625-7C68-D577-A59A-BAFC91F2B483}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\sledcore\assert.h">
+      <Filter>sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\base_types.h">
+      <Filter>sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\common.h">
+      <Filter>sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\datetime.h">
+      <Filter>sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\memory.h">
+      <Filter>sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\mutex.h">
+      <Filter>sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\sleep.h">
+      <Filter>sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\socket.h">
+      <Filter>sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\target_macros.h">
+      <Filter>sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\thread.h">
+      <Filter>sledcore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\windows\mutex_windows.h">
+      <Filter>sledcore\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\windows\socket_windows.h">
+      <Filter>sledcore\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledcore\windows\thread_windows.h">
+      <Filter>sledcore\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sleddebugger_unittests\scoped_network.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sledluaplugin_SharedSampleCode\fileutilities.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\sleddebugger_unittests\scoped_network.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sledluaplugin_SharedSampleCode\fileutilities.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

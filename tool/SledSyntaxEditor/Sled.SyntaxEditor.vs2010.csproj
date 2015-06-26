@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0D7B1F12-0EE5-4D7D-B116-C6E97F7A0956}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sce.Sled.SyntaxEditor</RootNamespace>
+    <AssemblyName>Sled.SyntaxEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\lib\anycpu_dotnet_clr4_debug\</OutputPath>
+    <IntermediateOutputPath>obj\Debug.vs2010\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\lib\anycpu_dotnet_clr4_release\</OutputPath>
+    <IntermediateOutputPath>obj\Release.vs2010\</IntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.101.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\wws_atf\ThirdParty\ActiPro\ActiproSoftware.Shared.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20, Version=4.0.281.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\wws_atf\ThirdParty\ActiPro\ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.281.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\wws_atf\ThirdParty\ActiPro\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.WinUICore.Net20, Version=1.0.101.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\wws_atf\ThirdParty\ActiPro\ActiproSoftware.WinUICore.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BreakpointEventArgs.cs" />
+    <Compile Include="BreakpointIndicator.cs" />
+    <Compile Include="EditorTextChangedEventArgs.cs" />
+    <Compile Include="FileDragDropEventArgs.cs" />
+    <Compile Include="IBreakpoint.cs" />
+    <Compile Include="Intellisense\Lua\Database.cs" />
+    <Compile Include="Intellisense\Lua\DecorationType.cs" />
+    <Compile Include="Intellisense\Lua\Helpers.cs" />
+    <Compile Include="Intellisense\Lua\HelpersExtension.cs" />
+    <Compile Include="Intellisense\Lua\ILuaIntellisense.cs" />
+    <Compile Include="Intellisense\Lua\ILuaIntellisenseNavigator.cs" />
+    <Compile Include="Intellisense\Lua\ILuaIntellisenseStatus.cs" />
+    <Compile Include="Intellisense\Lua\LuaIntellisenseBroker.cs" />
+    <Compile Include="Intellisense\Lua\LuaIntellisenseIconType.cs" />
+    <Compile Include="Intellisense\Lua\LuatFunction.cs" />
+    <Compile Include="Intellisense\Lua\LuatLiteral.cs" />
+    <Compile Include="Intellisense\Lua\LuatMetaTable.cs" />
+    <Compile Include="Intellisense\Lua\LuatScript.cs" />
+    <Compile Include="Intellisense\Lua\LuatSyntaxLanguage.cs" />
+    <Compile Include="Intellisense\Lua\LuatSyntaxWarning.cs" />
+    <Compile Include="Intellisense\Lua\LuatTable.cs" />
+    <Compile Include="Intellisense\Lua\LuatType.cs" />
+    <Compile Include="Intellisense\Lua\LuatValue.cs" />
+    <Compile Include="Intellisense\Lua\LuatVariable.cs" />
+    <Compile Include="Intellisense\Lua\NavigationBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Intellisense\Lua\OperatorType.cs" />
+    <Compile Include="Intellisense\Lua\Parser\AST\LuatAstNodeBase.cs" />
+    <Compile Include="Intellisense\Lua\Parser\AST\LuatASTNodes.cs" />
+    <Compile Include="Intellisense\Lua\Parser\LuatLexicalParser.cs" />
+    <Compile Include="Intellisense\Lua\Parser\LuatRecursiveDescentLexicalParser.cs" />
+    <Compile Include="Intellisense\Lua\Parser\LuatSemanticParser.cs" />
+    <Compile Include="Intellisense\Lua\Parser\LuatToken.cs" />
+    <Compile Include="Intellisense\Lua\RenameVariableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Intellisense\Lua\RenameVariableForm.Designer.cs">
+      <DependentUpon>RenameVariableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Intellisense\Lua\WarningType.cs" />
+    <Compile Include="ISyntaxEditorControl.cs" />
+    <Compile Include="Languages.cs" />
+    <Compile Include="LuaSyntaxLanguage.cs" />
+    <Compile Include="MouseHoverOverTokenEventArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowContextMenuEventArg.cs" />
+    <Compile Include="SyntaxEditorControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SyntaxEditorRegions.cs" />
+    <Compile Include="TaskQueue.cs" />
+    <Compile Include="TextEditorFactory.cs" />
+    <Compile Include="Token.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Intellisense\Lua\RenameVariableForm.resx">
+      <DependentUpon>RenameVariableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LanguageDefinitions\CgDefinition.xml" />
+    <EmbeddedResource Include="LanguageDefinitions\CSharpDefinition.xml" />
+    <EmbeddedResource Include="LanguageDefinitions\LuaDefinition.xml" />
+    <EmbeddedResource Include="LanguageDefinitions\PythonDefinition.xml" />
+    <EmbeddedResource Include="LanguageDefinitions\SquirrelDefinition.xml" />
+    <EmbeddedResource Include="LanguageDefinitions\XMLDefinition.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\wws_atf\Framework\Atf.Core\Atf.Core.vs2010.csproj">
+      <Project>{9D1835B6-D1C2-44BA-BAE1-05C6EC442D2F}</Project>
+      <Name>Atf.Core.vs2010</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\wws_atf\Framework\Atf.Gui.WinForms\Atf.Gui.WinForms.vs2010.csproj">
+      <Project>{7C36A258-9102-420D-B80A-5EB5717644B6}</Project>
+      <Name>Atf.Gui.WinForms.vs2010</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\wws_atf\Framework\Atf.Gui\Atf.Gui.vs2010.csproj">
+      <Project>{4765C2A7-F989-40DB-BC12-FCD67025B93F}</Project>
+      <Name>Atf.Gui.vs2010</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Intellisense\Lua\Icons\icons.png" />
+    <Content Include="Intellisense\Lua\Parser\Luat.Grammar.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Intellisense\Lua\StandardLibrary\basic.lua" />
+    <EmbeddedResource Include="Intellisense\Lua\StandardLibrary\coroutine.lua" />
+    <EmbeddedResource Include="Intellisense\Lua\StandardLibrary\debug.lua" />
+    <EmbeddedResource Include="Intellisense\Lua\StandardLibrary\file.lua" />
+    <EmbeddedResource Include="Intellisense\Lua\StandardLibrary\io.lua" />
+    <EmbeddedResource Include="Intellisense\Lua\StandardLibrary\math.lua" />
+    <EmbeddedResource Include="Intellisense\Lua\StandardLibrary\modules.lua" />
+    <EmbeddedResource Include="Intellisense\Lua\StandardLibrary\os.lua" />
+    <EmbeddedResource Include="Intellisense\Lua\StandardLibrary\string.lua" />
+    <EmbeddedResource Include="Intellisense\Lua\StandardLibrary\table.lua" />
+    <EmbeddedResource Include="Intellisense\Lua\StandardLibrary\types.lua" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

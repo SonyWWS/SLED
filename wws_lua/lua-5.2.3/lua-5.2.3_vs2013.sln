@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua-5.2.3", "build\lua-5.2.3\lua-5.2.3_vs2013.vcxproj", "{DFE31890-74BB-4EEB-AC15-1D003211FED6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua-5.2.3_compiler", "build\lua-5.2.3_compiler\lua-5.2.3_compiler_vs2013.vcxproj", "{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6} = {DFE31890-74BB-4EEB-AC15-1D003211FED6}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 Static DCRT = Debug|Win32 Static DCRT
+		Debug|Win32 Static SCRT = Debug|Win32 Static SCRT
+		Debug|Win64 Static DCRT = Debug|Win64 Static DCRT
+		Debug|Win64 Static SCRT = Debug|Win64 Static SCRT
+		Release|Win32 Static DCRT = Release|Win32 Static DCRT
+		Release|Win32 Static SCRT = Release|Win32 Static SCRT
+		Release|Win64 Static DCRT = Release|Win64 Static DCRT
+		Release|Win64 Static SCRT = Release|Win64 Static SCRT
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win32 Static DCRT.ActiveCfg = Debug Win32 Static DCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win32 Static DCRT.Build.0 = Debug Win32 Static DCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win32 Static SCRT.ActiveCfg = Debug Win32 Static SCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win32 Static SCRT.Build.0 = Debug Win32 Static SCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win64 Static DCRT.ActiveCfg = Debug Win64 Static DCRT|x64
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win64 Static DCRT.Build.0 = Debug Win64 Static DCRT|x64
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win64 Static SCRT.ActiveCfg = Debug Win64 Static SCRT|x64
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Debug|Win64 Static SCRT.Build.0 = Debug Win64 Static SCRT|x64
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win32 Static DCRT.ActiveCfg = Release Win32 Static DCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win32 Static DCRT.Build.0 = Release Win32 Static DCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win32 Static SCRT.ActiveCfg = Release Win32 Static SCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win32 Static SCRT.Build.0 = Release Win32 Static SCRT|Win32
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win64 Static DCRT.ActiveCfg = Release Win64 Static DCRT|x64
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win64 Static DCRT.Build.0 = Release Win64 Static DCRT|x64
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win64 Static SCRT.ActiveCfg = Release Win64 Static SCRT|x64
+		{DFE31890-74BB-4EEB-AC15-1D003211FED6}.Release|Win64 Static SCRT.Build.0 = Release Win64 Static SCRT|x64
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Debug|Win32 Static DCRT.ActiveCfg = Debug Win32 Static DCRT|Win32
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Debug|Win32 Static DCRT.Build.0 = Debug Win32 Static DCRT|Win32
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Debug|Win32 Static SCRT.ActiveCfg = Debug Win32 Static SCRT|Win32
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Debug|Win32 Static SCRT.Build.0 = Debug Win32 Static SCRT|Win32
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Debug|Win64 Static DCRT.ActiveCfg = Debug Win64 Static DCRT|x64
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Debug|Win64 Static DCRT.Build.0 = Debug Win64 Static DCRT|x64
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Debug|Win64 Static SCRT.ActiveCfg = Debug Win64 Static SCRT|x64
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Debug|Win64 Static SCRT.Build.0 = Debug Win64 Static SCRT|x64
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Release|Win32 Static DCRT.ActiveCfg = Release Win32 Static DCRT|Win32
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Release|Win32 Static DCRT.Build.0 = Release Win32 Static DCRT|Win32
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Release|Win32 Static SCRT.ActiveCfg = Release Win32 Static SCRT|Win32
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Release|Win32 Static SCRT.Build.0 = Release Win32 Static SCRT|Win32
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Release|Win64 Static DCRT.ActiveCfg = Release Win64 Static DCRT|x64
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Release|Win64 Static DCRT.Build.0 = Release Win64 Static DCRT|x64
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Release|Win64 Static SCRT.ActiveCfg = Release Win64 Static SCRT|x64
+		{7FABCDEF-1234-4321-CCDE-CABCD1233EFA}.Release|Win64 Static SCRT.Build.0 = Release Win64 Static SCRT|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
