@@ -16,7 +16,7 @@ SLED is an open source project. See [License.txt](https://github.com/SonyWWS/SLE
 
 The SLED wiki is at https://github.com/SonyWWS/SLED/wiki.
 
-We have PDF files in the [Docs folder](https://github.com/SonyWWS/SLED/tree/master/Docs) or [Documentation](https://github.com/SonyWWS/SLED/wiki/Documentation).
+We have PDF files in the [Docs folder](https://github.com/SonyWWS/SLED/tree/master/doc) or [Documentation](https://github.com/SonyWWS/SLED/wiki/Documentation).
 
 Bugs, feature requests, and questions:  
 https://github.com/SonyWWS/SLED/issues.
